@@ -188,3 +188,795 @@ Your application should:
 | **Total** | **100%** |
 
 **Important:** Write clean, readable, modular, and reusable Python code. Be prepared to explain your implementation and demonstrate the complete shopping workflow during the review session.
+
+
+
+# AI Prompts step by step 
+-------------------------
+
+![alt text](image-1.png) 
+
+# Step 1 – Create project structure
+##Foundation
+ Python syntax and project organization
+
+**Objective:** Establish the project structure and understand the application's components.
+
+## PROMPT 1: Create Python Project Structure
+```
+Act as an experienced Python developer and instructor.
+
+I want to develop a beginner-level Online Shopping and Order Management System using Python 3.x.
+
+First, help me establish the project structure.
+
+Requirements:
+
+Create a project folder named OnlineShoppingSystem.
+
+Organize the application into the following Python files:
+
+main.py – Application entry point.
+
+product.py – Product-related functionality.
+
+customer.py – Customer-related functionality.
+
+shopping_cart.py – Shopping cart operations.
+
+order.py – Order calculation and summary.
+
+payment.py – Payment processing.
+
+Explain the responsibility of each file.
+
+Explain how Python modules will communicate using import statements.
+
+Create basic placeholder code in each file.
+
+Ensure that the application can execute through main.py.
+
+Important instructions:
+
+Do not implement the complete application yet.
+
+Do not introduce advanced Python concepts.
+
+Use simple, beginner-friendly Python code.
+
+Explain every file and its purpose.
+
+Provide the expected project folder structure.
+
+Provide instructions to execute the application.
+```
+
+
+# Step 2 – Create product catalogue
+Python fundamentals
+**Objective:** Understand variables, data types, lists, dictionaries, and loops.
+
+## PROMPT 2: Implement Product Catalogue
+
+```
+Continue developing the existing Online Shopping and Order Management System.
+
+Implement the product catalogue in product.py.
+
+Use the following product information:
+
+
+| Product ID | Product Name | Price | Stock |
+|---|---|---:|---:|
+| P101 | Laptop | 55000 | 10 |
+| P102 | Wireless Mouse | 800 | 25 |
+| P103 | Keyboard | 1500 | 15 |
+| P104 | Monitor | 12000 | 8 |
+| P105 | Headphones | 2500 | 20 |
+
+Requirements:
+
+Store product information using appropriate Python data structures.
+
+Create a function named display_products().
+
+Display all products in a properly formatted tabular structure.
+
+Create a function named get_product_by_id(product_id).
+
+Return the matching product when the product ID exists.
+
+Return an appropriate result when the product does not exist.
+
+Demonstrate string formatting using f-strings.
+
+Use meaningful variable names and comments.
+
+Python concepts to demonstrate:
+
+Variables
+
+Strings
+
+Integers and floating-point numbers
+
+Lists and dictionaries
+
+Functions
+
+For loops
+
+Conditional statements
+
+Modify main.py to call display_products() and test the catalogue.
+
+Do not implement classes yet.
+
+Explain the code and provide sample output.
+```
+
+# Step 3 – Implement Product class
+**Objective:** Convert the product catalogue into an object-oriented implementation.
+
+## PROMPT 3: Implement Product Class
+```
+Continue with the existing Online Shopping System.
+
+Now implement the Product class in product.py.
+
+Requirements:
+
+Create a class named Product.
+
+Implement the __init__() constructor.
+
+Initialize the following attributes:
+
+product_id
+
+product_name
+
+price
+
+available_stock
+
+Implement a method named display_product() to display product information.
+
+Implement a method named is_available(quantity) to check stock availability.
+
+Implement a method named update_stock(quantity) to update available stock.
+
+Create at least five Product objects using the supplied product catalogue.
+
+Store these objects in a list.
+
+Implement display_products() to display the Product objects.
+
+Test retrieving a product by its ID.
+
+Important:
+
+Use private attributes for price and available stock.
+
+Use getter methods to retrieve these attributes.
+
+Use setter methods to update them.
+
+Validate that price is not negative and stock is not negative.
+
+Do not use advanced decorators or properties yet.
+
+Demonstrate:
+
+Class and object
+
+Constructor
+
+Instance attributes
+
+Instance methods
+
+Encapsulation
+
+Getter and setter methods
+
+Explain how the earlier dictionary-based catalogue differs from the new object-based implementation.
+```
+
+# Step 4 – Implement Customer class
+## PROMPT 4: Implement Customer Class
+```
+Continue developing the existing Online Shopping System.
+
+Implement a Customer class in customer.py.
+
+Requirements:
+
+Create a class named Customer.
+
+Implement the constructor __init__().
+
+Accept the following customer details:
+
+customer_id
+
+customer_name
+
+email
+
+mobile_number
+
+Use private attributes for customer information.
+
+Implement appropriate getter methods.
+
+Implement a method named display_customer() to display customer information.
+
+Implement a method named calculate_discount(order_amount) that returns 0 by default.
+
+Create a function to accept customer details using input().
+
+Convert input into appropriate data types wherever required.
+
+Create a Customer object using the collected information.
+
+Modify main.py to accept customer details and display the customer profile.
+
+Demonstrate:
+Classes and objects
+
+Constructors
+
+Instance methods
+
+Encapsulation
+
+User input
+
+String formatting
+
+Keep the code beginner-friendly and explain every method.
+```
+
+# Step 5 – Implement ShoppingCart class
+**Objective:** Understand how multiple objects interact with each other.
+
+## PROMPT 5: Implement ShoppingCart Class
+```
+Continue developing the existing Online Shopping System.
+
+Implement a ShoppingCart class in shopping_cart.py.
+
+The ShoppingCart should maintain a collection of Product objects and their selected quantities.
+
+Requirements:
+
+Create a class named ShoppingCart.
+
+Implement the constructor.
+
+Initialize an empty shopping cart.
+
+Implement the following methods:
+
+add_product(product, quantity)
+
+remove_product(product_id)
+
+view_cart()
+
+get_cart_total()
+
+clear_cart()
+
+Validate that the requested product exists.
+
+Validate that the requested quantity is greater than zero.
+
+Check whether sufficient stock is available.
+
+Prevent adding quantities beyond available stock.
+
+If the same product is added again, update its cart quantity.
+
+Display product name, unit price, quantity and subtotal.
+
+Use the existing Product objects from product.py.
+
+Modify main.py to:
+
+Display the product catalogue.
+
+Accept product ID and quantity.
+
+Add the selected product to the cart.
+
+Display the shopping cart.
+
+Demonstrate:
+
+Lists
+
+Dictionaries
+
+Loops
+
+Conditional statements
+
+Object interaction
+
+Methods
+
+Arithmetic operators
+
+Do not implement discounts or payment yet.
+
+Explain how ShoppingCart interacts with Product objects.
+```
+
+# Step 6 – Implement order calculations
+
+**Objective:** Implement business rules using arithmetic, comparison and logical operators.
+
+## PROMPT 6: Implement Order Pricing and Discount Calculation
+```
+Continue developing the existing Online Shopping System.
+
+Enhance the ShoppingCart and order calculation functionality.
+
+Implement the following business rules:
+
+Calculate the subtotal of all products in the cart.
+
+Apply a 15% discount when the subtotal is above ₹5,000.
+
+Apply a 10% discount when the subtotal is above ₹2,000 and up to ₹5,000.
+
+No discount for orders of ₹2,000 or below.
+
+Apply ₹50 delivery charges when the subtotal is below ₹500.
+
+Provide free delivery when the subtotal is ₹500 or above.
+
+Implement appropriate methods to calculate:
+
+Subtotal
+
+Discount percentage
+
+Discount amount
+
+Delivery charges
+
+Final payable amount
+
+Formula:
+
+Final Amount = Subtotal - Discount Amount + Delivery Charges
+
+Requirements:
+
+Use if, elif and else.
+
+Demonstrate comparison operators.
+
+Demonstrate logical operators.
+
+Demonstrate arithmetic operators.
+
+Demonstrate assignment operators.
+
+Use f-strings to display currency values.
+
+Handle empty shopping carts.
+
+Test the following scenarios:
+
+Order amount ₹300.
+
+Order amount ₹1,000.
+
+Order amount ₹3,000.
+
+Order amount ₹6,000.
+
+Display a detailed price breakdown for every scenario.
+
+Do not implement premium customer benefits yet.
+
+Explain how the business rules are translated into Python conditions.
+```
+
+# Step 7 – Implement inheritance and polymorphism
+**Objective:** Introduce inheritance and method overriding.
+
+## PROMPT 7: Implement PremiumCustomer Using Inheritance and Polymorphism
+```
+Continue developing the existing Online Shopping System.
+
+Enhance customer functionality using inheritance and polymorphism.
+
+Requirements:
+
+Keep the existing Customer class.
+
+Create a new class named PremiumCustomer.
+
+Inherit PremiumCustomer from Customer.
+
+Use super() to initialize the parent class attributes.
+
+Add a premium membership attribute.
+
+Override the calculate_discount(order_amount) method.
+
+Business rules:
+
+Regular customers receive the existing discount based on order value.
+
+Premium customers receive an additional 5% discount on the amount remaining after the regular discount.
+
+Example:
+
+For an order of ₹6,000:
+
+Regular discount = 15%.
+
+Regular discount amount = ₹900.
+
+Remaining amount = ₹5,100.
+
+Premium additional discount = 5% of ₹5,100 = ₹255.
+
+Total discount = ₹1,155.
+
+Requirements:
+
+Demonstrate inheritance.
+
+Demonstrate method overriding.
+
+Demonstrate polymorphism.
+
+Create both Customer and PremiumCustomer objects.
+
+Call calculate_discount() using both objects.
+
+Integrate customer-specific discounts into the order calculation.
+
+Ensure that the premium discount is applied only once.
+
+Explain how the same method name produces different results for different customer objects.
+```
+
+# Step 8 – Implement Order class
+
+## PROMPT 8: Implement Order Management
+```
+Continue developing the existing Online Shopping System.
+
+Implement an Order class in order.py.
+
+Requirements:
+
+Create a class named Order.
+
+Implement the constructor.
+
+Maintain the following information:
+
+order_id
+
+customer
+
+shopping_cart
+
+order_status
+
+subtotal
+
+discount_amount
+
+delivery_charges
+
+final_amount
+
+Implement the following methods:
+
+calculate_order_amount()
+
+generate_order_summary()
+
+update_order_status()
+
+Use the existing Customer or PremiumCustomer object.
+
+Use the existing ShoppingCart object.
+
+Calculate the final payable amount using the existing pricing rules.
+
+Generate a formatted order summary.
+
+Display customer information, purchased products, quantities, subtotal, discounts, delivery charges and final amount.
+
+Use a suitable order ID.
+
+Demonstrate:
+
+Classes and objects
+
+Constructors
+
+Object composition
+
+Method calls
+
+Conditional statements
+
+String formatting
+
+Do not implement payment processing yet.
+
+Explain how Order uses Customer and ShoppingCart objects.
+```
+
+# Step 9 – Implement abstraction and payment processing
+
+## PROMPT 9: Implement Payment Abstraction  
+```
+Continue developing the existing Online Shopping System.
+
+Implement payment functionality in payment.py.
+
+Requirements:
+
+Import ABC and abstractmethod from Python's abc module.
+
+Create an abstract class named Payment.
+
+Define an abstract method named process_payment(amount).
+
+Create a concrete class named UPIPayment that inherits from Payment.
+
+Create a concrete class named CardPayment that inherits from Payment.
+
+Override process_payment() in both concrete classes.
+
+Simulate payment processing without connecting to any real payment gateway.
+
+Accept payment details using input().
+
+Display the payment method and transaction status.
+
+Return payment success or failure.
+
+The application should allow customers to select:
+
+UPI Payment
+
+Card Payment
+
+Use appropriate validation for the selected payment method.
+
+Demonstrate:
+
+Abstract classes
+
+Abstract methods
+
+Inheritance
+
+Method overriding
+
+Polymorphism
+
+Explain why an object of the abstract Payment class cannot be created directly.
+
+Important: Do not collect or store actual card numbers, CVVs, UPI PINs or banking credentials. Use simulated payment details only.
+```
+
+# Step 10 – Implement menu-driven application
+
+## PROMPT 10: Implement Menu-Driven Shopping Application
+```
+Continue developing the existing Online Shopping System.
+
+Now implement the main application workflow in main.py.
+
+Display the following menu:
+
+View Products
+
+Add Product to Cart
+
+View Shopping Cart
+
+Calculate Order Amount
+
+Generate Order Summary
+
+Make Payment
+
+Exit
+
+Requirements:
+
+Display the welcome message.
+
+Accept customer information.
+
+Allow the customer to select regular or premium membership.
+
+Create the appropriate customer object.
+
+Display the menu repeatedly using a while loop.
+
+Use if, elif and else to process menu choices.
+
+Call the appropriate methods from the existing classes.
+
+Allow multiple products to be added.
+
+Allow customers to view and update their cart.
+
+Calculate the final payable amount.
+
+Generate an order summary.
+
+Process payment through the selected payment class.
+
+Display appropriate success and failure messages.
+
+Exit the application when the customer selects option 7.
+
+Ensure that the existing classes and methods are reused instead of duplicating business logic in main.py.
+
+Explain the complete application execution flow.
+
+Provide sample execution output for a complete shopping transaction.
+```
+
+# Step 11 – Exception handling and application integration
+
+## PROMPT 11: Improve Validation and Exception Handling
+```
+Review the complete Online Shopping System developed in the previous steps.
+
+Improve the application reliability without changing its existing business requirements.
+
+Implement the following validations:
+
+Reject invalid customer information.
+
+Reject empty customer names.
+
+Handle invalid product IDs.
+
+Reject zero or negative product quantities.
+
+Prevent adding more products than available stock.
+
+Handle invalid menu choices.
+
+Handle non-numeric input where numeric values are expected.
+
+Prevent payment when the shopping cart is empty.
+
+Prevent order generation for an empty cart.
+
+Handle payment failures gracefully.
+
+Use:
+
+try
+
+except
+
+else
+
+finally (where appropriate)
+
+ValueError
+
+Custom exceptions only where they provide a clear benefit.
+
+Additional requirements:
+
+Review all imports.
+
+Remove duplicated code.
+
+Ensure that each class has a clearly defined responsibility.
+
+Ensure that payment is processed only once per order.
+
+Update product stock only after successful payment.
+
+Do not reduce stock when payment fails.
+
+Ensure that the application can restart or continue after recoverable input errors.
+
+Explain every exception handling scenario with an example.
+
+Do not rewrite the entire application unnecessarily. Make incremental improvements to the existing files.
+```
+
+# Step 12 – Final testing and documentation
+
+# PROMPT 12: Perform Final Testing and Generate Documentation
+```
+Act as a Python code reviewer and software testing specialist.
+
+Review the complete Online Shopping and Order Management System.
+
+Perform the following activities:
+
+Verify that all six Python files work together.
+
+Check whether all required Python fundamentals are demonstrated.
+
+Check whether all required OOP concepts are implemented.
+
+Identify syntax errors and logical errors.
+
+Verify that all business rules are correctly implemented.
+
+Verify regular and premium customer discount calculations.
+
+Verify delivery charge calculations.
+
+Verify stock availability and stock updates.
+
+Verify successful and unsuccessful payment scenarios.
+
+Prepare test cases covering:
+
+Product available.
+
+Product unavailable.
+
+Valid product quantity.
+
+Invalid product quantity.
+
+Empty shopping cart.
+
+Order below ₹500.
+
+Order between ₹2,000 and ₹5,000.
+
+Order above ₹5,000.
+
+Regular customer.
+
+Premium customer.
+
+Successful payment.
+
+Failed payment.
+
+Finally, create a README.md file containing:
+
+Project title.
+
+Project description.
+
+Application features.
+
+Project folder structure.
+
+Python concepts demonstrated.
+
+OOP concepts demonstrated.
+
+Instructions to execute the application.
+
+Sample application output.
+
+Test scenarios.
+
+Provide a final project review and identify any remaining issues.
+
+Do not claim that a test has passed unless it has actually been executed and verified.
+
+```
