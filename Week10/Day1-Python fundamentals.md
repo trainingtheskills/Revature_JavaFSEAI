@@ -517,6 +517,112 @@ Python supports the following types of operators:
 - `is` compares whether two variables refer to the **same object**.
 
 These are the seven major categories of Python operators.
-
-
+```
+"""
+Python Operators Demo
+Demonstrates the seven categories of Python operators.
+"""
+ 
+ 
+def section(title):
+    print(f"\n{'=' * 50}\n{title}\n{'=' * 50}")
+ 
+ 
+# 1. Arithmetic Operators
+section("1. Arithmetic Operators")
+print("10 + 5   =", 10 + 5)      # Addition
+print("10 - 5   =", 10 - 5)      # Subtraction
+print("10 * 5   =", 10 * 5)      # Multiplication
+print("10 / 5   =", 10 / 5)      # Division (always returns float)
+print("10 % 3   =", 10 % 3)      # Modulus (remainder)
+print("10 // 3  =", 10 // 3)     # Floor division
+print("2 ** 3   =", 2 ** 3)      # Exponentiation
+ 
+ 
+# 2. Assignment Operators
+section("2. Assignment Operators")
+x = 10
+print("x = 10    ->", x)
+ 
+x += 5
+print("x += 5    ->", x)
+ 
+x -= 5
+print("x -= 5    ->", x)
+ 
+x *= 5
+print("x *= 5    ->", x)
+ 
+x /= 5
+print("x /= 5    ->", x)
+ 
+x %= 5
+print("x %= 5    ->", x)
+ 
+x = 17
+x //= 5
+print("x = 17; x //= 5 ->", x)
+ 
+x **= 2
+print("x **= 2   ->", x)
+ 
+ 
+# 3. Comparison (Relational) Operators
+section("3. Comparison Operators")
+print("10 == 10 :", 10 == 10)
+print("10 != 5  :", 10 != 5)
+print("10 > 5   :", 10 > 5)
+print("10 < 5   :", 10 < 5)
+print("10 >= 10 :", 10 >= 10)
+print("5 <= 10  :", 5 <= 10)
+ 
+ 
+# 4. Logical Operators
+section("4. Logical Operators")
+print("10 > 5 and 5 > 2 :", 10 > 5 and 5 > 2)
+print("10 < 5 or 5 > 2  :", 10 < 5 or 5 > 2)
+print("not(10 > 5)      :", not (10 > 5))
+ 
+ 
+# 5. Bitwise Operators
+section("5. Bitwise Operators")
+a, b = 5, 3  # 5 = 0101, 3 = 0011
+print(f"a = {a} ({a:04b}), b = {b} ({b:04b})")
+print(f"a & b  = {a & b} ({a & b:04b})")    # AND
+print(f"a | b  = {a | b} ({a | b:04b})")    # OR
+print(f"a ^ b  = {a ^ b} ({a ^ b:04b})")    # XOR
+print(f"~a     = {~a}")                      # NOT (inverts all bits)
+print(f"a << 1 = {a << 1} ({a << 1:04b})")  # Left shift
+print(f"a >> 1 = {a >> 1} ({a >> 1:04b})")  # Right shift
+ 
+ 
+# 6. Membership Operators
+section("6. Membership Operators")
+print('"a" in "apple"       :', "a" in "apple")
+print('"z" not in "apple"   :', "z" not in "apple")
+print("3 in [1, 2, 3]       :", 3 in [1, 2, 3])
+print("4 in (1, 2, 3)       :", 4 in (1, 2, 3))
+print("2 in {1, 2, 3}       :", 2 in {1, 2, 3})
+print('"k" in {"k": "v"}    :', "k" in {"k": "v"})  # checks keys
+ 
+ 
+# 7. Identity Operators
+section("7. Identity Operators")
+list_a = [1, 2, 3]
+list_b = list_a        # same object
+list_c = [1, 2, 3]     # equal value, different object
+ 
+print("list_a is list_b     :", list_a is list_b)
+print("list_a is list_c     :", list_a is list_c)
+print("list_a is not list_c :", list_a is not list_c)
+ 
+ 
+# Important distinction: == vs is
+section("Important Distinction: == vs is")
+print("list_a == list_c :", list_a == list_c)  # same values
+print("list_a is list_c :", list_a is list_c)  # different objects
+print("id(list_a) =", id(list_a))
+print("id(list_b) =", id(list_b))
+print("id(list_c) =", id(list_c))
+```
 d. control flow
