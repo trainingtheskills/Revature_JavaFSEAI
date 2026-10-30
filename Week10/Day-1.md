@@ -74,7 +74,7 @@ emp1.give_raise(5000)      # Output: New salary for Alice Smith: $90,000.00
 ##### Run : python oops-class.py
 <img width="589" height="75" alt="image" src="https://github.com/user-attachments/assets/cf20d112-b461-43e2-a10b-84e97e6cc18f" />
 
-#### Abstration
+#### Abstraction
 Abstraction is the OOP principle of hiding complex implementation details and exposing only the essential features to the user.
 
 Real-world analogy: When you drive a car, you press the gas pedal to move forward. You don't need to understand fuel injection, spark plugs, or thermodynamics to make the car go. The complexity is abstracted away behind a simple interface.
