@@ -71,8 +71,68 @@ print(emp2)                # Output: Bob Jones (Project Manager)
 # 3. Giving a raise
 emp1.give_raise(5000)      # Output: New salary for Alice Smith: $90,000.00
 ```
-#### Run : python oops-class.py
+##### Run : python oops-class.py
 <img width="589" height="75" alt="image" src="https://github.com/user-attachments/assets/cf20d112-b461-43e2-a10b-84e97e6cc18f" />
+
+#### Abstration
+Abstraction is the OOP principle of hiding complex implementation details and exposing only the essential features to the user.
+
+Real-world analogy: When you drive a car, you press the gas pedal to move forward. You don't need to understand fuel injection, spark plugs, or thermodynamics to make the car go. The complexity is abstracted away behind a simple interface.
+
+## Lab: oops- Abstration
+```
+from abc import ABC, abstractmethod
+
+# 1. Abstract Base Class (Blueprint)
+class Employee(ABC):
+    def __init__(self, name: str, base_salary: float):
+        self.name = name
+        self.base_salary = base_salary
+
+    # Abstract method: Forces subclasses to implement their own pay logic,
+    # while hiding the complex calculation details from the user.
+    @abstractmethod
+    def calculate_pay(self) -> float:
+        pass
+
+    # Concrete method: Shared interface
+    def get_payslip(self) -> str:
+        return f"Payslip for {self.name}: ${self.calculate_pay():,.2f}"
+
+
+# 2. Subclass implementing the hidden details for Full-Time Employees
+class FullTimeEmployee(Employee):
+    def calculate_pay(self) -> float:
+        # Complex hidden logic: taxes, benefits, standard deductions
+        tax_deduction = self.base_salary * 0.20
+        health_insurance = 300.0
+        return self.base_salary - tax_deduction - health_insurance
+
+
+# 3. Subclass implementing hidden details for Interns
+class Intern(Employee):
+    def calculate_pay(self) -> float:
+        # Interns have a different tax structure/no health deduction
+        return self.base_salary - (self.base_salary * 0.05)
+
+
+# --- Example Usage ---
+
+# emp = Employee("Alice", 50000)  # Error! Cannot instantiate abstract class directly.
+
+ft_emp = FullTimeEmployee("Alice Smith", 80000.0)
+intern = Intern("Bob Jones", 20000.0)
+
+# The user just calls .get_payslip() without worrying about how taxes/deductions are computed!
+print(ft_emp.get_payslip())  
+# Output: Payslip for Alice Smith: $63,700.00
+
+print(intern.get_payslip())  
+# Output: Payslip for Bob Jones: $19,000.00
+```
+
+##### Run - 
+<img width="624" height="46" alt="image" src="https://github.com/user-attachments/assets/c62ae277-eaef-4fb7-845a-f47647a37f51" />
 
 ### 2. Python syntax andlanguage features
 
