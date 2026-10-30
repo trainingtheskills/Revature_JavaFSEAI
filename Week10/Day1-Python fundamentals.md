@@ -381,5 +381,27 @@ if __name__ == "__main__":
     print(f"Set:             {unique_tools} (Type: {type(unique_tools).__name__})")
     print(f"NoneType:        {empty_value} (Type: {type(empty_value).__name__})")
 ```
+
+##  Data Type Comparison Matrix
+# Python Collections Comparison
+
+| Data Type | Ordered? | Mutable (Changeable)? | Unique Items Only? | Syntax |
+| :--- | :--- | :--- | :--- | :--- |
+| **list** | Yes | Yes | No | `[1, 2, 3]` |
+| **tuple** | Yes | No | No | `(1, 2, 3)` |
+| **dict** | Yes (Insertion order) | Yes | Yes (Keys must be unique) | `{"key": "value"}` |
+| **set** | No | Yes | Yes | `{1, 2, 3}` |
+
+
+# Selection Guide: When to Use Which Python Collection
+
+| Data Type | Ideal Use Case Scenarios | Key Requirements Met |
+| :--- | :--- | :--- |
+| **`list`** | • Managing a simple sequence of similar items (e.g., unread email titles). | • The specific **order** of elements matters.<br>• Items must be **added, removed, or modified** frequently over time. |
+| **`tuple`** | • Storing read-only operational configurations.<br>• Setting up coordinate pairs or constant data records. | • Data must remain **fixed and unchangeable** during execution.<br>• Protection against accidental program modifications.<br>• Need for minor **performance optimizations** or hashable dictionary keys. |
+| **`dict`** | • Mapping specific entity attributes.<br>• Implementing search indexes or lookups. | • Managing complex relational data via **key-value pairs**.<br>• Querying, matching, or updating information instantly using a **custom name or identifier label** instead of an integer sequence position. |
+| **`set`** | • Deduplicating data streams.<br>• Checking membership inclusion status. | • Automatically **filtering out duplicate entries**.<br>• Performing mathematical group calculations (e.g., intersections, unions, differences).<br>• Focus is strictly on whether an item **exists**, disregarding its exact storage index. |
+
+
 c. operators
 d. control flow
