@@ -332,6 +332,20 @@ Dunder stands for Double Underscore. These are special methods in Python that st
 
 They are also commonly known as magic methods or special methods. They aren't meant to be called directly by your code (e.g., you rarely write emp.__str__()); instead, Python calls them automatically behind the scenes when you use certain built-in functions, operators, or syntax.
 
+# Python Dunder Methods Reference Guide
+
+| Dunder Method | Purpose / Description | Trigger / Built-in Action | Example Use Case |
+| :--- | :--- | :--- | :--- |
+| `__init__` | Constructor method used to initialize object attributes. | Automatically called when a new instance is created: `obj = MyClass()` | Setting initial values like name and salary. |
+| `__str__` | Returns a user-friendly, readable string representation of the object. | `print(obj)` or `str(obj)` | Displaying a neat summary of an employee when printed. |
+| `__repr__` | Returns an official, unambiguous string representation (ideal for debugging). | `repr(obj)` or evaluating the object in the interactive REPL | Logging object details or recreating the object. |
+| `__eq__` | Defines custom logic for equality comparison between two objects. | `obj1 == obj2` | Checking if two employee records have identical data. |
+| `__add__` | Defines behavior for the addition operator (+). | `obj1 + obj2` | Combining two values (e.g., adding two employee salaries together). |
+| `__len__` | Returns the length or size of a custom object/collection. | `len(obj)` | Getting the number of team members managed by an employee. |
+| `__lt__` | Defines "less than" comparison logic (<). | `obj1 < obj2` | Sorting a list of employee objects by salary. |
+| `__call__` | Allows an instance of a class to be called like a regular function. | `obj()` | Creating stateful objects or custom function wrappers. |
+
+
 ```
 # # Dunder stands for Double Underscore.
 # These are special methods in Python that start and end with
