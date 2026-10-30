@@ -1,7 +1,10 @@
 # Week 10   -     AI EngineeringFoundations (Python &Fast API)
 
 ## DAY 1- Python Fundamentals 
+
+Python is a high-level, interpreted programming language known for its clear syntax and readability. It is a versatile, general-purpose language that supports multiple programming paradigms, including object-oriented, procedural, and functional programming.
 # Python Features
+<img width="1024" height="541" alt="image" src="https://github.com/user-attachments/assets/a8b4e46a-fe10-4a02-94ee-3b5d74055d2f" />
 
 ## Language Design
 
