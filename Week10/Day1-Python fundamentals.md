@@ -3,7 +3,7 @@
 ## DAY 1- Python Fundamentals 
 
 Python is a high-level, interpreted programming language known for its clear syntax and readability. It is a versatile, general-purpose language that supports multiple programming paradigms, including object-oriented, procedural, and functional programming.
-# Python Features
+## 1. Python Language features
 <img width="1024" height="541" alt="image" src="https://github.com/user-attachments/assets/a8b4e46a-fe10-4a02-94ee-3b5d74055d2f" />
 
 ## Language Design
@@ -32,7 +32,9 @@ Python is a high-level, interpreted programming language known for its clear syn
 - **Extensible and embeddable**: can call C/C++ code and be embedded in other applications.
 - **Great for integration**: works well as glue between systems, APIs, and databases.
 - **Built-in data structures**: lists, dictionaries, sets, and tuples are first-class and powerful.
-## 1. Python Syntax and Language features
+
+<img width="1024" height="519" alt="image" src="https://github.com/user-attachments/assets/36162a1e-d6e8-4573-9be4-ad83cbc8cefd" />
+## 1. Python Syntax 
 
 
 ## 2. Python 
