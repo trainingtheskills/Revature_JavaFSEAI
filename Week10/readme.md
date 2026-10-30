@@ -5,9 +5,7 @@ Recommended approach
 Module	Topic	Duration
 
 1	Python introduction, syntax and language features	40 min
-
 2	Variables, data types and type conversion	55 min
-
 3	Operators and expressions	50 min
 
 4	Conditional statements and loops	60 min
