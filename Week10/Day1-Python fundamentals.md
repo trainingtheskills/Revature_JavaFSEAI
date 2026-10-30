@@ -827,4 +827,4 @@ unique  = {x % 3 for x in range(10)}               # {0, 1, 2}
 | Decision making | `if`, `elif`, `else`, ternary, `match`-`case` |
 | Repetition | `for`, `while`, nested loops, comprehensions |
 | Loop control | `break`, `continue`, `pass`, loop `else` |
-| Error control | `try`, `except`, `else`, `finally`, `raise` |
+
