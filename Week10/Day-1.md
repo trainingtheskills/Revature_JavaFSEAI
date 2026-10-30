@@ -143,6 +143,45 @@ Encapsulation in the Employee Case
 In our Employee system, we might want to protect an employee's salary so that other parts of the program cannot accidentally or maliciously set it to a negative number or change it without authorization.
 
 Instead of letting anyone write emp.salary = -50000, we hide the salary attribute and force them to use a controlled method (a setter and a getter).
+### Lab: Encapsulation
+```
+class Employee:
+    def __init__(self, name: str, salary: float):
+        self.name = name
+        self.__salary = salary  # Private attribute (hidden from direct outside access)
+
+    # Getter method: Safely view the private salary
+    def get_salary(self) -> float:
+        return self.__salary
+
+    # Setter method: Safely update the salary with validation rules
+    def set_salary(self, new_salary: float) -> None:
+        if new_salary >= 0:
+            self.__salary = new_salary
+            print(f"Salary updated successfully to ${self.__salary:,.2f}")
+        else:
+            print("Error: Salary cannot be negative!")
+
+
+# --- Example Usage ---
+
+emp = Employee("Alice Smith", 85000.0)
+
+# 1. Trying to access the private attribute directly will fail:
+# print(emp.__salary)  # Raises an AttributeError!
+
+# 2. Using the getter works perfectly:
+print(f"Current Salary: ${emp.get_salary():,.2f}")  
+# Output: Current Salary: $85,000.00
+
+# 3. Trying to set an invalid salary via the setter:
+emp.set_salary(-1000)  
+# Output: Error: Salary cannot be negative!
+
+# 4. Updating with a valid salary:
+emp.set_salary(92000)  
+# Output: Salary updated successfully to $92,000.00
+```
 <img width="947" height="284" alt="image" src="https://github.com/user-attachments/assets/55be22fa-3ce6-4da3-9ecb-90d568671248" />
 
 
