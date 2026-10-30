@@ -202,3 +202,28 @@ Python_Conditional_Assignment/
 | **Total** | **100%** |
 
 **Important:** Write and execute the program independently. Ensure that all 11 tasks work correctly and be prepared to explain why each conditional statement is appropriate for its respective scenario.
+
+
+# AI-Solution
+## Task 1: Simple if Statement – Age Eligibility
+```
+Act as an experienced Python developer.
+
+Write a beginner-friendly Python program named age_eligibility.py to check voting eligibility using a simple if statement.
+
+Requirements:
+
+Accept the person's age using input().
+
+Convert the age into an integer.
+
+Check whether age >= 18 using a simple if statement.
+
+Display You are eligible to vote. only when the condition is true.
+
+Do not use else, elif, loops, functions, or classes.
+
+Add comments to explain the code.
+
+Generate the complete Python code and show sample outputs for ages 25 and 16. Briefly explain how the if statement works.
+```
