@@ -159,7 +159,30 @@ Because Python relies on indentation to group code blocks together, you cannot l
 if user_has_logged_out:
     pass  # Placeholder: item will be coded later without breaking execution
 ```
+### Comments
+use either the hash symbol (#) for standard inline/block comments or triple quotes (""") for multi-line summaries and documentation.
 
+### DocString 
+A docstring (short for documentation string) is a special type of literal string in Python used to explain and document what a specific module, class, method, or function does.
+
+A docstring is created by placing a triple-quoted string (""" or ''') as the absolute first statement inside a function, class, method, or module.
+```
+# 1. This is a single-line block comment
+# It is placed on its own line above the code.
+total_score = 100
+
+final_price = total_score * 0.85  # 2. This is an inline comment (2 spaces after code)
+
+"""
+3. This is a multi-line string used as a comment.
+Since it isn't assigned to a variable, Python ignores it.
+Ideal for writing long explanations.
+"""
+
+def greet():
+    """4. This is a Docstring. Placed inside a function/class to document it."""
+    print("Hello!")
+```
 ## 2. Python 
 a. Variables
 b. datatypes 
