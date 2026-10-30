@@ -405,7 +405,31 @@ print(f"Total Combined Salary: ${total_payroll:,.2f}")
 ```
 ## Run : <img width="587" height="59" alt="image" src="https://github.com/user-attachments/assets/36bca202-198b-4066-a522-b38dd613dbf3" />
 
-### 2. Python syntax andlanguage features
+
+#### Summary 
+# Object-Oriented Programming (OOP) Core Concepts in Python
+
+Object-Oriented Programming is structured around several foundational pillars that help organize, secure, and scale code. 
+
+| Concept | What It Is | Real-World Example | Python Implementation |
+| :--- | :--- | :--- | :--- |
+| **Class** | A blueprint or template for creating objects. | Architectural blueprint for a house. | `class Employee:` |
+| **Object** | An instance of a class with specific values. | The physical house built from the blueprint. | `emp1 = Employee("Alice", 85000)` |
+| **Abstraction** | Hiding internal complexity and exposing only essential features. | Driving a car: pressing the gas pedal without needing to know engine mechanics. | Using abstract base classes (`ABC`) and `@abstractmethod` like `def calculate_pay(self):`. |
+| **Encapsulation** | Bundling data and restricting direct access to protect integrity. | An ATM or bank account: updating your balance via secure transactions rather than directly opening the vault. | Private variables (`self.__salary`) accessed via getters (`get_salary()`) and setters (`set_salary()`). |
+| **Inheritance** | A mechanism where a child class adopts traits and behaviors from a parent class. | A specialized worker role: a Manager is an Employee with extra responsibilities like managing a team. | Subclassing: `class Manager(Employee):` and calling `super().__init__()`. |
+| **Polymorphism** | The ability for different objects to respond to the same action in their own unique way. | A "Play" button: on a remote, it plays video; on a microwave, it cooks food; on an audio player, it plays music. | Calling `emp.perform_duties()` on a list containing different `Employee`, `Developer`, and `Manager` instances. |
+| **Dunder Methods** | Special built-in methods (`__double_underscore__`) that overload operators and integrate with Python functions. | Signing a contract: standardizing how two parties agree or interact under standard legal conventions. | Implementing `__str__` for string previews, `__eq__` for `==` equality checks, or `__add__` for `+` addition. |
+
+## Quick Summary
+
+* **Classes and Objects** form the basic foundation of OOP layout.
+* **Abstraction and Encapsulation** hide logic and secure properties from unwanted changes.
+* **Inheritance and Polymorphism** minimize duplicate code by making logic reusable and adaptive.
+* **Dunder Methods** map basic Python hooks directly into your custom class system.
+
+### 2. Python syntax and language features
+
 
 ### 3. Variables, datatypes, operators, andcontrol flow
 
