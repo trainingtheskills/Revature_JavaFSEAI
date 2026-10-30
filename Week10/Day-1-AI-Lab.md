@@ -23,3 +23,16 @@ Follow these instructions for every lab exercise:
 8. Record your observations.
 
 **Important**: Do not simply copy AI-generated code. You must understand every statement and be able to explain the program.
+
+## Business scenarios
+
+1. HR Management :        Employee records, salary and bonus.
+2. Banking Operations:    Account management and transactions.
+3. Retail Management:     Product inventory and sales.
+4. IT Service Management: Tickets, priorities and automation.
+
+## Lab 1: Python Introduction and Language Features
+
+
+
+
