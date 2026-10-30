@@ -134,7 +134,7 @@ print(intern.get_payslip())
 ##### Run - 
 <img width="624" height="46" alt="image" src="https://github.com/user-attachments/assets/c62ae277-eaef-4fb7-845a-f47647a37f51" />
 
-#####  Encapsulation
+####  Encapsulation
 Encapsulation is the OOP principle of bundling data (attributes) and methods that work on that data into a single unit (a class), while restricting direct access to some of the object's internal components.
 
 Real-world analogy: Think of a capsule of medicine or a bank account. When you use an ATM, you don't reach directly into the bank's vault to change your balance. Instead, you interact with a controlled interface (the ATM screen/buttons) using specific methods like deposit() or withdraw(), which protect the data from invalid or unauthorized changes.
@@ -143,6 +143,19 @@ Encapsulation in the Employee Case
 In our Employee system, we might want to protect an employee's salary so that other parts of the program cannot accidentally or maliciously set it to a negative number or change it without authorization.
 
 Instead of letting anyone write emp.salary = -50000, we hide the salary attribute and force them to use a controlled method (a setter and a getter).
+### How it Works: Encapsulation in Python
+
+In Python, encapsulation is implemented using **access modifiers** (conventions) to indicate how "private" a member is:
+
+| Access Level | Convention | Description |
+| :--- | :--- | :--- |
+| **Public** | `name` | Accessible from anywhere. |
+| **Protected** | `_name` | Suggests the variable should only be accessed within the class and its subclasses. |
+| **Private** | `__name` | Triggers **Name Mangling**, making it harder (but not impossible) to access from outside the class. |
+
+> [!IMPORTANT]
+> **Name Mangling:** When you prefix an attribute with two underscores (e.g., `__balance`), Python internally renames it to `_ClassName__attributeName`. This is not strictly "private" (as you could still access it via the mangled name), but it serves to prevent accidental name clashes in subclasses and discourages direct external access.
+
 ### Lab: Encapsulation
 ```
 class Employee:
@@ -184,8 +197,7 @@ emp.set_salary(92000)
 ```
 <img width="947" height="284" alt="image" src="https://github.com/user-attachments/assets/55be22fa-3ce6-4da3-9ecb-90d568671248" />
 
-
-### Lab: Encapsulation
+### Run 
 <img width="652" height="59" alt="image" src="https://github.com/user-attachments/assets/b8d51cd0-a444-4eee-bf95-7147d636f4d9" />
 
 ### 2. Python syntax andlanguage features
