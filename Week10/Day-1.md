@@ -325,6 +325,72 @@ for emp in employees:
 # Bob is writing and debugging code.
 # Charlie is leading team syncs and planning projects.
 ```
+
+## Dunder Methods 
+What are Dunder Methods?
+Dunder stands for Double Underscore. These are special methods in Python that start and end with two underscores (like __init__, __str__, or __add__).
+
+They are also commonly known as magic methods or special methods. They aren't meant to be called directly by your code (e.g., you rarely write emp.__str__()); instead, Python calls them automatically behind the scenes when you use certain built-in functions, operators, or syntax.
+
+```
+# # Dunder stands for Double Underscore.
+# These are special methods in Python that start and end with
+# two underscores (like __init__, __str__, or __add__).
+#
+# They are also commonly known as magic methods or special methods.
+#
+# They are not generally called directly by your code.
+# For example, you rarely write emp.__str__().
+#
+# Instead, Python calls them automatically behind the scenes
+# when you use certain built-in functions, operators, or syntax.
+class Employee:
+    def __init__(self, name: str, salary: float):
+        self.name = name
+        self.salary = salary
+
+    # 1. __str__: Controls how the object looks when printed or converted to a string
+    def __str__(self) -> str:
+        return f"{self.name} (Salary: ${self.salary:,.2f})"
+
+    # 2. __repr__: Official string representation (great for debugging/logging)
+    def __repr__(self) -> str:
+        return f"Employee(name='{self.name}', salary={self.salary})"
+
+    # 3. __eq__: Defines how two objects are compared using the '==' operator
+    def __eq__(self, other) -> bool:
+        if isinstance(other, Employee):
+            return self.name == other.name and self.salary == other.salary
+        return False
+
+    # 4. __add__: Allows you to use the '+' operator to combine two objects
+    def __add__(self, other) -> float:
+        if isinstance(other, Employee):
+            return self.salary + other.salary
+        raise TypeError("Can only add salaries of two Employee objects")
+
+
+# --- Example Usage ---
+
+emp1 = Employee("Alice Smith", 85000.0)
+emp2 = Employee("Bob Jones", 95000.0)
+emp3 = Employee("Alice Smith", 85000.0)
+
+# 1. Using __str__ (triggered automatically by print() or str())
+print(emp1)  
+# Output: Alice Smith (Salary: $85,000.00)
+
+# 2. Using __eq__ (triggered by '==')
+print(emp1 == emp3)  
+# Output: True (because name and salary match)
+
+# 3. Using __add__ (triggered by '+')
+total_payroll = emp1 + emp2
+print(f"Total Combined Salary: ${total_payroll:,.2f}")  
+# Output: Total Combined Salary: $180,000.00
+```
+## Run : <img width="587" height="59" alt="image" src="https://github.com/user-attachments/assets/36bca202-198b-4066-a522-b38dd613dbf3" />
+
 ### 2. Python syntax andlanguage features
 
 ### 3. Variables, datatypes, operators, andcontrol flow
