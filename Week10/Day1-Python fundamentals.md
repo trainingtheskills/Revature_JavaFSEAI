@@ -419,5 +419,104 @@ if __name__ == "__main__":
 | Tuple | `(a, b)` | Immutable (unchangeable), Ordered. | A fixed collection of items (e.g., coordinates). |
 | Set | `{a, b}` | Mutable, Unordered, Unique items only. | Removing duplicates or mathematical sets. |
 | Dictionary | `{"k": "v"}` | Mutable, Key-Value pairs. | Mapping unique keys to specific values. |
-c. operators
+
+
+## c. operators
+# Python Operators
+
+An operator is a special symbol or keyword used to perform operations on variables and values.
+
+Python supports the following types of operators:
+
+| No. | Operator Type | Operators | Description |
+|-----|---------------|-----------|-------------|
+| 1 | Arithmetic Operators | `+`, `-`, `*`, `/`, `%`, `//`, `**` | Perform mathematical operations such as addition, subtraction, multiplication, division, modulus, floor division and exponentiation. |
+| 2 | Assignment Operators | `=`, `+=`, `-=`, `*=`, `/=`, `%=`, `//=`, `**=` | Assign values to variables and update their values. |
+| 3 | Comparison (Relational) Operators | `==`, `!=`, `>`, `<`, `>=`, `<=` | Compare two values and return either `True` or `False`. |
+| 4 | Logical Operators | `and`, `or`, `not` | Combine multiple conditions or reverse a Boolean condition. |
+| 5 | Bitwise Operators | `&`, `\|`, `^`, `~`, `<<`, `>>` | Perform operations on the binary representation of integers. |
+| 6 | Membership Operators | `in`, `not in` | Check whether an element exists in a sequence such as a list, tuple, string or set. |
+| 7 | Identity Operators | `is`, `is not` | Check whether two variables refer to the same object in memory. |
+
+---
+
+## 1. Arithmetic Operators
+
+| Operator | Name | Example | Result |
+|----------|------|---------|--------|
+| `+` | Addition | `10 + 5` | `15` |
+| `-` | Subtraction | `10 - 5` | `5` |
+| `*` | Multiplication | `10 * 5` | `50` |
+| `/` | Division | `10 / 5` | `2.0` |
+| `%` | Modulus | `10 % 3` | `1` |
+| `//` | Floor Division | `10 // 3` | `3` |
+| `**` | Exponentiation | `2 ** 3` | `8` |
+
+## 2. Assignment Operators
+
+| Operator | Example | Equivalent Expression | Description |
+|----------|---------|-----------------------|-------------|
+| `=` | `x = 10` | — | Assigns a value to a variable. |
+| `+=` | `x += 5` | `x = x + 5` | Adds and assigns the result. |
+| `-=` | `x -= 5` | `x = x - 5` | Subtracts and assigns the result. |
+| `*=` | `x *= 5` | `x = x * 5` | Multiplies and assigns the result. |
+| `/=` | `x /= 5` | `x = x / 5` | Divides and assigns the result. |
+| `%=` | `x %= 5` | `x = x % 5` | Calculates modulus and assigns the result. |
+| `//=` | `x //= 5` | `x = x // 5` | Performs floor division and assigns the result. |
+| `**=` | `x **= 2` | `x = x ** 2` | Calculates power and assigns the result. |
+
+## 3. Comparison Operators
+
+| Operator | Name | Example | Result |
+|----------|------|---------|--------|
+| `==` | Equal to | `10 == 10` | `True` |
+| `!=` | Not equal to | `10 != 5` | `True` |
+| `>` | Greater than | `10 > 5` | `True` |
+| `<` | Less than | `10 < 5` | `False` |
+| `>=` | Greater than or equal to | `10 >= 10` | `True` |
+| `<=` | Less than or equal to | `5 <= 10` | `True` |
+
+## 4. Logical Operators
+
+| Operator | Description | Example | Result |
+|----------|-------------|---------|--------|
+| `and` | Returns `True` if both conditions are true. | `10 > 5 and 5 > 2` | `True` |
+| `or` | Returns `True` if at least one condition is true. | `10 < 5 or 5 > 2` | `True` |
+| `not` | Reverses the Boolean result. | `not(10 > 5)` | `False` |
+
+## 5. Bitwise Operators
+
+| Operator | Name | Description |
+|----------|------|-------------|
+| `&` | AND | Sets each bit to 1 if both corresponding bits are 1. |
+| `\|` | OR | Sets each bit to 1 if at least one corresponding bit is 1. |
+| `^` | XOR | Sets each bit to 1 if corresponding bits are different. |
+| `~` | NOT | Inverts all bits of an integer. |
+| `<<` | Left Shift | Shifts bits to the left by the specified number of positions. |
+| `>>` | Right Shift | Shifts bits to the right by the specified number of positions. |
+
+## 6. Membership Operators
+
+| Operator | Description | Example | Result |
+|----------|-------------|---------|--------|
+| `in` | Returns `True` if an element exists in a sequence. | `"a" in "apple"` | `True` |
+| `not in` | Returns `True` if an element does not exist in a sequence. | `"z" not in "apple"` | `True` |
+
+## 7. Identity Operators
+
+| Operator | Description | Example | Result |
+|----------|-------------|---------|--------|
+| `is` | Returns `True` if two variables refer to the same object. | `a is b` | Depends on object identity |
+| `is not` | Returns `True` if two variables do not refer to the same object. | `a is not b` | Depends on object identity |
+
+---
+
+## Important Distinction for Students
+
+- `==` compares the **values** of two objects.
+- `is` compares whether two variables refer to the **same object**.
+
+These are the seven major categories of Python operators.
+
+
 d. control flow
