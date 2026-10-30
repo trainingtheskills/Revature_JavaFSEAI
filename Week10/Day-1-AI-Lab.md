@@ -33,6 +33,12 @@ Follow these instructions for every lab exercise:
 
 ## Lab 1: Python Introduction and Language Features
 
+### Business use case: HR Employee Registration System
 
+An organization wants to develop a simple employee registration program. The HR team needs to collect employee information and display it in a structured format.
+Experiment 1.1 – Understanding Python in business automation
+Objective: Understand Python and its applications in business and DevOps.
+
+**AI Prompt:**
 
 
