@@ -428,10 +428,5 @@ Object-Oriented Programming is structured around several foundational pillars th
 * **Inheritance and Polymorphism** minimize duplicate code by making logic reusable and adaptive.
 * **Dunder Methods** map basic Python hooks directly into your custom class system.
 
-### 2. Python syntax and language features
----
 
-
-
-### 3. Variables, datatypes, operators, andcontrol flow
 
