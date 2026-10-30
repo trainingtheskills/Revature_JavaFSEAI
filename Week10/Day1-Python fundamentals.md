@@ -809,29 +809,8 @@ lookup  = {name: len(name) for name in ["Asha", "Ravi"]}
 unique  = {x % 3 for x in range(10)}               # {0, 1, 2}
 ```
 
----
 
-## 5. Exception Handling (Control of Errors)
-
-Sometimes "control" also covers handling runtime errors without crashing.
-
-```python
-try:
-    value = int(input("Enter a number: "))
-    result = 10 / value
-except ValueError:
-    print("That's not a valid number")
-except ZeroDivisionError:
-    print("Cannot divide by zero")
-else:
-    print("Result:", result)      # runs if no exception occurred
-finally:
-    print("Done")                 # always runs
-```
-
----
-
-## 6. Common Pitfalls
+## 5. Common Pitfalls
 
 - **Indentation errors**: mixing tabs and spaces, or misaligning a block, raises `IndentationError`.
 - **`=` vs `==`**: `=` assigns, `==` compares. `if x = 5:` is a syntax error.
