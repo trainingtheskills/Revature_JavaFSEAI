@@ -28,7 +28,7 @@ An object contains **attributes** that define its properties or data and **metho
 **Behavior**: represented by the methods of an object and reflects the response of an object to other objects.
 **Identity** : gives a unique name to an object and enables one object to interact with other objects.
 
-## Lab: OOPS-Class
+### Lab: OOPS-Class
 ```
 class Employee:
     # Class attribute shared by all employees
@@ -79,7 +79,7 @@ Abstraction is the OOP principle of hiding complex implementation details and ex
 
 Real-world analogy: When you drive a car, you press the gas pedal to move forward. You don't need to understand fuel injection, spark plugs, or thermodynamics to make the car go. The complexity is abstracted away behind a simple interface.
 
-## Lab: oops- Abstration
+### Lab: oops- Abstration
 ```
 from abc import ABC, abstractmethod
 
@@ -133,6 +133,21 @@ print(intern.get_payslip())
 
 ##### Run - 
 <img width="624" height="46" alt="image" src="https://github.com/user-attachments/assets/c62ae277-eaef-4fb7-845a-f47647a37f51" />
+
+#####  Encapsulation
+Encapsulation is the OOP principle of bundling data (attributes) and methods that work on that data into a single unit (a class), while restricting direct access to some of the object's internal components.
+
+Real-world analogy: Think of a capsule of medicine or a bank account. When you use an ATM, you don't reach directly into the bank's vault to change your balance. Instead, you interact with a controlled interface (the ATM screen/buttons) using specific methods like deposit() or withdraw(), which protect the data from invalid or unauthorized changes.
+
+Encapsulation in the Employee Case
+In our Employee system, we might want to protect an employee's salary so that other parts of the program cannot accidentally or maliciously set it to a negative number or change it without authorization.
+
+Instead of letting anyone write emp.salary = -50000, we hide the salary attribute and force them to use a controlled method (a setter and a getter).
+<img width="947" height="284" alt="image" src="https://github.com/user-attachments/assets/55be22fa-3ce6-4da3-9ecb-90d568671248" />
+
+
+### Lab: Encapsulation
+<img width="652" height="59" alt="image" src="https://github.com/user-attachments/assets/b8d51cd0-a444-4eee-bf95-7147d636f4d9" />
 
 ### 2. Python syntax andlanguage features
 
