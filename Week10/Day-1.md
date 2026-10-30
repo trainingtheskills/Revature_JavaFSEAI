@@ -1,6 +1,6 @@
 # Week 10   -     AI EngineeringFoundations (Python &Fast API)
 
-## Python Fundamentals 
+## DAY 1- Python Fundamentals 
 
 ### 1. Object-oriented programming concepts
 ## Introduction to Object-Oriented Programming (OOP)
