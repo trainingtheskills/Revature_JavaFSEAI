@@ -222,6 +222,7 @@ status = 200        # Changed dynamically to an integer (int)
 ## 📊 2. The Built-in Data Types
 
 Python classifies data into structured families. Every object has an intrinsic data type that defines what actions can be safely performed on it.
+<img width="1024" height="519" alt="image" src="https://github.com/user-attachments/assets/cbf9841d-26ec-4d1d-94a1-1443d251bfde" />
 
 ### 🔢 Numeric Types
 Used to represent quantitative mathematical values.
@@ -625,4 +626,226 @@ print("id(list_a) =", id(list_a))
 print("id(list_b) =", id(list_b))
 print("id(list_c) =", id(list_c))
 ```
-d. control flow
+## d. control flow
+# Python Control Flow
+
+"Controls" in Python usually means **control flow**: the statements that decide which code runs, how many times, and when to stop. There are three groups: conditional statements, loops, and loop-control statements.
+
+---
+
+## 1. Conditional Statements
+
+These run code only when a condition is true.
+
+### `if`, `elif`, `else`
+
+```python
+marks = 72
+
+if marks >= 90:
+    print("Grade A")
+elif marks >= 60:
+    print("Grade B")
+else:
+    print("Grade C")
+```
+
+- Python checks conditions from top to bottom and runs only the first block that is true.
+- `elif` and `else` are optional, and you can have as many `elif` blocks as you need.
+- Blocks are defined by **indentation** (4 spaces is the convention), not braces.
+
+### Nested Conditions
+
+```python
+age = 25
+has_id = True
+
+if age >= 18:
+    if has_id:
+        print("Entry allowed")
+```
+
+This is often clearer as `if age >= 18 and has_id:`.
+
+### Ternary (Conditional) Expression
+
+```python
+status = "Pass" if marks >= 40 else "Fail"
+```
+
+### `match`-`case` (Python 3.10+)
+
+Structural pattern matching, similar to `switch` in other languages but more powerful.
+
+```python
+command = "stop"
+
+match command:
+    case "start":
+        print("Starting")
+    case "stop" | "halt":
+        print("Stopping")
+    case _:
+        print("Unknown command")
+```
+
+### What Counts as True or False?
+
+These values are **falsy**: `False`, `None`, `0`, `0.0`, `""`, `[]`, `()`, `{}`, `set()`. Almost everything else is truthy. That's why `if items:` is the idiomatic way to check for a non-empty list.
+
+---
+
+## 2. Loops
+
+### `for` Loop
+
+Iterates over any iterable: lists, tuples, strings, dictionaries, sets, ranges, files, and so on.
+
+```python
+for fruit in ["apple", "banana", "cherry"]:
+    print(fruit)
+
+for i in range(5):          # 0, 1, 2, 3, 4
+    print(i)
+
+for i in range(2, 10, 3):   # start, stop, step -> 2, 5, 8
+    print(i)
+```
+
+Useful helpers:
+
+```python
+names = ["Asha", "Ravi", "Meera"]
+scores = [88, 92, 79]
+
+for index, name in enumerate(names):          # index + value
+    print(index, name)
+
+for name, score in zip(names, scores):        # iterate in parallel
+    print(name, score)
+
+student = {"name": "Asha", "age": 22}
+for key, value in student.items():            # dictionary pairs
+    print(key, value)
+```
+
+### `while` Loop
+
+Repeats as long as a condition stays true. Use it when you don't know in advance how many iterations you need.
+
+```python
+count = 1
+while count <= 5:
+    print(count)
+    count += 1
+```
+
+If the condition never becomes false, you get an infinite loop. Always make sure something inside the loop changes the condition, or use `break`.
+
+### Nested Loops
+
+```python
+for i in range(1, 4):
+    for j in range(1, 4):
+        print(i * j, end=" ")
+    print()
+```
+
+---
+
+## 3. Loop Control Statements
+
+| Statement | What it does |
+|-----------|--------------|
+| `break` | Exits the nearest enclosing loop immediately. |
+| `continue` | Skips the rest of the current iteration and moves to the next. |
+| `pass` | Does nothing; a placeholder where code is syntactically required. |
+| `else` (on a loop) | Runs only if the loop finished **without** hitting `break`. |
+
+```python
+for n in range(1, 10):
+    if n == 3:
+        continue        # skip 3
+    if n == 7:
+        break           # stop at 7
+    print(n)            # prints 1, 2, 4, 5, 6
+```
+
+### Loop `else`
+
+A feature many other languages lack:
+
+```python
+numbers = [3, 5, 8, 11]
+
+for n in numbers:
+    if n % 2 == 0:
+        print("Found even number:", n)
+        break
+else:
+    print("No even number found")   # runs only if no break occurred
+```
+
+### `pass` as a Placeholder
+
+```python
+def not_implemented_yet():
+    pass
+
+if condition:
+    pass    # TODO: handle this case
+```
+
+---
+
+## 4. Comprehensions: Compact Loops
+
+A concise way to build collections from loops with optional conditions.
+
+```python
+squares = [x ** 2 for x in range(1, 6)]            # [1, 4, 9, 16, 25]
+evens   = [x for x in range(10) if x % 2 == 0]     # [0, 2, 4, 6, 8]
+lookup  = {name: len(name) for name in ["Asha", "Ravi"]}
+unique  = {x % 3 for x in range(10)}               # {0, 1, 2}
+```
+
+---
+
+## 5. Exception Handling (Control of Errors)
+
+Sometimes "control" also covers handling runtime errors without crashing.
+
+```python
+try:
+    value = int(input("Enter a number: "))
+    result = 10 / value
+except ValueError:
+    print("That's not a valid number")
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+else:
+    print("Result:", result)      # runs if no exception occurred
+finally:
+    print("Done")                 # always runs
+```
+
+---
+
+## 6. Common Pitfalls
+
+- **Indentation errors**: mixing tabs and spaces, or misaligning a block, raises `IndentationError`.
+- **`=` vs `==`**: `=` assigns, `==` compares. `if x = 5:` is a syntax error.
+- **Modifying a list while looping over it**: this can skip items. Loop over a copy (`for x in items[:]`) or build a new list.
+- **Infinite `while` loops**: forgetting to update the loop variable.
+- **Using `is` to compare values**: use `==` for values and `is` only for identity checks like `x is None`.
+
+---
+
+## Quick Summary
+
+| Category | Constructs |
+|----------|------------|
+| Decision making | `if`, `elif`, `else`, ternary, `match`-`case` |
+| Repetition | `for`, `while`, nested loops, comprehensions |
+| Loop control | `break`, `continue`, `pass`, loop `else` |
+| Error control | `try`, `except`, `else`, `finally`, `raise` |
