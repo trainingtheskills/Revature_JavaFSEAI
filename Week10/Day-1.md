@@ -2,8 +2,8 @@
 
 ## DAY 1- Python Fundamentals 
 
-### 1. Object-oriented programming concepts
-## Introduction to Object-Oriented Programming (OOP)
+## 1. Object-oriented programming concepts
+### Introduction to Object-Oriented Programming (OOP)
 
 Object-Oriented Programming (OOP) is a programming approach that helps developers design and build modular, reusable, maintainable, and scalable applications.
 
@@ -18,17 +18,17 @@ An object contains **attributes** that define its properties or data and **metho
 - **Encapsulation:** Combines data and methods within a class while controlling access to data.
 - **Inheritance:** Promotes code reusability by allowing one class to acquire the properties and behaviors of another class.
 - **Polymorphism:** Enables the same method or interface to exhibit different behaviors depending on the object.
-<img width="674" height="342" alt="image" src="https://github.com/user-attachments/assets/6fc4c1af-023c-496b-9005-ae0e6c5d6e68" />
 
-##### A class is a collection of objects. Classes are blueprints for creating objects. A class defines a set of attributes and methods that the created objects (instances) can have.  
 
-##### An Object is an instance of a Class. It represents a specific implementation of the class and holds its own data. An object consists of:
+### A class is a collection of objects. Classes are blueprints for creating objects. A class defines a set of attributes and methods that the created objects (instances) can have.  
+
+#### An Object is an instance of a Class. It represents a specific implementation of the class and holds its own data. An object consists of:
 
 **State**: represented by the attributes and reflects the properties of an object.
 **Behavior**: represented by the methods of an object and reflects the response of an object to other objects.
 **Identity** : gives a unique name to an object and enables one object to interact with other objects.
 
-### Lab: OOPS-Class
+##### Lab: OOPS-Class
 ```
 class Employee:
     # Class attribute shared by all employees
@@ -79,7 +79,7 @@ Abstraction is the OOP principle of hiding complex implementation details and ex
 
 Real-world analogy: When you drive a car, you press the gas pedal to move forward. You don't need to understand fuel injection, spark plugs, or thermodynamics to make the car go. The complexity is abstracted away behind a simple interface.
 
-### Lab: oops- Abstration
+##### Lab: oops- Abstration
 ```
 from abc import ABC, abstractmethod
 
@@ -143,7 +143,7 @@ Encapsulation in the Employee Case
 In our Employee system, we might want to protect an employee's salary so that other parts of the program cannot accidentally or maliciously set it to a negative number or change it without authorization.
 
 Instead of letting anyone write emp.salary = -50000, we hide the salary attribute and force them to use a controlled method (a setter and a getter).
-### How it Works: Encapsulation in Python
+##### How it Works: Encapsulation in Python
 
 In Python, encapsulation is implemented using **access modifiers** (conventions) to indicate how "private" a member is:
 
@@ -156,7 +156,7 @@ In Python, encapsulation is implemented using **access modifiers** (conventions)
 > [!IMPORTANT]
 > **Name Mangling:** When you prefix an attribute with two underscores (e.g., `__balance`), Python internally renames it to `_ClassName__attributeName`. This is not strictly "private" (as you could still access it via the mangled name), but it serves to prevent accidental name clashes in subclasses and discourages direct external access.
 
-### Lab: Encapsulation
+##### Lab: Encapsulation
 ```
 class Employee:
     def __init__(self, name: str, salary: float):
@@ -197,9 +197,134 @@ emp.set_salary(92000)
 ```
 <img width="947" height="284" alt="image" src="https://github.com/user-attachments/assets/55be22fa-3ce6-4da3-9ecb-90d568671248" />
 
-### Run 
+##### Run 
 <img width="652" height="59" alt="image" src="https://github.com/user-attachments/assets/b8d51cd0-a444-4eee-bf95-7147d636f4d9" />
 
+#### Inheritance
+Inheritance is the OOP principle that allows a new class (subclass or child class) to adopt the attributes and methods of an existing class (superclass or parent class). This promotes code reuse so you don't have to rewrite the same logic repeatedly.
+
+Real-world analogy: A Manager is a specialized type of Employee. They share general employee traits (like a name and salary), but they also have unique traits (like a department or team size) and specific behaviors.
+**Key Benefits of Inheritance:**
+
+Code Reusability: Common attributes and methods (name, salary) only need to be written once in the parent class.
+
+Method Overriding: Subclasses can customize or extend parent behaviors to fit their specific needs.
+
+Hierarchical Organization: Reflects real-world relationships clearly in your code.
+#### Lab: Inheritance
+```
+class Employee:
+    def __init__(self, name: str, salary: float):
+        self.name = name
+        self.salary = salary
+
+    def get_details(self) -> str:
+        """Returns basic employee details."""
+        return f"Name: {self.name} | Salary: ${self.salary:,.2f}"
+
+
+# 1. Manager inherits from Employee
+class Manager(Employee):
+    def __init__(self, name: str, salary: float, department: str):
+        # super() calls the constructor of the parent (Employee) class
+        super().__init__(name, salary)
+        self.department = department
+
+    # Method Overriding: Customizing the parent's method for a Manager
+    def get_details(self) -> str:
+        return f"Manager: {self.name} | Department: {self.department} | Salary: ${self.salary:,.2f}"
+
+
+# 2. Developer inherits from Employee
+class Developer(Employee):
+    def __init__(self, name: str, salary: float, programming_language: str):
+        super().__init__(name, salary)
+        self.programming_language = programming_language
+
+    def write_code(self) -> str:
+        """A unique method specific to developers."""
+        return f"{self.name} is writing code in {self.programming_language}."
+
+
+# --- Example Usage ---
+
+# Creating instances of child classes
+mgr = Manager("Alice Smith", 110000.0, "Engineering")
+dev = Developer("Bob Jones", 95000.0, "Python")
+
+# 1. Manager uses the overridden get_details method
+print(mgr.get_details())  
+# Output: Manager: Alice Smith | Department: Engineering | Salary: $110,000.00
+
+# 2. Developer inherits the base get_details method
+print(dev.get_details())  
+# Output: Name: Bob Jones | Salary: $95,000.00
+
+# 3. Developer uses its own unique method
+print(dev.write_code())   
+# Output: Bob Jones is writing code in Python.
+```
+
+#### Run :
+<img width="606" height="57" alt="image" src="https://github.com/user-attachments/assets/479ef4a7-4bb3-4cee-aee8-09ba4c494466" />
+
+#### Polymorphism
+Polymorphism comes from Greek meaning "many forms." In object-oriented programming, it refers to the ability of different classes to respond to the same method call in their own unique way.
+
+Real-world analogy: Imagine a button labeled "Press". If you press the button on a coffee machine, it brews coffee. If you press it on a microwave, it starts cooking. The action (press) is the same, but the behavior depends entirely on what object is receiving it.
+**Polymorphism in the Employee Case**
+
+Suppose every employee in our company has a method called perform_duties(). While a general employee might do standard office work, a Developer writes code, and a Manager leads meetings.
+
+Because of polymorphism, we can loop through a list of mixed employees and call .perform_duties() on each one without needing to check what specific type of employee they are!
+
+**Key Benefits of Polymorphism:**
+Flexibility & Extensibility: You can add new employee types (e.g., Designer, Salesperson) later without changing the code that processes them.
+
+Simplified Code: Functions or loops can interact with objects uniformly through a shared interface, ignoring internal implementation differences.
+
+##### Lab: Polymorphism 
+```
+class Employee:
+    def __init__(self, name: str):
+        self.name = name
+
+    def perform_duties(self) -> str:
+        return f"{self.name} is performing general office tasks."
+
+
+class Developer(Employee):
+    def perform_duties(self) -> str:
+        # Overriding the method with developer-specific behavior
+        return f"{self.name} is writing and debugging code."
+
+
+class Manager(Employee):
+    def perform_duties(self) -> str:
+        # Overriding the method with manager-specific behavior
+        return f"{self.name} is leading team syncs and planning projects."
+
+
+# --- Example Usage ---
+
+# 1. Creating a list of different employee objects
+employees = [
+    Employee("Alice"),
+    Developer("Bob"),
+    Manager("Charlie")
+]
+
+# 2. Demonstrating Polymorphism: 
+# We call the exact same method (.perform_duties()) on every object, 
+# and each object responds according to its own class definition.
+for emp in employees:
+    print(emp.perform_duties())
+
+# Output:
+# Alice is performing general office tasks.
+# Bob is writing and debugging code.
+# Charlie is leading team syncs and planning projects.
+```
 ### 2. Python syntax andlanguage features
 
 ### 3. Variables, datatypes, operators, andcontrol flow
