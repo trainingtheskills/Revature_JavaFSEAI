@@ -413,5 +413,11 @@ if __name__ == "__main__":
 | **`set`** | • Deduplicating data streams.<br>• Checking membership inclusion status. | • Automatically **filtering out duplicate entries**.<br>• Performing mathematical group calculations (e.g., intersections, unions, differences).<br>• Focus is strictly on whether an item **exists**, disregarding its exact storage index. |
 
 
+| Type | Syntax | Characteristics | Use Case |
+|------|--------|-----------------|----------|
+| List | `[a, b]` | Mutable (changeable), Ordered. | A collection of items you need to modify often. |
+| Tuple | `(a, b)` | Immutable (unchangeable), Ordered. | A fixed collection of items (e.g., coordinates). |
+| Set | `{a, b}` | Mutable, Unordered, Unique items only. | Removing duplicates or mathematical sets. |
+| Dictionary | `{"k": "v"}` | Mutable, Key-Value pairs. | Mapping unique keys to specific values. |
 c. operators
 d. control flow
