@@ -30,9 +30,11 @@ Suppose we are developing an Employee Management System. We need to perform diff
   ```
 
   ``` #main.py
-  # main.py
+ # main.py
 
 import salary
+
 result = salary.calculate_salary(30000, 5000)
+
 print("Employee Salary:", result)
   ```
