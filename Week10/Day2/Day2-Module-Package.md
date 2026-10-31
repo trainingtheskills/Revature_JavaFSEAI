@@ -73,20 +73,20 @@ EmployeeManagement/
 # Create empty __init__.py
 ```
 
-# salary.py
+##### salary.py
 ```
 def calculate_salary(basic, allowance):
     return basic + allowance
 ```
 
-# details.py
+##### details.py
 ```
 def display_employee():
     print("Employee ID: 101")
     print("Employee Name: Rahul")
     print("Department: IT")
 ```
-# main.py in EmployeeManagement
+##### main.py in EmployeeManagement
 ```
 # main.py
 
@@ -100,6 +100,7 @@ salary = calculate_salary(30000, 5000)
 
 print("Monthly Salary:", salary)
 ```
+
 
 
 
