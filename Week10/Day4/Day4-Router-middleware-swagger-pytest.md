@@ -1626,31 +1626,17 @@ A **fixture** is a function that provides reusable setup or test data to test fu
 
 Fixtures help avoid repeating initialization code.
 
-Example:
+Example: conftest.py  
 
 ```python
-import pytest
-
-
 @pytest.fixture
 def employee():
-
     return {
-        "id": 101,
-        "name": "Rahul",
-        "department": "IT",
+        "id": 109,
+        "name": "Amit",
+        "department": "IT109",
         "salary": 50000
     }
-
-
-def test_employee_name(employee):
-
-    assert employee["name"] == "Rahul"
-
-
-def test_employee_salary(employee):
-
-    assert employee["salary"] == 50000
 ```
 
 Here:
