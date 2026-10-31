@@ -23,7 +23,9 @@ Suppose we are developing an Employee Management System. We need to perform diff
   # salary.py
 
   def calculate_salary(basic_salary, allowance):
+  
     total_salary = basic_salary + allowance
+  
     return total_salary
   ```
 
