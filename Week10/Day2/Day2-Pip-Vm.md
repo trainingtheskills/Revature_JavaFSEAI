@@ -31,6 +31,9 @@ Installing packages globally can lead to "Dependency Hell," where different proj
 
 # 2. Environment Isolation: Virtual Environments
 A Virtual Environment is an isolated directory that contains its own Python installation and its own set of installed packages.
+A Virtual Environment in Python is an isolated workspace that allows developers to install and manage Python packages and dependencies separately for each project.
+
+It helps prevent conflicts between package versions used by different Python projects.
 
 ## 2.1 Why Use Virtual Environments?
 Without isolation, if Project A needs Django 3.0 and Project B needs Django 4.0, you cannot have both installed globally. Virtual environments solve this by creating "bubbles" for each project.
