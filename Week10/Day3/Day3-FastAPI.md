@@ -10,13 +10,11 @@
 8. Test API endpoints using Swagger UI and understand API request and response documentation.
 Expected Outcome: Participants will be able to develop, validate, test, and organize a basic REST API application using Python and FastAPI.
 
-# What is an API Interface?
+# 1. What is an API Interface?
 API (Application Programming Interface) is a mechanism that allows two different software applications to communicate and exchange data with each other.
 
 An API acts as a bridge between two applications, allowing one application to request services or data from another application without knowing its internal implementationt.
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/6945b4b4-37df-48ac-9d55-634f24d080bd" />
-
-
 
 ## 2. Technical Example
 
@@ -49,6 +47,8 @@ The API may return the following JSON response:
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/d1159194-99d8-43a3-9e98-fd06ed08f012" />
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/2d03a7b5-c42c-4222-b51d-52aa71d3f4d9" />
+
 1. Application A sends a GET request to Application B's API.
 2. Application B receives the request.
 3. Application B retrieves the employee details from its database.
@@ -60,11 +60,59 @@ The API may return the following JSON response:
 ### Key Understanding
 
 Application A can use this response without knowing:
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/61743ab5-6299-4250-a8bf-49656525be86" />
 
 - How Application B stores employee information.
 - Which database Application B uses.
 - How Application B retrieves employee records.
 - How Application B internally processes the request.
 
-**Conclusion:** An API acts as an interface between two applications, allowing them to communicate and exchange data without exposing their internal implementation.
+
+### 3. What Does an API Interface Specify?
+
+An API Interface specifies:
+
+- **Available Operations:** What operations can be performed.
+- **Input Parameters:** What input parameters are required.
+- **Data Format:** What data format should be used for communication (e.g., JSON or XML).
+- **Response:** What response will be returned by the API.
+- **Error Handling:** How errors and exceptions will be communicated.
+
+###  Example: Employee Management API
+
+Suppose we have an Employee Management System that exposes APIs to perform different employee-related operations.
+
+The Employee API might expose the following endpoints:
+
+| API Endpoint | HTTP Method | Operation |
+|---|---|---|
+| `/employees` | `GET` | Retrieve all employees |
+| `/employees/101` | `GET` | Retrieve employee by ID |
+| `/employees` | `POST` | Create a new employee |
+| `/employees/101` | `PUT` | Update employee details |
+| `/employees/101` | `DELETE` | Delete an employee |
+
+### Understanding API Endpoints
+
+Each API endpoint provides a specific operation:
+
+1. **GET /employees**
+   - Retrieves the list of all employees.
+
+2. **GET /employees/101**
+   - Retrieves employee details for employee ID 101.
+
+3. **POST /employees**
+   - Creates a new employee record.
+
+4. **PUT /employees/101**
+   - Updates the details of employee ID 101.
+
+5. **DELETE /employees/101**
+   - Deletes the employee record with ID 101.
+
+###  Key Takeaway
+
+An **API Interface defines what an application can request and how another application should respond**, without exposing its internal implementation details.
+
 
