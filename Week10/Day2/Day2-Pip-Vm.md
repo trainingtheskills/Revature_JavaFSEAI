@@ -40,11 +40,11 @@ Without isolation, if Project A needs Django 3.0 and Project B needs Django 4.0,
 
 ### The Benefits of Isolation:
 
-- Conflict Prevention: Prevents one project's updates from breaking another project.
-- Cleanliness: Keeps your global Python installation uncluttered.
-- Portability: Makes it easy to generate a precise requirements.txt.
+- **Conflict Prevention:** Prevents one project's updates from breaking another project.
+- **Cleanliness:** Keeps your global Python installation uncluttered.
+- **Portability:** Makes it easy to generate a precise requirements.txt.
   
-5.2 Workflow: Creating and Activating Environments
+## 2.2 Workflow: Creating and Activating Environments
 The most common tool for this is the built-in venv module.
 
 #### 1. Create the environment:
