@@ -16,6 +16,10 @@ Suppose we are developing an Employee Management System. We need to perform diff
 - Calculate employee salaries.
 - Calculate attendance.
 - Generate employee reports.
+### Why use modules?
+Reusability: Write a function once and use it across multiple scripts.
+Maintainability: Isolate logic to make debugging easier.
+Namespace Management: Avoid variable name collisions by keeping code within specific module scopes.
 
   ## Program
   <img width="170" height="89" alt="image" src="https://github.com/user-attachments/assets/02c5f6c5-2dea-492f-9e89-f7e395d1c05f" />
