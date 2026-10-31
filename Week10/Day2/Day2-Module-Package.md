@@ -81,13 +81,25 @@ def calculate_salary(basic, allowance):
 
 # details.py
 ```
-
 def display_employee():
     print("Employee ID: 101")
     print("Employee Name: Rahul")
     print("Department: IT")
 ```
+# main.py in EmployeeManagement
+```
+# main.py
 
+from employee.details import display_employee
+
+from employee.salary import calculate_salary
+
+display_employee()
+
+salary = calculate_salary(30000, 5000)
+
+print("Monthly Salary:", salary)
+```
 
 
 
