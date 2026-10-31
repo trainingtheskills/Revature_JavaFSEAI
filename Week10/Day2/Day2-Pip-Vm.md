@@ -52,16 +52,21 @@ python -m venv .venv
 
 #### 2. Activate the environment: Activation tells your terminal to use the Python interpreter inside the .venv folder instead of the global one.
 
-- Windows (Command Prompt): .venv\Scripts\activate
-- Windows (PowerShell): .\.venv\Scripts\Activate.ps1
-- macOS / Linux: source .venv/bin/activate
+- Windows (Command Prompt):
+  ``` .venv\Scripts\activate ```
+- Windows (PowerShell):
+  ``` .\.venv\Scripts\Activate.ps1 ```
+- macOS / Linux:
+  ```source .venv/bin/activate```
   
 #### 3. Verify Activation: Once activated, your terminal prompt will usually show (.venv). You can also run:
 
-which python  # macOS/Linux
-where python  # Windows
+``` which python  # macOS/Linux ```
+
+``` where python  # Windows ```
+
 It should point to a path inside your .venv folder.
 
-4. Deactivate: When you are done working, simply type:
+#### 4. Deactivate: When you are done working, simply type:
 
-deactivate
+``` deactivate ```
