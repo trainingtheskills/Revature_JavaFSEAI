@@ -35,3 +35,17 @@ An exception is an error that occurs during the execution of a Python program an
 | `KeyError` | Accessing a dictionary key that doesn't exist | `student["age"]` |
 | `FileNotFoundError` | Trying to open a file that doesn't exist | `open("abc.txt")` |
 | `AttributeError` | Accessing an unavailable object attribute | `"hello".append()` |
+
+
+## 3. Exception Handling Keywords
+
+Python provides five important keywords for exception handling.
+
+| Keyword | Description |
+|---|---|
+| `try` | Contains code that might generate an exception. |
+| `except` | Handles the exception if it occurs. |
+| `else` | Executes when no exception occurs in the try block. |
+| `finally` | Executes whether an exception occurs or not. |
+| `raise` | Explicitly generates an exception. |
+
