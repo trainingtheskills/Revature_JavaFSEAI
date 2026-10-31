@@ -28,9 +28,9 @@ Suppose we are developing an Employee Management System. We need to perform diff
   
     return total_salary
   ```
-
-  ``` #main.py
- # main.py
+  
+ # Create main 
+  ``` # main.py
 
 import salary
 
