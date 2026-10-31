@@ -133,6 +133,8 @@ FastAPI is commonly used to develop:
 - Microservices.
 - Machine Learning and AI model APIs.
 - GenAI and LLM-based application APIs.
+  
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/a87f4315-2ad4-4905-9e6b-0b0dd5ca07a6" />
 
 ## 2. Why Do We Need FastAPI?
 
@@ -147,34 +149,7 @@ FastAPI helps us develop the backend API that receives requests, processes busin
 
 ### Communication Architecture
 
-```text
-+-----------------------------+
-|         Application A       |
-|    Employee Management     |
-|          (Frontend)         |
-+-----------------------------+
-              |
-              | HTTP Request
-              | GET /employees/101
-              |
-              v
-+-----------------------------+
-|         Application B       |
-|       FastAPI Backend       |
-|                             |
-|  1. Receive Request         |
-|  2. Process Business Logic  |
-|  3. Retrieve Employee Data  |
-|  4. Return JSON Response    |
-+-----------------------------+
-              |
-              |
-              v
-+-----------------------------+
-|          Database           |
-|      Employee Records       |
-+-----------------------------+
-```
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/58d45d78-3ba2-44ad-a89a-8180b6217e1c" />
 
 ## 3. How Does FastAPI Work?
 
@@ -266,7 +241,6 @@ http://127.0.0.1:8000/employees/101
     "salary": 50000
 }
 ```
-
 ### Understanding the Code
 
 | Code | Description |
