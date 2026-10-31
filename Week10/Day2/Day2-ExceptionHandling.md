@@ -107,6 +107,31 @@ except ValueError:
 finally:
     print("Thank you for using the application.")
 ```
+# Program 4: Banking App 
+```
+balance = 10000
+
+try:
+    amount = float(input("Enter withdrawal amount: "))
+
+    if amount <= 0:
+        raise ValueError("Withdrawal amount must be positive.")
+
+    if amount > balance:
+        raise ValueError("Insufficient balance.")
+
+    balance = balance - amount
+
+except ValueError as e:
+    print("Transaction failed:", e)
+
+else:
+    print("Withdrawal successful!")
+    print("Remaining balance:", balance)
+
+finally:
+    print("Thank you for banking with us.")
+```
 
 
 # Hands-on Assignments for Participants
