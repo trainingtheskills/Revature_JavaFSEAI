@@ -165,3 +165,39 @@ if file_path.exists():
     content = file_path.read_text()
     print(content)
 ```
+## 5. Handling Exceptions Gracefully
+
+File operations can generate errors for several reasons, such as:
+
+- The file does not exist.
+- The application does not have permission to access the file.
+- The disk is full.
+- The specified file path is incorrect.
+- The file is being accessed in an invalid mode.
+
+Python provides **exception handling** using `try-except` blocks to handle such errors gracefully without abruptly terminating the program.
+
+### Common File Handling Exceptions
+
+| Exception | Description |
+|---|---|
+| `FileNotFoundError` | Raised when the specified file does not exist. |
+| `PermissionError` | Raised when the application does not have permission to access a file. |
+| `IsADirectoryError` | Raised when a directory is provided where a file is expected. |
+| `FileExistsError` | Raised when trying to create a file that already exists using `'x'` mode. |
+| `OSError` | Raised for operating system-related file errors, such as disk or file system issues. |
+
+### Example 1: Handling FileNotFoundError
+
+Attempting to read a file that does not exist raises a `FileNotFoundError`.
+
+```python
+try:
+    # Attempt to open a file
+    with open("student.txt", "r") as file:
+
+        content = file.read()
+        print(content)
+
+except FileNotFoundError:
+    print("Error: Student file does not exist!")
