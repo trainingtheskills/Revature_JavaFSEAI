@@ -37,6 +37,7 @@ Maintaining all these endpoints in a single Python file makes the application di
 FastAPI provides `APIRouter` to divide API endpoints into multiple files.
 
 **APIRouter** allows us to group related endpoints and include them in the main FastAPI application.
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/b7f85f75-3fda-406a-ac06-0396f1d05e0d" />
 
 ## 1.2 Why Do We Need Routers?
 
