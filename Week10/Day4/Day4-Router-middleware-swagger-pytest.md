@@ -54,6 +54,7 @@ Consider the following application:
 | Authentication | Login and logout |
 
 Without routers, all these endpoints might be defined in `main.py`.
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/dadcbccb-8d70-4c13-8fea-56a62cfe05e1" />
 
 Problems include:
 
@@ -64,6 +65,7 @@ Problems include:
 5. Difficult testing and debugging.
 
 Routers solve these problems by separating functionality into independent modules.
+<img width="206" height="286" alt="image" src="https://github.com/user-attachments/assets/2bf06e46-44ce-4558-b255-9b53315fecd2" />
 
 ## 1.3 Creating an APIRouter
 
