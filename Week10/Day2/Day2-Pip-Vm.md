@@ -1,7 +1,8 @@
-# 4. Dependency Management: pip
+# 1. Dependency Management: pip
+---
 **pip** (Package Installer for Python) is the standard tool for installing and managing additional libraries that are not part of the Python Standard Library.
 
-## 4.1 Installing and Managing Packages
+## 1.1 Installing and Managing Packages
 You interact with pip via the terminal (command line).
 
 - Install a package:  ``` pip install requests ```
@@ -9,7 +10,7 @@ You interact with pip via the terminal (command line).
 - List installed packages: ``` pip list ```
 - Show package details: ``` pip show requests ```
   
-## 4.2 Requirements Files
+## 1.2 Requirements Files
 In professional projects, you must track exactly which versions of which libraries your code needs. This is done using a requirements.txt file.
 
 Creating a requirements file:
@@ -28,10 +29,10 @@ pip install -r requirements.txt
 
 Installing packages globally can lead to "Dependency Hell," where different projects require conflicting versions of the same library. Virtual Environments solve this problem.
 
-# 5. Environment Isolation: Virtual Environments
+# 2. Environment Isolation: Virtual Environments
 A Virtual Environment is an isolated directory that contains its own Python installation and its own set of installed packages.
 
-## 5.1 Why Use Virtual Environments?
+## 2.1 Why Use Virtual Environments?
 Without isolation, if Project A needs Django 3.0 and Project B needs Django 4.0, you cannot have both installed globally. Virtual environments solve this by creating "bubbles" for each project.
 
 ### The Benefits of Isolation:
@@ -70,3 +71,5 @@ It should point to a path inside your .venv folder.
 #### 4. Deactivate: When you are done working, simply type:
 
 ``` deactivate ```
+
+
