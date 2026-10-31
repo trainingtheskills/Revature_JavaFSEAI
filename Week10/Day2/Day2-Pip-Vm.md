@@ -1,14 +1,15 @@
-4. Dependency Management: pip
-pip (Package Installer for Python) is the standard tool for installing and managing additional libraries that are not part of the Python Standard Library.
+# 4. Dependency Management: pip
+**pip** (Package Installer for Python) is the standard tool for installing and managing additional libraries that are not part of the Python Standard Library.
 
-4.1 Installing and Managing Packages
+## 4.1 Installing and Managing Packages
 You interact with pip via the terminal (command line).
 
-Install a package: pip install requests
-Uninstall a package: pip uninstall requests
-List installed packages: pip list
-Show package details: pip show requests
-4.2 Requirements Files
+- Install a package: pip install requests
+- Uninstall a package: pip uninstall requests
+- List installed packages: pip list
+- Show package details: pip show requests
+  
+## 4.2 Requirements Files
 In professional projects, you must track exactly which versions of which libraries your code needs. This is done using a requirements.txt file.
 
 Creating a requirements file:
@@ -19,8 +20,8 @@ Installing from a requirements file:
 pip install -r requirements.txt
 Why use requirements.txt?
 
-Reproducibility: Ensures that a teammate (or a deployment server) installs the exact same versions you used.
-Simplicity: One command sets up the entire environment.
+**Reproducibility:** Ensures that a teammate (or a deployment server) installs the exact same versions you used.
+**Simplicity:** One command sets up the entire environment.
 ↑ Back to Table of Contents
 
 Installing packages globally can lead to "Dependency Hell," where different projects require conflicting versions of the same library. Virtual Environments solve this problem.
