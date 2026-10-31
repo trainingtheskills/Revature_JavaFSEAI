@@ -123,3 +123,45 @@ with open("output.txt", "a") as f:
 with open("output.txt", "r") as f:
     print(f.read())
 ```
+
+
+## 4. Modern Path Management with `pathlib`
+
+While passing string paths such as `"data/file.txt"` works, Python provides the built-in **`pathlib` module** for handling file and directory paths.
+
+Introduced in Python 3.4, `pathlib` offers a modern, object-oriented, and cross-platform approach to working with file system paths.
+
+It automatically handles differences between operating systems such as Windows, macOS, and Linux.
+
+### Advantages of `pathlib`
+
+- **Object-Oriented:** Represents file paths using `Path` objects.
+- **Cross-Platform:** Automatically handles operating system-specific path separators.
+- **Readable Code:** Provides simple methods for common file and directory operations.
+- **File Management:** Supports checking, creating, reading, writing, and deleting files and directories.
+
+### Example 1: Creating a Path Using `pathlib`
+
+```python
+from pathlib import Path
+
+# Create a file path
+file_path = Path("data/student.txt")
+
+# Display the path
+print(file_path)
+
+```
+from pathlib import Path
+
+# Create a Path object
+file_path = Path("notes.txt")
+
+# Check if the file exists
+if file_path.exists():
+    print(f"File exists! Size: {file_path.stat().st_size} bytes")
+    
+    # Read text in one clean line using pathlib
+    content = file_path.read_text()
+    print(content)
+```
