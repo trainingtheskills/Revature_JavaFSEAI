@@ -124,7 +124,27 @@ with open("output.txt", "r") as f:
     print(f.read())
 ```
 
+# Lab: Accept data from user and print it
 
+```
+# Step 1: Accept a line of input from the user
+user_input = input("Enter a line of text to write to the file: ")
+
+file_name = "user_notes.txt"
+
+# Step 2: Open the file in write mode ('w') and write the user's input
+# The 'with' statement ensures the file is automatically closed afterwards.
+with open(file_name, "w") as file:
+    file.write(user_input + "\n")
+
+print(f"\nSuccessfully wrote your text to '{file_name}' and closed the file.")
+
+# Step 3: Open the file in read mode ('r') and read its content
+print("\n--- Reading file content ---")
+with open(file_name, "r") as file:
+    content = file.read()
+    print(content, end="")  # end="" prevents an extra newline
+``` 
 ## 4. Modern Path Management with `pathlib`
 
 While passing string paths such as `"data/file.txt"` works, Python provides the built-in **`pathlib` module** for handling file and directory paths.
