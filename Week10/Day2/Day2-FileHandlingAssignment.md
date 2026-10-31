@@ -11,7 +11,7 @@ Requirements:
 2. Write the details into student.txt.
 3. Display a success message after writing the data.
 
-## Assignment 1: AIPrompt
+	## Assignment 1: AIPrompt
 ```
 Develop a Python program that accepts Student ID, Student Name, and Course Name from the user and saves the information in a file named student.txt. Display a confirmation message after saving the details.
 ```
@@ -25,7 +25,7 @@ Requirements:
 3. Display the file contents on the console.
 4. Handle the situation where the file does not exist.
    
-## Assignment 2: AIPrompt
+	## Assignment 2: AIPrompt
 ```
 	Develop a Python program that reads student information from student.txt and displays all stored student records on the console. Display an appropriate message if the file is unavailable.
 ```
@@ -43,12 +43,11 @@ Requirements:
 3. Allow multiple employee records to be added.
 4. Preserve previously stored employee records.
 
-## Assignment 3: AIPrompt
+	## Assignment 3: AIPrompt
 ```
 Develop a Python program that accepts Employee ID, Name, Department, and Salary from the user and adds the employee details to employee.txt. Previously stored employee records must remain unchanged.
 ```
 
-## Assignment 4: AIPrompt
 # Assignment 4:
 Student Records – Read Line by Line
 Objective: Practice using readline() and file iteration.
@@ -58,6 +57,8 @@ Requirements:
 2. Read the file one line at a time.
 3. Display each student record separately.
 4. Count and display the total number of student records.
+
+	## Assignment 4: AIPrompt
 ```
 Develop a Python program that reads student records from students.txt and displays each student record separately. Also, display the total number of students stored in the file.
 ``` 
@@ -72,7 +73,7 @@ Requirements:
 4. Count the total number of records.
 5. Display the attendance records and total count.
 
-## Assignment 5: AIPrompt
+	## Assignment 5: AIPrompt
 ```
 Develop a Python program that reads student attendance records from attendance.txt. Display each student's ID, Name, and Attendance Status. Calculate and display the total number of attendance records.
 ```
@@ -91,7 +92,7 @@ Requirements:
 4. Use append mode to preserve existing notes.
 5. Allow users to view all previously saved notes.
 
-## Assignment 6: AIPrompt
+	## Assignment 6: AIPrompt
 ```
 Develop a menu-driven Notes Application that allows users to add new notes, view previously saved notes, and exit the application. All notes must be stored permanently in notes.txt.
 ```
@@ -107,7 +108,7 @@ Requirements:
 5. Check whether the file exists using exists().
 6. Display the file name and extension.
 
-## Assignment 7: AIPrompt
+	## Assignment 7: AIPrompt
 ```
 	Develop a Python program to create an EmployeeData folder and an employee.txt file inside it. Store employee information in the file and display details about the created file, including its name, extension, and existence status.
 ```
@@ -123,7 +124,7 @@ Requirements:
 5. Handle PermissionError.
 6. Display an appropriate error message.
 
-## Assignment 8: AIPrompt
+	## Assignment 8: AIPrompt
 ```
 Develop a Python program that accepts a file name from the user and displays its contents. If the file does not exist or cannot be accessed, display an appropriate error message instead of terminating the application unexpectedly.
 ```
@@ -141,7 +142,7 @@ Requirements:
    - Lines
 5. Display the calculated results.
 
-## Assignment 9: AIPrompt
+	## Assignment 9: AIPrompt
 ```
 Develop a Python application that reads an article from article.txt and calculates the total number of characters, words, and lines. Display the calculated statistics.
 ```
@@ -174,7 +175,7 @@ Requirements:
    - Display an appropriate message if not found.
 5. Handle missing files using exception handling.
 
-## Assignment 10: AIPrompt
+	## Assignment 10: AIPrompt
 ```
 Develop a menu-driven Student Result Management System that allows users to add student results, view all student records, search for a student using Student ID, and exit the application. Store all student information in results.txt.
 ```
