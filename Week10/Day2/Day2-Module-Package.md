@@ -113,7 +113,17 @@ salary = calculate_salary(30000, 5000)
 print("Monthly Salary:", salary)
 ```
 
+# Python Module vs Package
 
+| Feature | Module | Package |
+|---|---|---|
+| **Definition** | Single Python file | Directory containing related modules |
+| **Extension** | `.py` | Directory |
+| **Purpose** | Organize reusable code | Organize multiple modules |
+| **Contains** | Functions, classes, variables | Multiple modules and subpackages |
+| **Import** | `import employee` | `import employee.salary` |
+| **Example** | `employee.py` | `employee/` |
+| **Complexity** | Suitable for smaller functionality | Suitable for larger applications |
 
 
     
