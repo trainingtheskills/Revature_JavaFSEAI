@@ -51,6 +51,64 @@ Python provides five important keywords for exception handling.
 
 <img width="1024" height="718" alt="image" src="https://github.com/user-attachments/assets/da48136d-ecf1-413d-bef7-7d17738c26f6" />
 
+
+## Program 1: Accept two number and handle exception
+```
+try:
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+
+    result = num1 / num2
+
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+
+except ValueError:
+    print("Please enter valid numbers.")
+
+else:
+    print("Division successful!")
+    print("Result:", result)
+```
+## Program 2: Raise an exception
+```
+try:
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+
+    result = num1 / num2
+
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+
+except ValueError:
+    print("Please enter valid numbers.")
+
+else:
+    print("Division successful!")
+    print("Result:", result)
+```
+# Program 3: Use Finally
+```
+try:
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+
+    result = num1 / num2
+
+    print("Result:", result)
+
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+
+except ValueError:
+    print("Invalid input.")
+
+finally:
+    print("Thank you for using the application.")
+```
+
+
 # Hands-on Assignments for Participants
 Try implementing the following programs.
 Assignment	Requirements	Exception to handle
