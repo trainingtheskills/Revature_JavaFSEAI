@@ -51,4 +51,13 @@ Python provides five important keywords for exception handling.
 
 <img width="1024" height="718" alt="image" src="https://github.com/user-attachments/assets/da48136d-ecf1-413d-bef7-7d17738c26f6" />
 
+# Hands-on Assignments for Participants
+Try implementing the following programs.
+Assignment	Requirements	Exception to handle
+1. Calculator	Accept two numbers and perform division                     -  ZeroDivisionError
+2. Age Validator	Accept age and validate numeric input.	                -  ValueError
+3. Student Marks	Accept marks and validate that they are between 0 and 100. -ValueError
+4. List Access	Accept an index and display the corresponding list element.- IndexError
+5. File Reader	Open and read a text file.	                               - FileNotFoundError
+6. Bank Withdrawal	Validate withdrawal amount and account balance.	       -      ValueError
 
