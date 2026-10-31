@@ -320,6 +320,7 @@ This is useful for:
 - Request validation
 
 ## 1.7 Benefits of Routers
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/086ffa9e-c7dc-4aad-a10e-3f93885ad3e8" />
 
 1. Modular application architecture.
 2. Better code reusability.
