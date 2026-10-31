@@ -1526,7 +1526,18 @@ File:
 ```text
 tests/test_employee.py
 ```
+** If test file is seperate folder **
+<img width="211" height="263" alt="image" src="https://github.com/user-attachments/assets/a6c64048-7964-4a8c-a657-ea0e2d53beb8" />
 
+1. Create a pytest.ini
+   ```
+        [pytest]
+        pythonpath = .
+        testpaths = testing
+   ```
+2. Run pytest now
+   
+   ``` EmployeeManangement % pytest ```
 Code:
 
 ```python
