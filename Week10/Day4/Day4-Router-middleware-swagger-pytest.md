@@ -417,6 +417,7 @@ Middleware allows us to implement common functionality once and apply it across 
 ## 2.4 Creating Custom Middleware
 
 FastAPI supports middleware using the `@app.middleware("http")` decorator.
+<img width="606" height="467" alt="image" src="https://github.com/user-attachments/assets/be6accd0-1b0a-48b1-a510-3db7a48d3453" />
 
 Example:
 
