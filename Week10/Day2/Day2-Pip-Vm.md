@@ -37,6 +37,31 @@ It helps prevent conflicts between package versions used by different Python pro
 
 ## 2.1 Why Use Virtual Environments?
 Without isolation, if Project A needs Django 3.0 and Project B needs Django 4.0, you cannot have both installed globally. Virtual environments solve this by creating "bubbles" for each project.
+### 1. Why Do We Need a Virtual Environment?
+Consider two Python projects:
+- Project A: Requires Django 4.2.
+- Project B: Requires Django 5.0.
+  
+If we install both versions globally, managing dependencies can become difficult.
+
+A virtual environment allows each project to maintain its own Python packages and versions independently.
+
+### 2. How Does a Virtual Environment Work?
+System Python Installation
+Common Python installation on your computer
+**Project A**
+Virtual Environment
+- Django 4.2
+- NumPy 1.26
+- Pandas 2.0
+
+**Project B**
+Virtual Environment
+- Django 5.0
+- NumPy 2.0
+- Pandas 2.2
+
+Each project manages its own installed packages independently.
 
 ### The Benefits of Isolation:
 
