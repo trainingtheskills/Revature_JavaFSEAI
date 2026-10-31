@@ -18,6 +18,8 @@ Suppose we are developing an Employee Management System. We need to perform diff
 - Generate employee reports.
 
   ## Program
+  <img width="170" height="89" alt="image" src="https://github.com/user-attachments/assets/02c5f6c5-2dea-492f-9e89-f7e395d1c05f" />
+
   ### Create salary module
   ```
   # salary.py
@@ -38,3 +40,55 @@ result = salary.calculate_salary(30000, 5000)
 
 print("Employee Salary:", result)
   ```
+
+## 2. What is a Package in Python?
+A Package is a directory (folder) used to organize related Python modules together.
+
+In simple words, when an application contains multiple modules, we can group related modules inside a package.
+
+Real-world example:
+
+Consider an Employee Management System with the following requirements:
+- Employee details
+- Salary management
+- Attendance management
+- Leave management
+
+  ### Creating an Employee Package
+  <img width="286" height="205" alt="image" src="https://github.com/user-attachments/assets/ffdc8b41-a3bf-4681-a46c-b3cd59c70c44" />
+
+EmployeeManagement/
+│
+├── main.py
+│
+└── employee/
+    │
+    ├── __init__.py
+    ├── details.py
+    ├── salary.py
+    ├── attendance.py
+    └── leave.py
+#### employee folder
+```
+# Create empty __init__.py
+```
+
+# salary.py
+```
+def calculate_salary(basic, allowance):
+    return basic + allowance
+```
+
+# details.py
+```
+
+def display_employee():
+    print("Employee ID: 101")
+    print("Employee Name: Rahul")
+    print("Department: IT")
+```
+
+
+
+
+    
