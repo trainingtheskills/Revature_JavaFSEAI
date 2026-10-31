@@ -4,10 +4,10 @@
 ## 4.1 Installing and Managing Packages
 You interact with pip via the terminal (command line).
 
-- Install a package: pip install requests
-- Uninstall a package: pip uninstall requests
-- List installed packages: pip list
-- Show package details: pip show requests
+- Install a package:  ``` pip install requests ```
+- Uninstall a package: ``` pip uninstall requests ```
+- List installed packages: ``` pip list ```
+- Show package details: ``` pip show requests ```
   
 ## 4.2 Requirements Files
 In professional projects, you must track exactly which versions of which libraries your code needs. This is done using a requirements.txt file.
