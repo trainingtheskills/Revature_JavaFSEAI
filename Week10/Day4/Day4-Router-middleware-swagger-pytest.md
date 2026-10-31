@@ -1672,6 +1672,21 @@ def test_home(client):
     response = client.get("/")
 
     assert response.status_code == 200
+
+def test_create_employee_with_fixture(employee):
+    #employee = {
+     #   "id": 103,
+      #  "name": "Amit",
+       # "department": "Finance",
+        #"salary": 55000
+    #}
+
+    response = client.post(
+        "/employees/",
+        json=employee
+    )   
+    assert response.status_code == 201
+    assert response.json()["name"] == "Amit"
 ```
 
 Benefits:
@@ -1782,6 +1797,13 @@ markers =
 | API Testing | Tests REST API endpoints | GET, POST, PUT, DELETE |
 | Regression Testing | Checks existing functionality after changes | Rechecking employee APIs |
 | Smoke Testing | Checks critical application functionality | Checking application health endpoint |
+
+## Code Coverage
+
+python -m pip install -r testing/requirements.txt
+PYTHONPATH=. pytest --cov=main --cov=routers --cov=models --cov-report=term-missing
+
+<img width="896" height="683" alt="image" src="https://github.com/user-attachments/assets/d184b11a-ad94-4e7c-ae83-fca8c666ca54" />
 
 ---
 
