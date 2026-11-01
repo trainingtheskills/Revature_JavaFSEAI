@@ -1,9 +1,6 @@
 # LangChain Setup – Python Environment
 
 ## 1. Prerequisites
-|Software	 |            Purpose|
-Python 3.10+	Programming language
-VS Code	Code editor
-pip	Python package manager
-OpenAI API Key	Connect to OpenAI LLM
-Virtual Environment	Manage project dependencies
+
+<img width="482" height="227" alt="image" src="https://github.com/user-attachments/assets/349b5548-1814-4617-ab9f-bf1930bebc59" />
+
