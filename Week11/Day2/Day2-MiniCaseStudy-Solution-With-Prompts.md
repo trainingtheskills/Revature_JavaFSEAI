@@ -32,6 +32,8 @@ Help me create the initial project structure.
 Do not implement HR functionality yet.
 Explain each step clearly for a beginner.
 
+---
+
 **Expected outcome:** A working Python project with the required dependencies and API configuration.
 
 ---
@@ -42,6 +44,7 @@ Explain each step clearly for a beginner.
 
 **Objective:** Prepare sample employee, policy, and ticket data.
 
+---
 Continue developing the TechNova AI-Powered HR Assistant.
 Before implementing LangChain tools, create sample HR data using Python dictionaries.
 
@@ -65,6 +68,8 @@ Use realistic sample data.
 Write the code in `main.py` and explain the purpose of each dictionary.
 Do not implement LangChain tools yet.
 
+---
+
 **Expected outcome:** Sample data structures ready for business operations.
 
 ---
@@ -74,7 +79,7 @@ Do not implement LangChain tools yet.
 ### Step 3
 
 **Objective:** Convert business functions into LangChain tools.
-
+---
 Continue developing the TechNova HR Assistant.
 Implement the following five LangChain tools using the `@tool` decorator.
 
@@ -106,7 +111,7 @@ For each tool, explain:
 
 Do not integrate an LLM yet.
 Provide complete runnable code.
-
+---
 **Expected outcome:** Five independently working LangChain tools.
 
 ---
@@ -116,7 +121,7 @@ Provide complete runnable code.
 ### Step 4
 
 **Objective:** Define the HR Assistant's behavior.
-
+---
 Continue developing the TechNova HR Assistant.
 Now implement a LangChain `ChatPromptTemplate`.
 
@@ -140,6 +145,7 @@ Use a simple employee query as an example.
 Do not implement tool calling or conversation memory yet.
 Provide complete runnable code.
 
+---
 **Expected outcome:** A reusable prompt template that defines the assistant's role and behavior.
 
 ---
@@ -149,7 +155,7 @@ Provide complete runnable code.
 ### Step 5
 
 **Objective:** Enable the assistant to remember previous interactions.
-
+---
 Continue developing the TechNova HR Assistant.
 Implement conversation memory using the modern LangChain message history approach.
 
@@ -181,6 +187,7 @@ Do not integrate tools yet.
 Provide complete runnable code.
 Use modern LangChain APIs rather than legacy `ConversationBufferMemory`.
 
+---
 **Expected outcome:** Conversation history that can be retrieved and inserted into subsequent prompts.
 
 ---
@@ -191,6 +198,7 @@ Use modern LangChain APIs rather than legacy `ConversationBufferMemory`.
 
 **Objective:** Allow the LLM to select and call tools.
 
+---
 Continue developing the TechNova HR Assistant.
 Now integrate `ChatOpenAI` with the five LangChain tools created earlier.
 
@@ -217,7 +225,7 @@ Demonstrate these queries:
 Explain the complete tool-calling lifecycle.
 Do not integrate conversation memory yet.
 Provide complete runnable code.
-
+---
 **Expected outcome:** An LLM that can select and execute HR tools based on employee queries.
 
 ---
@@ -227,7 +235,7 @@ Provide complete runnable code.
 ### Step 7
 
 **Objective:** Combine the three main LangChain building blocks.
-
+---
 Continue developing the TechNova AI-Powered HR Assistant.
 Now integrate the following components:
 
@@ -265,6 +273,7 @@ This function should:
 Provide complete runnable code.
 Explain how the components interact with one another.
 
+---
 **Expected outcome:** A functional conversational HR assistant with tools and memory.
 
 ---
@@ -274,7 +283,7 @@ Explain how the components interact with one another.
 ### Step 8
 
 **Objective:** Create the final user interface.
-
+---
 Continue developing the TechNova AI-Powered HR Assistant.
 Now build a console-based application around the integrated LangChain implementation.
 
@@ -310,6 +319,8 @@ Assistant: Thank you for contacting TechNova HR.
 
 Provide the complete updated `main.py` file.
 
+---
+
 **Expected outcome:** A working console-based HR chatbot.
 
 ---
@@ -319,7 +330,7 @@ Provide the complete updated `main.py` file.
 ### Step 9
 
 **Objective:** Validate the application and fix errors.
-
+---
 Review and test the complete TechNova AI-Powered HR Assistant developed using Python and LangChain.
 Perform a detailed code review.
 
@@ -357,7 +368,7 @@ Perform a detailed code review.
 Identify bugs and explain why they occur.
 Provide corrected complete code only after explaining the issues.
 Do not silently remove any existing functionality.
-
+---
 **Expected outcome:** A tested and corrected application.
 
 ---
@@ -368,6 +379,7 @@ Do not silently remove any existing functionality.
 
 **Objective:** Prepare the project for demonstration and future enhancement.
 
+---
 Refactor the completed TechNova AI-Powered HR Assistant into a clean, maintainable Python project.
 
 **Requirements:**
@@ -411,6 +423,7 @@ Ensure all modules work together and the final application can be executed using
 ```bash
 python main.py
 ```
+---
 
 **Expected outcome:** A modular, documented, maintainable HR Assistant project.
 
