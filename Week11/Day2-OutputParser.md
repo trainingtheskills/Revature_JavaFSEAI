@@ -13,3 +13,40 @@ Output Parsers help transform the LLM's response into the required format.
 **In simple words:**
 
 An LLM generates the response, and an Output Parser converts that response into a usable format.
+
+# 2. Why do we need Output Parsers?
+Consider an AI-powered employee policy assistant.
+
+An employee asks:
+
+"What are the three main benefits offered by the company?"
+
+The LLM might generate the following response:
+```
+The company offers three main benefits:
+
+1. Health Insurance
+2. Paid Leave
+3. Retirement Benefits
+```
+
+This response is readable for humans, but suppose the application needs to display the benefits in a dropdown list or use them in another Python function.
+
+# 3. How Output Parsers work
+<img width="669" height="451" alt="image" src="https://github.com/user-attachments/assets/de4b5a82-3b4a-4e03-9f6d-ac32931c82ac" />
+
+# 4. Common Output Parsers in LangChain
+
+# Types of Output Parsers in LangChain
+
+LangChain provides different output parsers depending on the expected response format.
+
+| Output Parser | Purpose | Return Type |
+|---|---|---|
+| `StrOutputParser` | Returns the model response as plain text | `str` |
+| `JsonOutputParser` | Converts the response into JSON-compatible data | `dict` / `list` |
+| `CommaSeparatedListOutputParser` | Converts comma-separated text into a list | `list` |
+| `PydanticOutputParser` | Converts the response into a validated Pydantic model | Pydantic object |
+| `XMLOutputParser` | Parses XML-formatted responses | Nested dictionary |
+
+
