@@ -301,6 +301,20 @@ The following table explains the core component hierarchy and the responsibility
 # Building Blocks of Langchain 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/326ee6c1-574e-4873-b684-1974c3585cad" />
 
+## 1. Prompt Templates
+A Prompt Template is a reproducible way to generate a prompt. Instead of hard-coding strings, you create templates with placeholders that can be dynamically filled with user input or context.
+
+### Why use Templates instead of Raw Strings?
+
+**Consistency:** Ensures that the LLM always receives instructions in a specific format.
+**Separation of Concerns:** Keeps the "logic" of the prompt separate from the "data" (the user's input).
+**Complexity Management:** Allows for complex, multi-step instructions to be organized cleanly.
+
+## 2. Chains
+Chains are the fundamental unit of composition in LangChain. A chain takes an input, passes it through a sequence of components, and returns an output. While simple chains link a prompt to a model, more advanced chains can link multiple models, tools, and data retrieval steps.
+
+## 3. Output Parsers
+LLMs, by default, return raw text. However, software applications usually require structured data (like JSON, a Python list, or a specific object). Output Parsers are responsible for transforming the LLM's string output into a structured format.
 
 
 
