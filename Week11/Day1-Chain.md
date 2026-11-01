@@ -80,6 +80,45 @@ Employee Question
 | LLM | Processes the prompt and generates a response |
 | Output | Returns the response to the employee |
 
+
+
+## Legacy chains are still in the curriculum though, so:
+
+### LLMChain - The most basic and general-use chain - 
+
+it connects an LLM with a prompt template. It’s a single-step chain, which means it takes in one input and returns one output.
+LLMChain is a fundamental building block in more complex chains. These days, we don’t use it directly too often. Usually we’ll just do something like this for a generic chain:
+
+An LLMChain is implied here, no need for explicit invocation.
+
+**SimpleSequentialChain** - The output of chain A becomes the only input to Chain B, and so on. It’s a simple sequence.
+Since there’s only one input and output for each chain, it’s good for simple tasks that benefit from multiple steps. For instance, Chain A takes in raw data to create an outline, then passes it to Chain B to write and return an article. 
+
+*Note the use of LLMChain here!... also since direct use of LLMChain is deprecated,  SequentialChains aren’t really directly used either! We’ll see an easier way in the demo
+chain =  chain1 | chain2 | … | chain500
+
+**SequentialChain** - This chain is like SimpleSequentialChain, but with more flexibility and power. 
+Outputs are stored globally instead of becoming the input for the next chain. You can also have multiple inputs/outputs in a chain, and pass variables between chains.
+[pic]
+*Note how each chain defines its own output_key that can be called on after invocation!
+
+**LLMMathChain** - The aptly named LLMMathChain is good to use when working with numbers and calculations. The LLM decides what kind of mathematical problem it’s solving, but offloads the actual computation to a calculator under the hood.
+Math Chains can be helpful in more complex scenarios like word problems, business-related forecasting, or general quantitative decision making, but if you want mathematical responses, you can use a general chain or a tool (week 5 content).
+
+Good use of LLMMathChain:
+“If an evil scientist sells 75 Doomsday Devices at $120 each, what is the total revenue?”
+Word problem format, no guesswork required from the LLM. It has all the info it needs.
+Bad use of LLMMathChain:
+“How long would it take me to get to the moon?”
+More of a generic query. The LLM has to assume things like distance and speed, so it might be prone to making stuff up.
+
+**LLMRouterChain** - This chain’s main use case is to route user requests to the appropriate sub-chain. This helps us create versatile apps that are accurate across a wide array of capabilities.
+Imagine we have different chains for summarizing, translating, and general chatting. A properly configured LLMRouterChain knows the appropriate chain to invoke if the user sends the prompt “Take this English text and return it in Spanish.”.
+[pic]
+
+**TransformChain** - This chain doesn’t actually call the LLM at all. It’s just a regular python function that we can fit in our overall chain.
+This is useful for input preprocessing, LLM response postprocessing, data cleaning, really anything you might need to do with plain python (which tends to be data transformation, hence the name).
+
 ## 5. Example Interaction
 
 **Employee:**
@@ -91,6 +130,10 @@ Employee Question
 > According to the company's leave policy, employees are entitled to 12 casual leaves per calendar year.
 
 *Note: The number of leaves is illustrative. In a real application, the assistant should retrieve the applicable rule from the organization's approved policy documents.*
+
+
+
+
 
 ## 6. Key Takeaway
 
