@@ -176,6 +176,37 @@ We want the LLM to return:
 - Experience
 - Technical skills
 We can define the expected structure using Pydantic.
+```
+import os
+from dotenv import load_dotenv
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+
+# ------------------------------------------------------------
+# Load API key from the project .env file
+dotenv_path = os.path.join(os.path.dirname(__file__), "..", "..", "Day1-Langchain", ".env")
+load_dotenv(dotenv_path)
+api_key = os.getenv("OPENAI_API_KEY")
+
+if not api_key:
+    raise RuntimeError("OPENAI_API_KEY is missing. Add it to Day1-Langchain/.env")
+
+# Create a single configured LLM instance
+llm = ChatOpenAI(
+    model="gpt-4o-mini",
+    temperature=0,
+    api_key=api_key,
+)
+# Load environment variables
+
+
+# Create a Chat Model
+model = ChatOpenAI(
+    model="gpt-4o-mini",
+    temperature=0
+)
+```
 
 ## 5.XMLOutputParser
 
