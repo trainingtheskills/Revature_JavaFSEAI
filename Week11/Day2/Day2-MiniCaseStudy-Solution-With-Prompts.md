@@ -1,143 +1,171 @@
-#TechNova AI-Powered HR Assistant — Prompt Series# 
-Prompt 1: Create the project structure and environment
-Step 1
+# TechNova AI-Powered HR Assistant — Prompt Series
 
-Objective: Set up the Python project.
+---
 
-I want to develop an AI-Powered HR Assistant using Python and LangChain. Help me create the initial project structure.
+## Prompt 1: Create the project structure and environment
 
-Requirements:
+### Step 1
 
-Create a project named hr-assistant.
-Create the following files:
-main.py
-.env
-requirements.txt
-Use Python as the programming language.
-Use LangChain and OpenAI integration.
-Include the following dependencies:
-langchain
-langchain-core
-langchain-openai
-python-dotenv
-Explain how to install the dependencies.
-Show how to configure the OpenAI API key using the .env file.
-Write a simple Python program to verify that the environment is configured correctly.
+**Objective:** Set up the Python project.
 
-Do not implement HR functionality yet. Explain each step clearly for a beginner.
+I want to develop an AI-Powered HR Assistant using Python and LangChain.
+Help me create the initial project structure.
 
-Expected outcome: A working Python project with the required dependencies and API configuration.
+**Requirements:**
 
-Prompt 2: Create mock HR data
-Step 2
+1. Create a project named `hr-assistant`.
+2. Create the following files:
+   - `main.py`
+   - `.env`
+   - `requirements.txt`
+3. Use Python as the programming language.
+4. Use LangChain and OpenAI integration.
+5. Include the following dependencies:
+   - `langchain`
+   - `langchain-core`
+   - `langchain-openai`
+   - `python-dotenv`
+6. Explain how to install the dependencies.
+7. Show how to configure the OpenAI API key using the `.env` file.
+8. Write a simple Python program to verify that the environment is configured correctly.
 
-Objective: Prepare sample employee, policy, and ticket data.
+Do not implement HR functionality yet.
+Explain each step clearly for a beginner.
 
-Continue developing the TechNova AI-Powered HR Assistant. Before implementing LangChain tools, create sample HR data using Python dictionaries.
+**Expected outcome:** A working Python project with the required dependencies and API configuration.
 
-Requirements:
+---
 
-Create an employee dictionary with at least three employees.
-Each employee should contain:
-Employee ID
-Employee name
-Department
-Designation
-Leave balance
-Create an HR policy dictionary containing:
-Annual leave policy
-Leave carry-forward policy
-Work-from-home policy
-Create an empty dictionary to store HR support tickets.
-Initialize a ticket counter starting from 1001.
+## Prompt 2: Create mock HR data
 
-Use realistic sample data. Write the code in main.py and explain the purpose of each dictionary. Do not implement LangChain tools yet.
+### Step 2
 
-Expected outcome: Sample data structures ready for business operations.
+**Objective:** Prepare sample employee, policy, and ticket data.
 
-Prompt 3: Implement individual LangChain tools
-Step 3
+Continue developing the TechNova AI-Powered HR Assistant.
+Before implementing LangChain tools, create sample HR data using Python dictionaries.
 
-Objective: Convert business functions into LangChain tools.
+**Requirements:**
 
-Continue developing the TechNova HR Assistant. Implement the following five LangChain tools using the @tool decorator.
+1. Create an employee dictionary with at least three employees.
+2. Each employee should contain:
+   - Employee ID
+   - Employee name
+   - Department
+   - Designation
+   - Leave balance
+3. Create an HR policy dictionary containing:
+   - Annual leave policy
+   - Leave carry-forward policy
+   - Work-from-home policy
+4. Create an empty dictionary to store HR support tickets.
+5. Initialize a ticket counter starting from 1001.
 
-get_employee_details(employee_id)
-get_leave_balance(employee_id)
-get_hr_policy(policy_type)
-create_hr_ticket(employee_id, issue)
-get_ticket_status(ticket_id)
+Use realistic sample data.
+Write the code in `main.py` and explain the purpose of each dictionary.
+Do not implement LangChain tools yet.
 
-Requirements:
+**Expected outcome:** Sample data structures ready for business operations.
 
-Use the @tool decorator from langchain_core.tools.
-Define appropriate Python type hints.
-Add meaningful descriptions to every tool.
-Use the employee, policy, and ticket dictionaries already created.
-Implement proper validation for missing or invalid employee IDs.
-Generate unique ticket IDs such as HR1001, HR1002, etc.
-Return meaningful messages from each tool.
-Register all five tools in a Python list.
-Create a dictionary to look up tools by their names.
-Demonstrate how to execute each tool independently using .invoke().
+---
+
+## Prompt 3: Implement individual LangChain tools
+
+### Step 3
+
+**Objective:** Convert business functions into LangChain tools.
+
+Continue developing the TechNova HR Assistant.
+Implement the following five LangChain tools using the `@tool` decorator.
+
+1. `get_employee_details(employee_id)`
+2. `get_leave_balance(employee_id)`
+3. `get_hr_policy(policy_type)`
+4. `create_hr_ticket(employee_id, issue)`
+5. `get_ticket_status(ticket_id)`
+
+**Requirements:**
+
+1. Use the `@tool` decorator from `langchain_core.tools`.
+2. Define appropriate Python type hints.
+3. Add meaningful descriptions to every tool.
+4. Use the employee, policy, and ticket dictionaries already created.
+5. Implement proper validation for missing or invalid employee IDs.
+6. Generate unique ticket IDs such as `HR1001`, `HR1002`, etc.
+7. Return meaningful messages from each tool.
+8. Register all five tools in a Python list.
+9. Create a dictionary to look up tools by their names.
+10. Demonstrate how to execute each tool independently using `.invoke()`.
 
 For each tool, explain:
 
-Its business purpose.
-Its input parameters.
-Its return value.
-How the @tool decorator works.
+- Its business purpose.
+- Its input parameters.
+- Its return value.
+- How the `@tool` decorator works.
 
-Do not integrate an LLM yet. Provide complete runnable code.
+Do not integrate an LLM yet.
+Provide complete runnable code.
 
-Expected outcome: Five independently working LangChain tools.
+**Expected outcome:** Five independently working LangChain tools.
 
-Prompt 4: Create and test ChatPromptTemplate
-Step 4
+---
 
-Objective: Define the HR Assistant's behavior.
+## Prompt 4: Create and test ChatPromptTemplate
 
-Continue developing the TechNova HR Assistant. Now implement a LangChain ChatPromptTemplate.
+### Step 4
 
-Requirements:
+**Objective:** Define the HR Assistant's behavior.
 
-Import ChatPromptTemplate from langchain_core.prompts.
-Create a system prompt defining the assistant as an HR Assistant for TechNova Solutions.
-Include the following instructions:
-Answer employee HR queries.
-Use available tools when employee or ticket information is required.
-Never invent employee information.
-Never invent HR policies.
-Ask for missing information.
-Use professional and employee-friendly language.
-Include a dynamic employee_id variable.
-Demonstrate how to create the prompt using ChatPromptTemplate.from_messages().
-Demonstrate how to pass dynamic values using invoke().
-Print and explain the generated prompt messages.
+Continue developing the TechNova HR Assistant.
+Now implement a LangChain `ChatPromptTemplate`.
 
-Use a simple employee query as an example. Do not implement tool calling or conversation memory yet. Provide complete runnable code.
+**Requirements:**
 
-Expected outcome: A reusable prompt template that defines the assistant's role and behavior.
+1. Import `ChatPromptTemplate` from `langchain_core.prompts`.
+2. Create a system prompt defining the assistant as an HR Assistant for TechNova Solutions.
+3. Include the following instructions:
+   - Answer employee HR queries.
+   - Use available tools when employee or ticket information is required.
+   - Never invent employee information.
+   - Never invent HR policies.
+   - Ask for missing information.
+   - Use professional and employee-friendly language.
+4. Include a dynamic `employee_id` variable.
+5. Demonstrate how to create the prompt using `ChatPromptTemplate.from_messages()`.
+6. Demonstrate how to pass dynamic values using `invoke()`.
+7. Print and explain the generated prompt messages.
 
-Prompt 5: Implement Conversation Memory
-Step 5
+Use a simple employee query as an example.
+Do not implement tool calling or conversation memory yet.
+Provide complete runnable code.
 
-Objective: Enable the assistant to remember previous interactions.
+**Expected outcome:** A reusable prompt template that defines the assistant's role and behavior.
 
-Continue developing the TechNova HR Assistant. Implement conversation memory using the modern LangChain message history approach.
+---
 
-Requirements:
+## Prompt 5: Implement Conversation Memory
 
-Use InMemoryChatMessageHistory from langchain_core.chat_history.
-Create an object to store conversation messages.
-Store employee messages using HumanMessage.
-Store assistant responses using AIMessage.
-Retrieve previous messages from memory.
-Demonstrate how to maintain conversation history across multiple queries.
-Use MessagesPlaceholder in ChatPromptTemplate to insert conversation history dynamically.
+### Step 5
+
+**Objective:** Enable the assistant to remember previous interactions.
+
+Continue developing the TechNova HR Assistant.
+Implement conversation memory using the modern LangChain message history approach.
+
+**Requirements:**
+
+1. Use `InMemoryChatMessageHistory` from `langchain_core.chat_history`.
+2. Create an object to store conversation messages.
+3. Store employee messages using `HumanMessage`.
+4. Store assistant responses using `AIMessage`.
+5. Retrieve previous messages from memory.
+6. Demonstrate how to maintain conversation history across multiple queries.
+7. Use `MessagesPlaceholder` in `ChatPromptTemplate` to insert conversation history dynamically.
 
 Demonstrate the following conversation:
 
+```
 Employee: My employee ID is E101.
 Assistant: Hello Rahul! How can I help you?
 Employee: What is my leave balance?
@@ -146,106 +174,126 @@ Employee: What is the annual leave policy?
 Assistant: Employees are eligible for 18 annual leaves.
 Employee: Do you remember my employee ID?
 Assistant: Your employee ID is E101.
+```
 
-Explain how the conversation history is stored and reused. Do not integrate tools yet. Provide complete runnable code. Use modern LangChain APIs rather than legacy ConversationBufferMemory.
+Explain how the conversation history is stored and reused.
+Do not integrate tools yet.
+Provide complete runnable code.
+Use modern LangChain APIs rather than legacy `ConversationBufferMemory`.
 
-Expected outcome: Conversation history that can be retrieved and inserted into subsequent prompts.
+**Expected outcome:** Conversation history that can be retrieved and inserted into subsequent prompts.
 
-Prompt 6: Integrate ChatOpenAI with tools
-Step 6
+---
 
-Objective: Allow the LLM to select and call tools.
+## Prompt 6: Integrate ChatOpenAI with tools
 
-Continue developing the TechNova HR Assistant. Now integrate ChatOpenAI with the five LangChain tools created earlier.
+### Step 6
 
-Requirements:
+**Objective:** Allow the LLM to select and call tools.
 
-Create a ChatOpenAI object using gpt-4o-mini.
-Set temperature to 0.
-Use model.bind_tools(tools) to bind the available tools.
-Pass an employee query to the model.
-Inspect the response's tool_calls property.
-Extract the tool name, arguments, and tool call ID.
-Find the corresponding tool using the tool dictionary.
-Execute the tool using .invoke().
-Send the result back to the LLM using ToolMessage.
-Invoke the LLM again to generate a natural-language response.
+Continue developing the TechNova HR Assistant.
+Now integrate `ChatOpenAI` with the five LangChain tools created earlier.
+
+**Requirements:**
+
+1. Create a `ChatOpenAI` object using `gpt-4o-mini`.
+2. Set temperature to 0.
+3. Use `model.bind_tools(tools)` to bind the available tools.
+4. Pass an employee query to the model.
+5. Inspect the response's `tool_calls` property.
+6. Extract the tool name, arguments, and tool call ID.
+7. Find the corresponding tool using the tool dictionary.
+8. Execute the tool using `.invoke()`.
+9. Send the result back to the LLM using `ToolMessage`.
+10. Invoke the LLM again to generate a natural-language response.
 
 Demonstrate these queries:
 
-What is my leave balance?
-What is the annual leave policy?
-Create an HR ticket for a salary correction request.
-What is the status of ticket HR1001?
+- What is my leave balance?
+- What is the annual leave policy?
+- Create an HR ticket for a salary correction request.
+- What is the status of ticket HR1001?
 
-Explain the complete tool-calling lifecycle. Do not integrate conversation memory yet. Provide complete runnable code.
+Explain the complete tool-calling lifecycle.
+Do not integrate conversation memory yet.
+Provide complete runnable code.
 
-Expected outcome: An LLM that can select and execute HR tools based on employee queries.
+**Expected outcome:** An LLM that can select and execute HR tools based on employee queries.
 
-Prompt 7: Integrate prompt template, tools, and memory
-Step 7
+---
 
-Objective: Combine the three main LangChain building blocks.
+## Prompt 7: Integrate prompt template, tools, and memory
 
-Continue developing the TechNova AI-Powered HR Assistant. Now integrate the following components:
+### Step 7
 
-ChatOpenAI
-ChatPromptTemplate
-MessagesPlaceholder
-LangChain Tools
-InMemoryChatMessageHistory
-Tool Calling
+**Objective:** Combine the three main LangChain building blocks.
 
-Requirements:
+Continue developing the TechNova AI-Powered HR Assistant.
+Now integrate the following components:
 
-Maintain conversation history between employee queries.
-Insert previous messages into the prompt using MessagesPlaceholder.
-Bind all five HR tools to ChatOpenAI.
-Send employee queries to the model.
-Detect tool calls using response.tool_calls.
-Execute requested tools.
-Send tool results back using ToolMessage.
-Invoke the model again to generate the final response.
-Save the employee query and final assistant response in memory.
-Support multiple tool calls if the model requests them.
+1. `ChatOpenAI`
+2. `ChatPromptTemplate`
+3. `MessagesPlaceholder`
+4. LangChain Tools
+5. `InMemoryChatMessageHistory`
+6. Tool Calling
 
-Create a reusable function: process_query(user_input)
+**Requirements:**
+
+1. Maintain conversation history between employee queries.
+2. Insert previous messages into the prompt using `MessagesPlaceholder`.
+3. Bind all five HR tools to `ChatOpenAI`.
+4. Send employee queries to the model.
+5. Detect tool calls using `response.tool_calls`.
+6. Execute requested tools.
+7. Send tool results back using `ToolMessage`.
+8. Invoke the model again to generate the final response.
+9. Save the employee query and final assistant response in memory.
+10. Support multiple tool calls if the model requests them.
+
+Create a reusable function: `process_query(user_input)`
 
 This function should:
 
-Accept an employee query.
-Retrieve conversation history.
-Invoke the prompt and model.
-Execute tools when requested.
-Return the final assistant response.
-Save the completed conversation turn.
+- Accept an employee query.
+- Retrieve conversation history.
+- Invoke the prompt and model.
+- Execute tools when requested.
+- Return the final assistant response.
+- Save the completed conversation turn.
 
-Provide complete runnable code. Explain how the components interact with one another.
+Provide complete runnable code.
+Explain how the components interact with one another.
 
-Expected outcome: A functional conversational HR assistant with tools and memory.
+**Expected outcome:** A functional conversational HR assistant with tools and memory.
 
-Prompt 8: Build the console application
-Step 8
+---
 
-Objective: Create the final user interface.
+## Prompt 8: Build the console application
 
-Continue developing the TechNova AI-Powered HR Assistant. Now build a console-based application around the integrated LangChain implementation.
+### Step 8
 
-Requirements:
+**Objective:** Create the final user interface.
 
-Display the application title: TechNova HR Support Assistant
-Display a welcome message.
-Accept employee queries using Python input().
-Process each query using process_query().
-Display the assistant's response.
-Continue accepting queries in a while loop.
-Stop when the employee enters "exit".
-Handle empty inputs.
-Add exception handling.
-Keep conversation history during the application session.
+Continue developing the TechNova AI-Powered HR Assistant.
+Now build a console-based application around the integrated LangChain implementation.
 
-Expected interaction:
+**Requirements:**
 
+1. Display the application title: `TechNova HR Support Assistant`
+2. Display a welcome message.
+3. Accept employee queries using Python `input()`.
+4. Process each query using `process_query()`.
+5. Display the assistant's response.
+6. Continue accepting queries in a `while` loop.
+7. Stop when the employee enters `"exit"`.
+8. Handle empty inputs.
+9. Add exception handling.
+10. Keep conversation history during the application session.
+
+**Expected interaction:**
+
+```
 Employee: My employee ID is E101.
 Assistant: Welcome Rahul! How can I help you?
 Employee: What is my leave balance?
@@ -258,121 +306,140 @@ Employee: Do you remember my previous request?
 Assistant: Yes, you previously raised a salary correction request.
 Employee: exit
 Assistant: Thank you for contacting TechNova HR.
+```
 
-Provide the complete updated main.py file.
+Provide the complete updated `main.py` file.
 
-Expected outcome: A working console-based HR chatbot.
+**Expected outcome:** A working console-based HR chatbot.
 
-Prompt 9: Test and debug the application
-Step 9
+---
 
-Objective: Validate the application and fix errors.
+## Prompt 9: Test and debug the application
 
-Review and test the complete TechNova AI-Powered HR Assistant developed using Python and LangChain. Perform a detailed code review.
+### Step 9
 
-Check the following areas:
+**Objective:** Validate the application and fix errors.
 
-Correct imports and package compatibility.
-Correct use of ChatOpenAI.
-Correct use of ChatPromptTemplate.
-Correct use of MessagesPlaceholder.
-Correct use of InMemoryChatMessageHistory.
-Correct tool registration.
-Correct tool calling using bind_tools().
-Correct handling of tool_calls.
-Correct ToolMessage creation and tool_call_id matching.
-Correct conversation history management.
-Correct employee ID handling.
-Correct ticket creation and ticket status retrieval.
-Correct handling of invalid employee IDs and ticket IDs.
-Correct handling of missing information.
-Correct application exit behavior.
+Review and test the complete TechNova AI-Powered HR Assistant developed using Python and LangChain.
+Perform a detailed code review.
 
-Test these scenarios:
+**Check the following areas:**
 
-Valid employee ID.
-Invalid employee ID.
-Leave balance retrieval.
-HR policy retrieval.
-Ticket creation.
-Ticket status retrieval.
-Previous conversation recall.
-Missing employee ID.
-Empty user input.
-Multiple consecutive tool calls.
+1. Correct imports and package compatibility.
+2. Correct use of `ChatOpenAI`.
+3. Correct use of `ChatPromptTemplate`.
+4. Correct use of `MessagesPlaceholder`.
+5. Correct use of `InMemoryChatMessageHistory`.
+6. Correct tool registration.
+7. Correct tool calling using `bind_tools()`.
+8. Correct handling of `tool_calls`.
+9. Correct `ToolMessage` creation and `tool_call_id` matching.
+10. Correct conversation history management.
+11. Correct employee ID handling.
+12. Correct ticket creation and ticket status retrieval.
+13. Correct handling of invalid employee IDs and ticket IDs.
+14. Correct handling of missing information.
+15. Correct application exit behavior.
 
-Identify bugs and explain why they occur. Provide corrected complete code only after explaining the issues. Do not silently remove any existing functionality.
+**Test these scenarios:**
 
-Expected outcome: A tested and corrected application.
+- Valid employee ID.
+- Invalid employee ID.
+- Leave balance retrieval.
+- HR policy retrieval.
+- Ticket creation.
+- Ticket status retrieval.
+- Previous conversation recall.
+- Missing employee ID.
+- Empty user input.
+- Multiple consecutive tool calls.
 
-Prompt 10: Refactor and document the final application
-Step 10 — Final
+Identify bugs and explain why they occur.
+Provide corrected complete code only after explaining the issues.
+Do not silently remove any existing functionality.
 
-Objective: Prepare the project for demonstration and future enhancement.
+**Expected outcome:** A tested and corrected application.
+
+---
+
+## Prompt 10: Refactor and document the final application
+
+### Step 10 — Final
+
+**Objective:** Prepare the project for demonstration and future enhancement.
 
 Refactor the completed TechNova AI-Powered HR Assistant into a clean, maintainable Python project.
 
-Requirements:
+**Requirements:**
 
-Separate the application into logical modules:
-tools.py
-data.py
-prompts.py
-memory.py
-main.py
-Keep responsibilities separate:
-data.py: Employee, policy, and ticket data.
-tools.py: All LangChain tools.
-prompts.py: ChatPromptTemplate.
-memory.py: Conversation history management.
-main.py: LLM integration and console application.
-Avoid unnecessary code duplication.
-Use meaningful function and variable names.
-Add comments to important sections.
-Add exception handling.
-Keep the application compatible with modern LangChain APIs.
-Include requirements.txt.
-Include .env.example without an actual API key.
-Create a README.md with:
-Project overview.
-Features.
-Project structure.
-Installation steps.
-Environment configuration.
-Execution instructions.
-Sample application interaction.
-Explain how the application can later be extended to use:
-MySQL database.
-Persistent conversation history.
-Employee authentication.
-HR management system APIs.
+1. Separate the application into logical modules:
+   - `tools.py`
+   - `data.py`
+   - `prompts.py`
+   - `memory.py`
+   - `main.py`
+2. Keep responsibilities separate:
+   - `data.py`: Employee, policy, and ticket data.
+   - `tools.py`: All LangChain tools.
+   - `prompts.py`: `ChatPromptTemplate`.
+   - `memory.py`: Conversation history management.
+   - `main.py`: LLM integration and console application.
+3. Avoid unnecessary code duplication.
+4. Use meaningful function and variable names.
+5. Add comments to important sections.
+6. Add exception handling.
+7. Keep the application compatible with modern LangChain APIs.
+8. Include `requirements.txt`.
+9. Include `.env.example` without an actual API key.
+10. Create a `README.md` with:
+    - Project overview.
+    - Features.
+    - Project structure.
+    - Installation steps.
+    - Environment configuration.
+    - Execution instructions.
+    - Sample application interaction.
+11. Explain how the application can later be extended to use:
+    - MySQL database.
+    - Persistent conversation history.
+    - Employee authentication.
+    - HR management system APIs.
 
-Provide the complete source code for every file. Ensure all modules work together and the final application can be executed using:
+Provide the complete source code for every file.
+Ensure all modules work together and the final application can be executed using:
 
-bash
+```bash
 python main.py
+```
 
-Expected outcome: A modular, documented, maintainable HR Assistant project.
+**Expected outcome:** A modular, documented, maintainable HR Assistant project.
 
-Development Roadmap
+---
+
+## Development Roadmap
 
 Here is the recommended order for teaching and implementation.
 
-HR Assistant development journey
-Project setup — Prompt 1 — Environment and dependencies
-Prepare business data — Prompt 2 — Employees, policies and tickets
-Develop tools — Prompt 3 — Five business functions
-Develop prompt template — Prompt 4 — Assistant instructions
-Implement memory — Prompt 5 — Conversation history
-Integrate LLM and tools — Prompt 6 — Tool calling
-Integrate all components — Prompt 7 — Prompt + Tools + Memory
-Build console application — Prompt 8 — User interaction
-Test and debug — Prompt 9 — Quality assurance
-Refactor and document — Prompt 10 — Final project
-Additional Prompt: How to Work Effectively with AI
+### HR Assistant development journey
+
+1. **Project setup** — Prompt 1 — Environment and dependencies
+2. **Prepare business data** — Prompt 2 — Employees, policies and tickets
+3. **Develop tools** — Prompt 3 — Five business functions
+4. **Develop prompt template** — Prompt 4 — Assistant instructions
+5. **Implement memory** — Prompt 5 — Conversation history
+6. **Integrate LLM and tools** — Prompt 6 — Tool calling
+7. **Integrate all components** — Prompt 7 — Prompt + Tools + Memory
+8. **Build console application** — Prompt 8 — User interaction
+9. **Test and debug** — Prompt 9 — Quality assurance
+10. **Refactor and document** — Prompt 10 — Final project
+
+---
+
+## Additional Prompt: How to Work Effectively with AI
 
 Use this instruction at the beginning of your development session.
 
+```
 Act as a Senior Python Developer and LangChain Architect.
 
 I am developing an AI-Powered HR Assistant using Python, LangChain, and OpenAI.
@@ -393,3 +460,4 @@ Follow these development rules:
 12. If an error occurs, first explain the root cause and then provide the corrected code.
 
 The final goal is to build a working console-based HR Assistant using LangChain Tools, ChatPromptTemplate, ChatOpenAI, Tool Calling, and Conversation Memory.
+```
