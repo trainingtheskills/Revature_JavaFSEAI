@@ -41,6 +41,7 @@ With memory, the chatbot can use previously shared information:
 LangChain has provided different memory approaches depending on how much conversation information an application needs to retain.
 
 
+
 ## Types of Memory in LangChain
 
 LangChain provides different memory mechanisms to maintain conversation context in AI applications.
@@ -51,6 +52,8 @@ LangChain provides different memory mechanisms to maintain conversation context 
 | `ConversationBufferMemory` | Stores the complete conversation | Remembers all previous messages |
 | `ConversationBufferWindowMemory` | Stores only the latest K interactions | Remembers the last 5 interactions |
 | `ConversationSummaryMemory` | Stores a summarized version of the conversation | Summarizes a long discussion |
+
+# SETUP : pip install langchain langchain-openai langchain-classic python-dotenv
 
 ### A. ChatMessageHistory
 **Purpose:** Stores messages exchanged between the user and AI.
@@ -75,3 +78,139 @@ history.add_user_message("I am learning LangChain")
 for message in history.messages:
     print(message.type, ":", message.content)
 ```
+
+## B. ConversationBufferMemory
+Purpose: Maintains the complete conversation history.
+
+It keeps previous messages and makes them available as context for subsequent interactions.
+**Example**
+User: My name is Rahul.
+AI: Hello Rahul!
+
+User: I am 25 years old.
+AI: That's great!
+
+User: What is my name and age?
+AI: Your name is Rahul and your age is 25.
+```
+
+from dotenv import load_dotenv
+
+from langchain_openai import ChatOpenAI
+from langchain_classic.memory import ConversationBufferMemory
+from langchain_classic.chains import ConversationChain
+
+# Load environment variables from .env file
+load_dotenv()
+
+# 1. Create the LLM
+model = ChatOpenAI(
+    model="gpt-4o-mini",
+    temperature=0
+)
+
+# 2. Create ConversationBufferMemory
+# Stores the complete conversation history
+memory = ConversationBufferMemory(
+    memory_key="history",
+    return_messages=False
+)
+
+# 3. Create ConversationChain
+# Connects the LLM with conversation memory
+conversation = ConversationChain(
+    llm=model,
+    memory=memory,
+    verbose=True
+)
+
+# 4. First interaction
+response1 = conversation.predict(
+    input="My name is Rahul."
+)
+print("AI:", response1)
+
+# 5. Second interaction
+response2 = conversation.predict(
+    input="I am 25 years old."
+)
+print("AI:", response2)
+
+# 6. Third interaction
+# AI can use information from previous interactions
+response3 = conversation.predict(
+    input="What is my name and age?"
+)
+print("AI:", response3)
+
+# 7. Display complete conversation history
+print("\nComplete Conversation History:")
+print(memory.buffer)
+
+```
+
+## C. ConversationBufferWindowMemory
+Purpose: Maintains only a limited number of recent conversation interactions.
+
+It is useful when the conversation becomes very long and we want to limit the amount of history passed to the LLM.
+```
+
+from dotenv import load_dotenv
+
+from langchain_openai import ChatOpenAI
+from langchain_classic.memory import ConversationBufferWindowMemory
+from langchain_classic.chains import ConversationChain
+
+# Load environment variables from .env file
+load_dotenv()
+
+# 1. Create the LLM
+model = ChatOpenAI(
+    model="gpt-4o-mini",
+    temperature=0
+)
+
+# 2. Create ConversationBufferWindowMemory
+# Stores only the latest 2 conversation turns
+memory = ConversationBufferWindowMemory(
+    k=2,
+    memory_key="history",
+    return_messages=False
+)
+
+# 3. Create ConversationChain
+# Connects the LLM with conversation memory
+conversation = ConversationChain(
+    llm=model,
+    memory=memory,
+    verbose=True
+)
+
+# 4. First interaction
+response1 = conversation.predict(
+    input="My name is Rahul."
+)
+print("AI:", response1)
+
+# 5. Second interaction
+response2 = conversation.predict(
+    input="I am 25 years old."
+)
+print("AI:", response2)
+
+# 6. Third interaction
+response3 = conversation.predict(
+    input="I work as a Java developer."
+)
+print("AI:", response3)
+
+# 7. Fourth interaction
+response4 = conversation.predict(
+    input="What is my age and profession?"
+)
+print("AI:", response4)
+
+# 8. Display the conversation history retained in memory
+print("\nConversation History in Memory:")
+print(memory.buffer)
+```   
