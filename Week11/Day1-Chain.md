@@ -34,6 +34,8 @@ The application needs to perform the following steps:
 4. **Generate an answer** — let the LLM generate a response.
 5. **Return the answer** — display the generated response to the employee.
 
+<img width="648" height="461" alt="image" src="https://github.com/user-attachments/assets/8d765f14-4d9b-450d-92ad-0c20adedd596" />
+
 ## 3. How Does LangChain Help?
 
 Without LangChain, developers may need to write and manage each step independently.
