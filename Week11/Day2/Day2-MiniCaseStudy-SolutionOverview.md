@@ -1,4 +1,7 @@
 # Development roadmap
+
+![Uploading image.png…]()
+
 ## 1. Project Setup
    ### Prompt 1 — Environment and dependencies
    **Tasks to perform:**
