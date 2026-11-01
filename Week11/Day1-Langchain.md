@@ -216,54 +216,8 @@ Each step introduces a new technical concept and gradually builds towards the co
 | 9 | Expose the chatbot through REST APIs | FastAPI |
 
 ### 8.1 Implementation Approach
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/eacf1219-f3bb-425e-a1e9-92befd107324" />
 
-**Step 1: Ask GPT a Question**
-- Connect Python application with OpenAI GPT.
-- Send a question to GPT.
-- Display the generated response.
-- Concept: LLM Integration.
-
-**Step 2: Manage Reusable Prompts**
-- Create reusable prompt templates.
-- Pass dynamic values into prompts.
-- Concept: Prompt Templates.
-
-**Step 3: Load an HR PDF**
-- Load the company's HR policy PDF document.
-- Extract text from the document.
-- Concept: Document Loaders.
-
-**Step 4: Split the PDF Content**
-- Divide large documents into smaller chunks.
-- Configure chunk size and chunk overlap.
-- Concept: Text Splitters.
-
-**Step 5: Generate Embeddings**
-- Convert document chunks into numerical vectors.
-- Understand semantic representations.
-- Concept: Embeddings.
-
-**Step 6: Store Document Vectors**
-- Store generated embeddings in a vector database.
-- Use ChromaDB or FAISS.
-- Concept: Vector Store.
-
-**Step 7: Search Relevant Information**
-- Accept an employee question.
-- Search the vector database for relevant document chunks.
-- Concept: Retriever.
-
-**Step 8: Generate Answers Using Retrieved Content**
-- Retrieve relevant HR policy information.
-- Pass the retrieved content and employee question to GPT.
-- Generate a context-aware answer.
-- Concept: RAG (Retrieval-Augmented Generation).
-
-**Step 9: Expose the Chatbot Through REST APIs**
-- Develop REST endpoints using FastAPI.
-- Accept employee questions through API requests.
-- Return AI-generated answers as JSON responses.
-- Concept: FastAPI Integration.
 
 ### 8.2 Final Learning Outcome
 
