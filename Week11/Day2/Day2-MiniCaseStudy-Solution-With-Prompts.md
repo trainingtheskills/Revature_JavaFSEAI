@@ -7,7 +7,7 @@
 ### Step 1
 
 **Objective:** Set up the Python project.
-
+---
 I want to develop an AI-Powered HR Assistant using Python and LangChain.
 Help me create the initial project structure.
 
