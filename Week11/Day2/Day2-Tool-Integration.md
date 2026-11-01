@@ -54,3 +54,28 @@ Consider the following business requirements and the tools required to perform e
 | Get weather information | Weather API Tool |
 | Send an email | Email Tool |
 
+
+## 3. How do LangChain Tools work?
+The tool-calling process generally involves the following steps:
+
+1. The user sends a question to the AI application.
+   
+2. The application sends the question and available tool definitions to the LLM.
+   
+3. The LLM determines whether a tool is required.
+   
+4. If a tool is required, the LLM generates a tool call with the required arguments.
+   
+5. The application executes the corresponding Python function.
+    
+6. The tool returns its result.
+    
+7. The LLM uses the result to generate the final response.
+
+<img width="676" height="463" alt="image" src="https://github.com/user-attachments/assets/916c25e9-b23f-49dc-95e2-062fdae7b0ca" />
+
+
+## Setup 
+pip install langchain langchain-openai python-dotenv
+
+
