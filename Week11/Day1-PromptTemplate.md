@@ -112,6 +112,7 @@ This generates prompts by filling in blanks in a string, and is perfect for comp
 You define a prompt with placeholders using standard Python format syntax. At runtime, these get resolved to generate the final prompt string:
 
 ```
+# Form the Prompt 
 # String Template - This generates prompts by filling in blanks in a string, and is perfect for completion-style models that expect a single text input 
 from langchain_core.prompts import PromptTemplate
 
@@ -125,6 +126,7 @@ print(filled_prompt)
 ```
 
 ```
+# Form a Prompt Template
 from langchain_core.prompts import PromptTemplate
 
 # Create a String Prompt Template
@@ -141,3 +143,31 @@ formatted_prompt = prompt.format(
 print(formatted_prompt)
 ```
 
+
+```
+# Mulitple Parameter
+from langchain_core.prompts import PromptTemplate
+
+prompt = PromptTemplate(
+    input_variables=["role", "topic", "level"],
+    template="""
+    Act as a {role}.
+
+    Explain {topic} for {level} level students.
+
+    Provide:
+    1. Definition
+    2. Explanation
+    3. Real-world example
+    4. Python code example
+    """
+)
+
+result = prompt.format(
+    role="Python Trainer",
+    topic="Inheritance",
+    level="Beginner"
+)
+
+print(result)
+```
