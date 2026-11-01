@@ -38,3 +38,19 @@ The AI model can then decide to call this tool and use its result to answer the 
 **5. File Processing Tools**— Help analyze documents, PDFs, or CSV files.
 
 **6. Code Execution Tools** — Provide AI the capability to write, execute, and debug code in Python or other languages.
+
+##  Why do we need Tools in LangChain?
+
+# Business Requirements and Corresponding Tools
+
+Consider the following business requirements and the tools required to perform each task:
+
+| Business Requirement | Required Tool |
+|---|---|
+| Calculate employee salary | Calculator |
+| Search the internet | Search Tool |
+| Retrieve customer details | Database Tool |
+| Check order status | Order Status Tool |
+| Get weather information | Weather API Tool |
+| Send an email | Email Tool |
+
