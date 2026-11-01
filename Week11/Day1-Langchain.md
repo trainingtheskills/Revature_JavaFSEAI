@@ -20,10 +20,15 @@ LangChain provides a framework to build applications around language models — 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/5e48e5dd-a638-4e38-b73b-24d1f0cb8c47" />
 
 It allows you to chain together intelligent components like:
+
 • 🧠 **Memory:** Retain previous conversations, user context, or results.
+
 • 🔧 **Tools:** Let the LLM call APIs, run code, query databases, or fetch live information.
+
 • 🧱 **Retrieval:** Bring your own knowledge base (RAG) into the conversation.
+
 • 🛡️ **Guardrails:** Control model outputs, prevent hallucinations, and validate responses.
+
 • ⚙️ **Control Flow:** Add conditional logic, branching, retries, fallbacks, or even switch models dynamically.
 
 
