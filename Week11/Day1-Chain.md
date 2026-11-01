@@ -11,6 +11,17 @@ We can connect these components into a single workflow called a Chain.
 
 A chain allows us to combine multiple LangChain building blocks to create an end-to-end application.
 
+## . Important Components Used in a Chain
+
+| Component | Purpose |
+|---|---|
+| `PromptTemplate` | Creates a reusable text prompt |
+| `ChatPromptTemplate` | Creates structured chat messages |
+| `LLM` | Generates text responses |
+| `OutputParser` | Converts model output into the required format |
+| `Runnable` | Represents a component that can execute as part of a chain |
+| `Chain` | Connects multiple components into a workflow |
+
 
 # Simple Real-World Example: Employee Policy Assistant Using LangChain
 
