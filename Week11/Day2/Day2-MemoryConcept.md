@@ -208,9 +208,87 @@ print("AI:", response3)
 response4 = conversation.predict(
     input="What is my age and profession?"
 )
+```
+## D. ConversationSummaryMemory
+Purpose: Creates a summary of previous conversations instead of retaining every individual message.
+
+This is useful for long-running conversations.
 print("AI:", response4)
 
 # 8. Display the conversation history retained in memory
 print("\nConversation History in Memory:")
 print(memory.buffer)
-```   
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/a27f598e-e5b5-4f00-a2b7-4c0fc5706b4e" />
+
+```
+
+from dotenv import load_dotenv
+
+from langchain_openai import ChatOpenAI
+from langchain_classic.memory import ConversationSummaryMemory
+from langchain_classic.chains import ConversationChain
+
+# Load environment variables from .env file
+load_dotenv()
+
+# 1. Create the LLM
+model = ChatOpenAI(
+    model="gpt-4o-mini",
+    temperature=0
+)
+
+# 2. Create ConversationSummaryMemory
+# Uses the LLM to summarize conversation history
+memory = ConversationSummaryMemory(
+    llm=model,
+    memory_key="history",
+    return_messages=False
+)
+
+# 3. Create ConversationChain
+# Connects the LLM with conversation summary memory
+conversation = ConversationChain(
+    llm=model,
+    memory=memory,
+    verbose=True
+)
+
+# 4. First interaction
+conversation.predict(
+    input="My name is Rahul."
+)
+
+# 5. Second interaction
+conversation.predict(
+    input="I am 25 years old."
+)
+
+# 6. Third interaction
+conversation.predict(
+    input="I work as a Java developer."
+)
+
+# 7. Fourth interaction
+conversation.predict(
+    input="I have 3 years of experience."
+)
+
+# 8. Fifth interaction
+conversation.predict(
+    input="I want to learn Spring Boot."
+)
+
+# 9. Display summarized conversation memory
+print("\nSummarized Conversation Memory:")
+print(memory.buffer)
+
+# 10. Ask a question using the summarized memory
+response = conversation.predict(
+    input="What do you know about me?"
+)
+
+print("\nAI Response:", response)
+
+```
+
