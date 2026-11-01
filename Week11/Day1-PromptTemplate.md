@@ -373,3 +373,14 @@ Answer employee questions politely and professionally.
 Human:
 {question}
 ```
+
+### Important components of ChatPromptTemplate
+| Component | Purpose |
+|---|---|
+| `from_messages()` | Creates a chat prompt using multiple messages. |
+| `SystemMessage` role | Defines AI behaviour and instructions. |
+| `HumanMessage` role | Represents user input. |
+| `AIMessage` role | Represents an AI message or example response. |
+| `{variable}` | Defines a dynamic placeholder. |
+| `invoke()` | Supplies values to the template and generates formatted messages. |
+
