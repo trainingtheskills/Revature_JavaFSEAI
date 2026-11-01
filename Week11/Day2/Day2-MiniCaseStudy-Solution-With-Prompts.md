@@ -1,4 +1,5 @@
 # TechNova AI-Powered HR Assistant — Prompt Series
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/7659b204-f3fc-44cf-8040-9ad88cb77532" />
 
 ---
 
