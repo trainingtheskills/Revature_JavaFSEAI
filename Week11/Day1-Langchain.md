@@ -168,18 +168,6 @@ This is the important part when introducing **LangChain** to students.
 
 LangChain provides different components that help developers integrate LLMs with documents, embeddings, vector databases, and other services.
 
-The following table explains the relationship between business requirements and the corresponding LangChain components.
-
-| Requirement | LangChain Component |
-|---|---|
-| Read PDF documents | Document Loaders |
-| Divide documents into chunks | Text Splitters |
-| Generate vector representations | Embeddings Integration |
-| Store and search vectors | Vector Store Integrations |
-| Retrieve relevant information | Retrievers |
-| Prepare instructions for LLM | Prompt Templates |
-| Connect with GPT | Chat Models |
-| Generate structured responses | Output Parsers |
 
 
 
