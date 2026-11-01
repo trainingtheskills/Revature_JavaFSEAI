@@ -412,3 +412,76 @@ Human:
 | **Chat history** | Not directly structured | Supported using `MessagesPlaceholder` |
 | **Typical usage** | Traditional LLMs | Chat models |
 
+
+#--------------------------------------------------
+# MessagesPlaceholder
+## What is MessagesPlaceholder?
+MessagesPlaceholder is a component of LangChain's ChatPromptTemplate that allows us to dynamically insert a list of chat messages (conversation history) into a prompt.
+
+In a chatbot application, conversations usually contain multiple messages exchanged between the user and the AI assistant.
+
+For example:
+- User: Hi, my name is Rahul.
+- AI: Hello Rahul! How can I help you?
+- User: What is my name?
+- AI: Your name is Rahul.
+The AI needs access to previous messages to understand the context of the current question.
+
+Instead of manually adding every previous message to the prompt, we can use MessagesPlaceholder.
+**In simple words:** MessagesPlaceholder creates a dynamic section in a chat prompt where previous conversation messages can be inserted at runtime.
+
+## 2. Why do we need MessagesPlaceholder?
+Consider a customer support chatbot.
+
+A customer starts a conversation:
+1. Customer: I purchased a laptop.
+2. AI: Which laptop model did you purchase?
+3. Customer: Dell Inspiron 15.
+4. AI: How can I help you with your Dell Inspiron 15?
+5. Customer: What is its warranty period?
+When the customer asks the final question, the AI should understand that "its" refers to Dell Inspiron 15.
+
+Without conversation history, the AI may not understand the context.
+
+MessagesPlaceholder helps solve this problem by inserting previous messages into the current prompt.
+
+### Syntax
+```
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are a helpful customer support assistant."),
+    MessagesPlaceholder(variable_name="chat_history"),
+    ("human", "{question}")
+])
+```
+
+<img width="1024" height="655" alt="image" src="https://github.com/user-attachments/assets/35b1e81b-4e01-4685-a81a-e944d522b30e" />
+
+### Build a career coach bot that remembers previous questions and answers:
+```
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.messages import HumanMessage, AIMessage
+
+chat_prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are a helpful career coach."),
+    MessagesPlaceholder("conversation"),  # Dynamic history insertion
+    ("human", "{current_question}")
+])
+
+# Define history using proper message objects
+conversation_history = [
+    HumanMessage(content="How do I prepare for a job interview?"),
+    AIMessage(content="Start by researching the company and practicing common questions.")
+]
+
+formatted_messages = chat_prompt.format_messages(
+    conversation=conversation_history,
+    current_question="Should I send a thank-you email afterward?"
+)
+
+print(formatted_messages)
+```
+
+
+
