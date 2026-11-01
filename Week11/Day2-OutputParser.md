@@ -157,6 +157,25 @@ print(type(result))
 
 An HR application needs to retrieve employee benefits as a list.
 ## 4.PydanticOutputParser
+### What is PydanticOutputParser?
+PydanticOutputParser converts the LLM response into a Python object defined using a Pydantic model.
+
+It is useful when we need:
+- Structured data
+- Data type validation
+- Mandatory fields
+- Data validation rules
+- Consistent output formats
+**Business scenario:**
+
+An employee recruitment application extracts candidate information from resumes.
+
+We want the LLM to return:
+- Candidate name
+- Email address
+- Experience
+- Technical skills
+We can define the expected structure using Pydantic.
 
 ## 5.XMLOutputParser
 
