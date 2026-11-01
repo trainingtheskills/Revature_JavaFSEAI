@@ -28,8 +28,13 @@ The AI model can then decide to call this tool and use its result to answer the 
 
 ## Types of LangChain Tools
 **1. Search Tools** — Allow models to fetch real-time information from sources like Google Search or Bing.
+
 **2. Database Query Tools** — Help AI interact with structured data sources like SQL databases or vector stores.
+
 **3. API Call Tools** — Enable interaction with external APIs (e.g., weather data, stock prices, etc.).
+
 **4. Mathematical Tools** — Allow AI to perform complex calculations and data processing.
+
 **5. File Processing Tools**— Help analyze documents, PDFs, or CSV files.
+
 **6. Code Execution Tools** — Provide AI the capability to write, execute, and debug code in Python or other languages.
