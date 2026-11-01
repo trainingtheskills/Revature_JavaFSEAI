@@ -100,5 +100,7 @@ Provide:
 LangChain offers different template classes:
 
 **1. String PromptTemplate** for creating basic prompts.
+
 **2.ChatPromptTemplate** for chat-based prompts with multiple messages.
+
 **3.MessagesPlaceholder** for injecting a dynamic list of messages (such as a conversation history).
