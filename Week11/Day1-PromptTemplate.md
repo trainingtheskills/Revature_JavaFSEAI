@@ -365,6 +365,9 @@ We want the AI to behave consistently while answering all these questions.
 
 Instead of writing a new prompt for every employee, we can create a reusable template.
 
+### Understanding the execution flow
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/ded6a546-09ed-4081-b2ca-4a4beba9821b" />
+
 ```
 System:
 You are an HR assistant of TechNova Solutions.
@@ -383,4 +386,16 @@ Human:
 | `AIMessage` role | Represents an AI message or example response. |
 | `{variable}` | Defines a dynamic placeholder. |
 | `invoke()` | Supplies values to the template and generates formatted messages. |
+
+
+# ChatPromptTemplate vs PromptTemplate
+
+| Feature | PromptTemplate | ChatPromptTemplate |
+|---|---|---|
+| **Input structure** | Single text prompt | Multiple chat messages |
+| **Message roles** | Not explicitly defined | System, Human, AI, etc. |
+| **Main purpose** | Text-based prompting | Conversation-based prompting |
+| **Dynamic variables** | Supported | Supported |
+| **Chat history** | Not directly structured | Supported using `MessagesPlaceholder` |
+| **Typical usage** | Traditional LLMs | Chat models |
 
