@@ -171,3 +171,205 @@ result = prompt.format(
 
 print(result)
 ```
+
+
+```
+# Prompt with LLM
+from langchain_core.prompts import PromptTemplate
+
+prompt = PromptTemplate(
+    input_variables=["role", "topic", "level"],
+    template="""
+    Act as a {role}.
+
+    Explain {topic} for {level} level students.
+
+    Provide:
+    1. Definition
+    2. Explanation
+    3. Real-world example
+    4. Python code example
+    """
+)
+
+result = prompt.format(
+    role="Python Trainer",
+    topic="Inheritance",
+    level="Beginner"
+)
+
+print(result)
+
+
+### PromptTemplate Method
+
+from langchain_core.prompts import PromptTemplate
+
+# ==========================================================
+# 1. from_template()
+# PURPOSE:
+# Creates a reusable prompt template from a normal string.
+# Variables inside {} are treated as dynamic input variables.
+# ==========================================================
+
+prompt = PromptTemplate.from_template(
+    """
+    You are an expert {role}.
+
+    Explain the topic: {topic}
+
+    Target Audience: {level}
+
+    Provide:
+    1. Definition
+    2. Explanation
+    3. Real-world example
+    """
+)
+
+
+# ==========================================================
+# 2. input_variables
+# PURPOSE:
+# Returns a list of all dynamic variables used in the
+# prompt template.
+# Helps identify what input values are required.
+# ==========================================================
+
+print("\n1. INPUT VARIABLES")
+print("-----------------------------")
+
+print(prompt.input_variables)
+
+
+# ==========================================================
+# 3. format()
+# PURPOSE:
+# Replaces the dynamic variables in the template with
+# actual values supplied by the application.
+# Returns the final formatted prompt as a Python string.
+# ==========================================================
+
+print("\n2. FORMAT METHOD")
+print("-----------------------------")
+
+formatted_prompt = prompt.format(
+    role="Python Trainer",
+    topic="Object Oriented Programming",
+    level="Beginner"
+)
+
+print(formatted_prompt)
+
+
+# ==========================================================
+# 4. format_prompt()
+# PURPOSE:
+# Formats the template by replacing dynamic variables.
+# Unlike format(), it returns a PromptValue object
+# (StringPromptValue) instead of a normal string.
+# Useful when passing formatted prompts to an LLM.
+# ==========================================================
+
+print("\n3. FORMAT_PROMPT METHOD")
+print("-----------------------------")
+
+prompt_value = prompt.format_prompt(
+    role="Java Trainer",
+    topic="Inheritance",
+    level="Intermediate"
+)
+
+print(prompt_value)
+
+# PURPOSE:
+# to_string() converts the PromptValue object into
+# a normal Python string for display or inspection.
+
+print("\nConverted into String:")
+print(prompt_value.to_string())
+
+
+# ==========================================================
+# 5. invoke()
+# PURPOSE:
+# Executes the prompt template with the supplied input
+# dictionary and returns a formatted PromptValue object.
+# It is commonly used when building LangChain chains.
+# Note: It does NOT call an LLM by itself.
+# ==========================================================
+
+print("\n4. INVOKE METHOD")
+print("-----------------------------")
+
+result = prompt.invoke({
+    "role": "AI Trainer",
+    "topic": "Generative AI",
+    "level": "Beginner"
+})
+
+print(result)
+
+# Convert PromptValue into a normal Python string.
+
+print("\nConverted into String:")
+print(result.to_string())
+
+
+# ==========================================================
+# 6. LLM INTEGRATION (NEXT STEP)
+# PURPOSE:
+# Connects the prompt template with an LLM.
+# The | operator creates a LangChain chain using LCEL.
+# invoke() executes the complete chain and generates
+# an AI response.
+# ==========================================================
+
+# from langchain_openai import ChatOpenAI
+#
+# llm = ChatOpenAI(model="gpt-4o-mini")
+#
+# chain = prompt | llm
+#
+# response = chain.invoke({
+#     "role": "AI Trainer",
+#     "topic": "LangChain",
+#     "level": "Beginner"
+# })
+#
+# print(response.content)
+
+
+
+
+
+-----------------------------------------------------------------------------------------
+## ChatPromptTemplate: Chat-Style Prompt with Roles
+
+ChatPromptTemplate is a class provided by LangChain that helps developers create structured, reusable prompts for chat-based Large Language Models (LLMs).
+
+It allows us to define a conversation using different message roles, such as:
+- System: Defines the behaviour, personality, and instructions for the AI.
+- Human: Represents the user's input or question.
+- AI: Represents the assistant's response or an example response.
+It also supports dynamic placeholders, allowing us to pass values at runtime instead of hardcoding information into prompts.
+
+###. Why do we need ChatPromptTemplate?
+Consider a business application where employees ask questions about company policies.
+
+For example:
+- Employee 1: What is the annual leave policy?
+- Employee 2: How many sick leaves are allowed?
+- Employee 3: What is the maternity leave policy?
+We want the AI to behave consistently while answering all these questions.
+
+Instead of writing a new prompt for every employee, we can create a reusable template.
+
+```
+System:
+You are an HR assistant of TechNova Solutions.
+Answer employee questions politely and professionally.
+
+Human:
+{question}
+```
