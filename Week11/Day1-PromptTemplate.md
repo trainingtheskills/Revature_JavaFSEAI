@@ -104,3 +104,40 @@ LangChain offers different template classes:
 **2.ChatPromptTemplate** for chat-based prompts with multiple messages.
 
 **3.MessagesPlaceholder** for injecting a dynamic list of messages (such as a conversation history).
+
+
+## 3.1 String Prompt Template
+This generates prompts by filling in blanks in a string, and is perfect for completion-style models that expect a single text input (text-davinci-003 or similar).
+
+You define a prompt with placeholders using standard Python format syntax. At runtime, these get resolved to generate the final prompt string:
+
+```
+# String Template - This generates prompts by filling in blanks in a string, and is perfect for completion-style models that expect a single text input 
+from langchain_core.prompts import PromptTemplate
+
+example_prompt = PromptTemplate.from_template("Share an interesting fact about {animal}.")  # infers 'animal' as input variable
+
+# Format the template with a specific animal
+filled_prompt = example_prompt.format(animal="octopus")
+print(filled_prompt)
+
+#> Share an interesting fact about octopus.
+```
+
+```
+from langchain_core.prompts import PromptTemplate
+
+# Create a String Prompt Template
+prompt = PromptTemplate.from_template(
+    "You are an expert {subject} trainer. Explain {topic} with a simple example."
+)
+
+# Provide input values
+formatted_prompt = prompt.format(
+    subject="Python",
+    topic="OOP Concepts"
+)
+
+print(formatted_prompt)
+```
+
