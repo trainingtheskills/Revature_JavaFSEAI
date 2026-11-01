@@ -209,4 +209,66 @@ model = ChatOpenAI(
 ```
 
 ## 5.XMLOutputParser
+### What is XMLOutputParser?
+XMLOutputParser converts an XML-formatted LLM response into a Python dictionary.
 
+XML is useful when working with applications that exchange information using XML structures.
+
+Business scenario:
+
+An employee management application needs employee information in XML format.
+```
+
+from dotenv import load_dotenv
+
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import XMLOutputParser
+
+load_dotenv()
+
+# 1. Create Chat Model
+model = ChatOpenAI(
+    model="gpt-4o-mini",
+    temperature=0
+)
+
+# 2. Create XML Output Parser
+parser = XMLOutputParser()
+
+# 3. Get XML formatting instructions
+format_instructions = parser.get_format_instructions()
+
+# 4. Create Prompt Template
+prompt = ChatPromptTemplate.from_template(
+    """
+    Generate employee details in XML format.
+
+    Employee Name: Rahul
+    Department: IT
+    Experience: 5 years
+
+    {format_instructions}
+    """
+)
+
+# 5. Generate XML response from LLM
+response = (prompt | model).invoke({
+    "format_instructions": format_instructions
+})
+
+# 6. Display Original XML Response
+print("---------- XML OUTPUT ----------")
+print(response.content)
+
+# 7. Parse XML into Python Dictionary
+result = parser.invoke(response)
+
+# 8. Display Dictionary Output
+print("\n---------- DICTIONARY OUTPUT ----------")
+print(result)
+
+# 9. Check Data Type
+print("\nData Type:", type(result))
+
+```
