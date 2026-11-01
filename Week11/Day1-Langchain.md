@@ -281,6 +281,68 @@ After completing all nine steps, students will be able to develop an AI-powered 
 - RAG
 - FastAPI
 
+# LangChain Architecture
+LangChain is built on a Modular Architecture. Rather than being a monolithic library, it is a collection of specialized components that can be composed into complex sequences. This modularity allows developers to swap out different LLM providers (e.g., OpenAI, Anthropic, HuggingFace) or different retrieval strategies without rewriting the entire application.
+
+
+## The Core Components Hierarchy of LangChain
+
+LangChain provides different component categories that work together to build intelligent LLM-powered applications.
+
+The following table explains the core component hierarchy and the responsibility of each layer.
+
+| **Layer** | **Component Category** | **Function** |
+|---|---|---|
+| **Foundation** | **Model I/O** | Handles interaction with the LLM through Prompts, Models, and Output Parsers. |
+| **Orchestration** | **Chains** | The logic layer that sequences multiple components together to execute a workflow. |
+| **Intelligence** | **Memory** | Provides the ability to store and retrieve conversational context across interactions. |
+| **Agency** | **Tools & Agents** | Enables the LLM to interact with external systems and perform actions using APIs, search, and code execution. |
+| **Data** | **Retrieval (RAG)** | Connects the LLM to private or external data sources through document retrieval and vector stores. |
+
+### Understanding Each Layer
+
+#### 1. Foundation – Model I/O
+
+- Responsible for communication between the application and LLM.
+- Includes Prompt Templates, Chat Models, and Output Parsers.
+- Example: Send an employee's question to OpenAI GPT and receive an answer.
+
+#### 2. Orchestration – Chains
+
+- Combines multiple LangChain components into a workflow.
+- Defines the sequence in which components execute.
+- Example: Combine a Prompt Template, Chat Model, and Output Parser to generate an answer.
+
+#### 3. Intelligence – Memory
+
+- Maintains conversational context.
+- Allows applications to use information from previous interactions.
+- Example: Remember an employee's previous question during a conversation.
+
+#### 4. Agency – Tools & Agents
+
+- Allows LLM-powered applications to interact with external systems.
+- Tools perform specific operations, while agents can decide which tools to use.
+- Example: Use an HR API to retrieve an employee's leave balance.
+
+#### 5. Data – Retrieval (RAG)
+
+- Connects LLMs with external knowledge sources.
+- Retrieves relevant information from documents and vector databases.
+- Example: Retrieve leave policy information from the company's HR PDF documents.
+
+### Summary
+
+| Layer | Key Components |
+|---|---|
+| Foundation | Prompts, Models, Output Parsers |
+| Orchestration | Chains |
+| Intelligence | Memory |
+| Agency | Tools, Agents |
+| Data | Document Loaders, Embeddings, Vector Stores, Retrievers |
+
+**Note:** This is a conceptual hierarchy for understanding LangChain's building blocks. In modern LangChain development, LCEL, Runnable components, LangGraph, and other abstractions provide additional ways to compose and orchestrate these capabilities.
+
 
 # Building Blocks of Langchain 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/326ee6c1-574e-4873-b684-1974c3585cad" />
