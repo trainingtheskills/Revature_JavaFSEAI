@@ -93,9 +93,69 @@ print(result)
 print(type(result))
 ```
 ## 2. JsonOutputParser
+### What is JsonOutputParser?
+JsonOutputParser converts an LLM response formatted as JSON into a Python dictionary or list.
+
+JSON is particularly useful when integrating AI applications with REST APIs, databases and other applications.
+
+Business scenario:
+
+An employee onboarding application needs employee details in a structured format.
 
 ## 3.CommaSeparatedListOutputParser
+### What is CommaSeparatedListOutputParser?
+This parser converts a comma-separated text response from an LLM into a Python list.
 
+Business scenario:
+```
+from dotenv import load_dotenv
+
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import (
+    CommaSeparatedListOutputParser
+)
+
+# Load environment variables
+load_dotenv()
+
+# Create a Chat Model
+model = ChatOpenAI(
+    model="gpt-4o-mini",
+    temperature=0
+)
+
+# Create the Output Parser
+parser = CommaSeparatedListOutputParser()
+
+# Get formatting instructions from the parser
+format_instructions = parser.get_format_instructions()
+
+# Create a Prompt Template
+prompt = ChatPromptTemplate.from_template(
+    """
+    List three employee benefits.
+
+    {format_instructions}
+    """
+)
+
+# Create a Chain
+chain = prompt | model | parser
+
+# Invoke the chain
+result = chain.invoke({
+    "format_instructions": format_instructions
+})
+
+# Display the result
+print(result)
+
+# Check the data type
+print(type(result))
+```
+
+An HR application needs to retrieve employee benefits as a list.
 ## 4.PydanticOutputParser
 
 ## 5.XMLOutputParser
