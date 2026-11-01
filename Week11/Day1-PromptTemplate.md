@@ -200,9 +200,22 @@ result = prompt.format(
 
 print(result)
 
+```
 
 ### PromptTemplate Method
 
+# Understanding the Methods
+
+| Method | Purpose | Return Type |
+|---|---|---|
+| `from_template()` | Creates a prompt template from a string. | `PromptTemplate` |
+| `input_variables` | Returns the required variable names. | `List` |
+| `format()` | Replaces variables with actual values. | `String` |
+| `format_prompt()` | Formats the prompt into a prompt value object. | `StringPromptValue` |
+| `invoke()` | Executes the prompt template with input data. | `StringPromptValue` |
+
+
+```
 from langchain_core.prompts import PromptTemplate
 
 # ==========================================================
@@ -339,7 +352,7 @@ print(result.to_string())
 #
 # print(response.content)
 
-
+```
 
 
 
