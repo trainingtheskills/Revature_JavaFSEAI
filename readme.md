@@ -1,5 +1,5 @@
 # Project – P1 
-## roject Title: Banking Management System
+## Project Title: Banking Management System
 
 ## Project Description: 
 A bank wants to develop a console-based Banking Management System using Core Java 8, JDBC, and MySQL to automate basic banking operations. The application should allow bank employees to create customers and bank accounts, deposit and withdraw money, check account balances, transfer funds between accounts, and view transaction history. Customer, account, and transaction details must be stored in a MySQL database and accessed through JDBC. The application should use OOP concepts, Collections, Exception Handling, Java 8 features (Lambda expressions and Streams), and JDBC transactions to ensure reliable banking operations.
