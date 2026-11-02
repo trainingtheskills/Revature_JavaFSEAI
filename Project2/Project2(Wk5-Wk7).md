@@ -1,7 +1,7 @@
 
 # Online Shopping Management System – Project Case Study
 
-Nov 3, 2026 · @Ashu
+
 
 **Summary.** The Online Shopping Management System (ShopSmart) is a three-week project in which learners build a monolithic web application on Java 17/21 and Spring Boot, using Spring Web for the REST API, Hibernate for persistence, MySQL for storage and Maven for the build. A React SPA or Angular front end, written in HTML, CSS and JavaScript or TypeScript, calls the API. The data model has three tables: `customers`, `products` and `orders`, where each order links one customer to one product. There is no login, role or security layer, so the focus stays on core Java full-stack skills. Staff keep customer and product records, customers place orders, and orders move from placed to shipped to delivered or cancelled. The key design point is that stock is reduced and the order is saved in one transaction, so stock can never go negative. The service layer is tested with JUnit 5 and Mockito, the API with Postman, and the work runs across Weeks 5 to 7 with three checkpoints, built in IntelliJ IDEA or Eclipse and graded against a 100-mark rubric.
 
