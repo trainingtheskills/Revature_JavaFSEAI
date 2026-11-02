@@ -161,6 +161,7 @@ HRPolicyAssistant/
 > "it says installed but Python can't find it" errors (see Troubleshooting).
 
 ---
+<img width="420" height="488" alt="image" src="https://github.com/user-attachments/assets/e8f04e24-2530-436e-82ff-d80ba1454e6b" />
 
 ## 5. Step-by-Step Build
 
