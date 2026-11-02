@@ -1,6 +1,6 @@
 # Project 1: Banking Management System
 
-**Technology:** Core Java 8, JDBC, MySQL  
+**Technology:** Core Java 8, JDBC, MySQL,AWS  
 **Level:** Beginner to Intermediate  
 **Application type:** Console-based Java application  
 **Architecture:** Simple Core Java package structure (no MVC, no Spring, no web layer)
