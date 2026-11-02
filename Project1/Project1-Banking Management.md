@@ -1,6 +1,6 @@
 # Project 1: Banking Management System
 
-**Technology:** Core Java 8, JDBC, MySQL,AWS  
+**Technology:** Core Java 8, JDBC, MySQL,AWS ,Junit
 **Level:** Beginner to Intermediate  
 **Application type:** Console-based Java application  
 **Architecture:** Simple Core Java package structure (no MVC, no Spring, no web layer)
@@ -273,6 +273,8 @@ Students must implement these validations:
 11. Invalid menu choices and malformed console input should be handled without terminating the application unexpectedly.
 
 > **Important:** Use a single JDBC connection and transaction for the complete fund-transfer operation. Disable auto-commit, perform both balance updates and both transaction inserts, then commit. If any operation fails, roll back the entire transaction. For a real banking system, additional controls such as concurrency handling, auditability, authorization, and idempotency would also be required.
+>
+> NOTE: Write test cases
 
 ## 11. Expected Project Outcome
 
