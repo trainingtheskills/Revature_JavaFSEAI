@@ -484,3 +484,79 @@ if __name__ == "__main__":
         print("\nAPPLICATION ERROR:", str(error))
 
 ```
+
+
+
+##Output
+
+************************************************************
+       MULTI-STEP HR LEAVE ELIGIBILITY ASSISTANT
+************************************************************
+
+=======================================================
+STEP 1: RETRIEVING EMPLOYEE DETAILS
+=======================================================
+Employee ID: EMP102
+Employee Name: Priya
+Department: HR
+Joining Date: 2026-05-10
+Leave Balance: 2
+
+=======================================================
+STEP 2: CALCULATING EMPLOYEE SERVICE
+=======================================================
+Joining Date: 2026-05-10
+Current Date: 2026-11-03
+Completed Service Years: 0
+
+=======================================================
+STEP 3: RETRIEVING LEAVE POLICY
+=======================================================
+Leave Type: Annual Leave
+Minimum Service Required: 1 years
+Annual Leave Entitlement: 18 days
+
+=======================================================
+STEP 4: EVALUATING LEAVE ELIGIBILITY
+=======================================================
+Completed Service: 0 years
+Requested Leave: 5 days
+Available Balance: 2 days
+Service Eligible: False
+Balance Eligible: False
+Final Eligibility: False
+Reason: Employee has not completed the minimum required service period.
+
+=======================================================
+STEP 5: GENERATING FINAL HR RESPONSE
+=======================================================
+
+
+************************************************************
+                 FINAL HR RESPONSE
+************************************************************
+
+Employee ID: EMP102
+Employee Name: Priya
+
+Eligibility: False
+
+HR Assistant Response:
+Subject: Annual Leave Eligibility Inquiry
+
+Dear Priya,
+
+Thank you for reaching out regarding your annual leave eligibility. 
+
+After reviewing your request for 5 days of annual leave, I would like to inform you that, unfortunately, you are not eligible for this leave at this time. Currently, you have an available leave balance of 2 days, which is below the requested amount. Additionally, you have completed 0 years of service, while the minimum required service period for annual leave eligibility is 1 year.
+
+If you have any further questions or need assistance with anything else, please feel free to reach out.
+
+Best regards,
+
+[Your Name]  
+HR Assistant  
+[Your Company]  
+[Your Contact Information]  
+
+************************************************************
