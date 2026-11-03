@@ -13,3 +13,12 @@ Langgraph orchestrate the workflow as graph choosing right path at every state u
 
 <img width="547" height="265" alt="image" src="https://github.com/user-attachments/assets/67e80239-1877-4653-ba39-faa11983ecbc" />
 
+## Why it exist?
+
+A simple **LangChain** chain is a straight line: **prompt → model → parser**.
+
+Real agents need more: loops (retry until the answer is good), branches (route by intent), pauses (wait for a human), and memory (resume tomorrow). A linear chain cannot express these cleanly. 
+
+**LangGraph** models the workflow explicitly as a graph so control flow is code you can see, test and debug, not something hidden inside a prompt.
+
+
