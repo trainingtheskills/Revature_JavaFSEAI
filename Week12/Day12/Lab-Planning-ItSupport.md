@@ -11,7 +11,23 @@ Plan-and-Execute Agent
  Beginner to intermediate
 
 # 1. Problem scenario
-An employee sends the following request:
-  
-"I am Ashu. My laptop is not starting. Please check whether I already have an open support ticket. 
-If I don't have one, create a high-priority ticket and provide me with the ticket ID."
+Imagine an employee contacts the IT Helpdesk:
+I cannot complete payments through the company employee portal. When I click Submit Payment, I receive HTTP 503 Service Unavailable. Other employees are also facing the same issue.
+
+Traditionally, an IT support engineer would:
+- Understand the reported issue.
+- Check application logs.
+- Check the status of dependent services.
+- Identify the probable root cause.
+- Recommend a solution.
+This code automates much of that investigation process.
+
+# What does each component do ?
+
+<img width="611" height="185" alt="image" src="https://github.com/user-attachments/assets/97a5fd85-6685-496c-ab6f-cca5f713512c" />
+
+# Where can this application be used in an organization?
+
+<img width="481" height="212" alt="image" src="https://github.com/user-attachments/assets/3435042c-3ee1-44f7-9920-b84e7ad244c2" />
+
+
