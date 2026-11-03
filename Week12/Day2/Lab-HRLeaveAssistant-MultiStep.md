@@ -491,14 +491,14 @@ if __name__ == "__main__":
 
 
 
-##Output
+## Output
 
 ************************************************************
        MULTI-STEP HR LEAVE ELIGIBILITY ASSISTANT
 ************************************************************
 
 =======================================================
-STEP 1: RETRIEVING EMPLOYEE DETAILS
+**STEP 1: RETRIEVING EMPLOYEE DETAILS**
 =======================================================
 Employee ID: EMP102
 Employee Name: Priya
@@ -507,21 +507,21 @@ Joining Date: 2026-05-10
 Leave Balance: 2
 
 =======================================================
-STEP 2: CALCULATING EMPLOYEE SERVICE
+**STEP 2: CALCULATING EMPLOYEE SERVICE**
 =======================================================
 Joining Date: 2026-05-10
 Current Date: 2026-11-03
 Completed Service Years: 0
 
 =======================================================
-STEP 3: RETRIEVING LEAVE POLICY
+**STEP 3: RETRIEVING LEAVE POLICY**
 =======================================================
 Leave Type: Annual Leave
 Minimum Service Required: 1 years
 Annual Leave Entitlement: 18 days
 
 =======================================================
-STEP 4: EVALUATING LEAVE ELIGIBILITY
+**STEP 4: EVALUATING LEAVE ELIGIBILITY**
 =======================================================
 Completed Service: 0 years
 Requested Leave: 5 days
@@ -532,12 +532,12 @@ Final Eligibility: False
 Reason: Employee has not completed the minimum required service period.
 
 =======================================================
-STEP 5: GENERATING FINAL HR RESPONSE
+**STEP 5: GENERATING FINAL HR RESPONSE**
 =======================================================
 
 
 ************************************************************
-                 FINAL HR RESPONSE
+                 **FINAL HR RESPONSE**
 ************************************************************
 
 Employee ID: EMP102
