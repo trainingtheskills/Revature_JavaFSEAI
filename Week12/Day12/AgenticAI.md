@@ -7,15 +7,8 @@ and repeating until the task is done.
 #--------------------------------------Problem scenario-----------------------------------------------------------
 
 # Introduction to Agentic AI
-## Classroom Problem Scenario: The Intelligent HR Assistant
 
-**Target Audience:** Beginners / IT Professionals  
-**Duration:** 15–20 Minutes  
-**Objective:** Understand why Agentic AI is needed and how it differs from Traditional Programming and Generative AI.
-
----
-
-# 1. Introduce the Problem Scenario
+# 1.  Problem Scenario
 
 ## The Business Problem: Managing Employee Requests
 
@@ -67,6 +60,7 @@ Allow students to discuss.
 Use the same HR problem to demonstrate three different approaches.
 
 ## Scenario 1: Traditional Programming
+<img width="883" height="475" alt="image" src="https://github.com/user-attachments/assets/56f9e61c-2bcd-4ff9-ab8b-b60c4632ff38" />
 
 **Employee Request:**
 
@@ -126,6 +120,7 @@ Remaining Leaves: 12
 ---
 
 ## Scenario 3: Agentic AI
+<img width="884" height="565" alt="image" src="https://github.com/user-attachments/assets/23e57c94-fdc2-4d3d-b1c4-35641fe3926f" />
 
 **Employee Request:**
 
@@ -186,6 +181,7 @@ Introduce the basic Agentic AI execution cycle.
 ## Agentic AI Workflow
 
 An AI Agent generally follows this process:
+<img width="783" height="563" alt="image" src="https://github.com/user-attachments/assets/690ea8f9-75e0-44dd-ab92-3394bb9d7b8c" />
 
 ### Step 1: Goal Identification
 
@@ -404,6 +400,8 @@ The following components can be used to develop the application.
 | Memory | Maintains relevant conversation context |
 
 **Security Note:** The AI Agent must operate with appropriate access permissions. Sensitive operations, such as leave approvals, should require authorized human approval where applicable.
+
+<img width="656" height="465" alt="image" src="https://github.com/user-attachments/assets/1160690a-1470-4186-9219-a3feb91244bd" />
 
 ---
 
