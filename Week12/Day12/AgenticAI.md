@@ -7,7 +7,8 @@ and repeating until the task is done.
 #--------------------------------------Problem scenario-----------------------------------------------------------
 
 # Introduction to Agentic AI
-# 1. Problem Scenarion 
+### 1. Problem Scenario
+
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/a120d276-e171-4b08-80a9-c5229da744bd" />
 
 **Problem scenario: Suspicious card transaction at a retail bank**
