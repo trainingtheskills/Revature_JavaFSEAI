@@ -48,6 +48,15 @@ Use multi-step reasoning when **any** of these is true:
 
 Do **not** use it for simple lookups, single-fact questions, or one-shot rewriting and summarizing. A single well-written prompt is cheaper, faster, and more reliable there.
 
+Comparison of Agent Patterns
+
+| Pattern | Question it answers |
+|---|---|
+| **Reactive (ReAct)** | What should I do next, based on what I just saw? |
+| **Planning** | What are all the steps, before I start? |
+| **Human-in-the-Loop** | Who must approve before I act? |
+| **Multi-step Reasoning** | How do I carry results from one step to the next to reach an answer? |
+
 ### Business scenarios
 
 | # | Scenario | Typical steps | Good-fit technique |
