@@ -2,6 +2,10 @@
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/f4803bd1-e7ef-4e31-bc7a-eb24a0b37586" />
 
 
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/74dbe21b-06ad-46e6-9861-b986693b5f02" />
+
+
 ```
 # --------------------------------------------------
 # Example: Creating an AI Agent using LangChain
