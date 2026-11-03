@@ -53,7 +53,16 @@ Real agents need more: loops (retry until the answer is good), branches (route b
 
 **Super-step.** Nodes that can run at the same time execute in one step; the state is updated and checkpointed at the end of each step.
 
+
+
+## Langchain Vs LangGraph
+
+<img width="716" height="389" alt="image" src="https://github.com/user-attachments/assets/aa35b80e-4bdc-45a4-8b97-0db72524669f" />
+
+
 ## 3. How it works: build a graph in six steps
 
 Install: `pip install langgraph langchain-openai` (any chat model provider works).
+
+
 
