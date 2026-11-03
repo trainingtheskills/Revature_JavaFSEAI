@@ -3,6 +3,12 @@
  
  <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/7e0757bc-6306-4708-9d66-a3af310159f2" />
 
+##Core Execution Steps
+
+- State Structuring: Establishes a centralized TypedDict schema to share data across separate runtime contexts.
+- Sequential Node Isolation: Modularizes execution boundaries into distinct functional components (topic_generator \(\rightarrow \) article_writer \(\rightarrow \) summarizer).
+- Dependency Flow Routing: Configures edge trajectories to dynamically pass accumulated context from one Large Language Model (LLM) execution layer to the next.
+
 ```
 import os
 from typing import TypedDict
