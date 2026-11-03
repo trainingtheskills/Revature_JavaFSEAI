@@ -7,8 +7,53 @@ and repeating until the task is done.
 #--------------------------------------Problem scenario-----------------------------------------------------------
 
 # Introduction to Agentic AI
+# 1. Problem Scenarion 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/a120d276-e171-4b08-80a9-c5229da744bd" />
 
-# 1.  Problem Scenario
+**Problem scenario: Suspicious card transaction at a retail bank**
+
+A retail bank has a customer chatbot backed by RAG over its policy documents (dispute rules, card terms, fee schedules). Customers can ask questions, but the contact center is still overwhelmed with card-dispute calls.
+
+A typical customer message:
+
+“There’s a charge of $480 on my credit card from a store in another country. I haven’t travelled anywhere. Please sort this out.”
+
+### What the current chatbot does:
+
+It retrieves the dispute policy and replies: “You can dispute unauthorized transactions within 60 days. Please call our support line or visit a branch.”
+The answer is correct, but nothing has been resolved. The customer is sent to a human agent.
+
+### What a human dispute officer actually does:
+
+- Verify the customer’s identity.
+- Pull up the transaction details (merchant, country, time, amount).
+- Check the customer’s recent activity and location pattern for fraud signals.
+- Check whether this is a known recurring merchant or a duplicate charge.
+- If fraud is likely, block the card immediately and issue a replacement.
+- Open a dispute case and apply a provisional credit, if the policy allows it.
+- Notify the customer and log everything for audit.
+
+Each step depends on the previous result:
+
+- If the merchant turns out to be a subscription the customer signed up for, there is no fraud case.
+- If identity verification fails, the process stops.
+- If the amount exceeds a limit, a human must approve the credit.
+
+The path is decided along the way, not scripted in advance.
+
+### Why existing approaches fall short:
+
+**Approach**						**Limitation**
+Plain LLM chatbot				Can talk, but has no access to account data and can’t act
+RAG assistant					Knows the policy, but has no live data and takes no actions
+Fixed workflow (if/else rules)	Breaks on cases nobody coded: partial matches, repeat disputes, mixed requests
+
+The business question: Can we build a system that understands the customer’s goal, decides which steps to take, uses the bank’s internal systems securely, completes routine cases end-to-end, and escalates the risky ones to a human?
+
+That is the case for Agentic AI.
+
+
+# 2.  Problem Scenario
 
 ## The Business Problem: Managing Employee Requests
 
