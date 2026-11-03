@@ -142,6 +142,16 @@ The plan can be reviewed, approved and logged **before** anything runs.
 **Fits Part B:** remediation is structured, order-sensitive, and needs sign-off.
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/d668dfef-de17-48cd-a43f-587ead9c0eba" />
 
+
+## 1. Where can we use Reactive Agents?
+
+<img width="628" height="274" alt="image" src="https://github.com/user-attachments/assets/a0a4b553-5171-4562-97f9-2918dac87c39" />
+
+
+## 2. 1. Where can we use Planning Agents?
+
+<img width="627" height="182" alt="image" src="https://github.com/user-attachments/assets/52eed13b-882f-47cb-b650-dbeb3de222f6" />
+
 ## Side by Side
 
 | | Reactive | Planning |
