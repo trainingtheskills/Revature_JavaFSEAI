@@ -31,6 +31,10 @@ Workflow:
 3. Retrieve leave policy.
 4. Evaluate leave eligibility.
 5. Generate the final answer using an LLM.
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/9d4f9574-2926-4f03-958a-c56ecbf8e167" />
+
+
 """
 
 import os
