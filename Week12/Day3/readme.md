@@ -89,3 +89,5 @@ Put a human where **risk x irreversibility** is high, and automate the rest:
 ## Summary
 
 HITL keeps the agent doing the work while humans keep the authority over the decisions that matter.
+
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/604244c5-130c-4bbb-bdae-895fca8c6c34" />
