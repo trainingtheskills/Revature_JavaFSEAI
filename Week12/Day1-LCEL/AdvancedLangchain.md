@@ -41,6 +41,8 @@ export OPENAI_API_KEY="sk-..."
 ## Part 1: LangChain Expression Language (LCEL)
 
 LCEL is a declarative way to build LLM pipelines by connecting components with the `|` operator, and it gives every pipeline streaming, batching, async and retries for free.
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/ce899bcd-7408-4794-bcfe-94580379a129" />
+
 
 ### 1.1 The problem scenario
 
