@@ -218,3 +218,9 @@ if __name__ == "__main__":
     answer = run_planning_agent(user_input)
     print(answer)
   ```
+
+## Points
+
+You can review the plan before anything runs, so it’s easy to add an approval step between Phase 1 and 2.
+It uses gpt-4o-mini by default. Change MODEL if you want gpt-5.
+This simple version doesn’t replan when a step fails. A good extension exercise is to add a check after each step that calls the planner again on failure.
