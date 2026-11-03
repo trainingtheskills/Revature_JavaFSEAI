@@ -1,3 +1,19 @@
+# Multi-Step Reasoning Agent using LangChain
+
+# Business scenario: An employee asks:
+
+"Am I eligible for 5 days of annual leave?"
+
+The application performs multiple steps and carries the output of each step forward to reach the final answer.
+
+## Execution Flow 
+
+<img width="196" height="489" alt="image" src="https://github.com/user-attachments/assets/8f4838e5-30c9-4f71-af49-0727743bbb2c" />
+
+
+
+<img width="389" height="492" alt="image" src="https://github.com/user-attachments/assets/5f53a72a-cd4d-42e4-a010-de2e8f3fd138" />
+
 ```
 
 """
