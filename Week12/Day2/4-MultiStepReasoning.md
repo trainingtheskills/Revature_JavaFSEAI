@@ -1,3 +1,4 @@
+
 # Multi-Step Reasoning in Agentic AI: A Practical Tutorial
 
 **Audience:** developers who have built a basic tool-calling agent (such as the Reactive and Planning agents in this folder) and want to understand how agents solve problems that need many dependent steps.
@@ -57,25 +58,30 @@ Comparison of Agent Patterns
 | **Human-in-the-Loop** | Who must approve before I act? |
 | **Multi-step Reasoning** | How do I carry results from one step to the next to reach an answer? |
 
+
 ### Business scenarios
 
-| # | Scenario | Typical steps | Good-fit technique |
-|---|---|---|---|
-| 1 | **Refund / return eligibility** (retail, e-commerce) | Fetch order, check delivery date, check policy window, apply restocking fee, decide, get approval | ReAct + approval gate |
-| 2 | **Loan application pre-screening** (banking) | Collect documents, verify identity, pull credit data, apply policy rules, compute exposure, recommend, escalate borderline cases | Plan-and-Execute + human review |
-| 3 | **Card transaction dispute** (banking) | Retrieve transaction, check merchant and location, compare to customer pattern, check fraud rules, decide provisional credit | ReAct |
-| 4 | **KYC / customer onboarding** (banking, fintech) | Extract data from documents, validate fields, screen against watchlists, score risk, route to analyst | Prompt chaining + escalation |
-| 5 | **Fraud and AML alert investigation** | Pull alert, gather related transactions, check counterparties, build timeline, write case summary | ReAct + reflection |
-| 6 | **IT incident triage and resolution** | Read ticket, check logs and service status, identify probable cause, recommend fix, create incident ticket | Plan-and-Execute + approval |
-| 7 | **Insurance claim processing** | Verify policy coverage, check claim documents, estimate damage, detect inconsistencies, compute payout | Prompt chaining + ReAct |
-| 8 | **Regulatory or compliance report drafting** | Collect data from systems, compute metrics, draft sections, check against a checklist, revise | Plan-and-Execute + reflection |
-| 9 | **Customer support resolution** | Understand issue, look up account, search knowledge base, try fix, escalate if unresolved | ReAct |
-| 10 | **Contract or policy review** | Extract clauses, compare with standard terms, flag deviations, summarize risk | Prompt chaining + self-consistency |
-| 11 | **Procurement and purchase approval** | Check budget, compare vendor quotes, verify approval limits, route for sign-off | Prompt chaining + approval gate |
-| 12 | **HR policy and leave queries** | Identify employee, fetch leave balance, apply policy rules, compute entitlement, answer | ReAct |
-| 13 | **Data analysis and reporting** | Query data, clean it, compute metrics, interpret, produce a narrative with charts | Plan-and-Execute |
-| 14 | **Travel disruption rebooking** | Check flight status, find alternatives, check fare rules, price options, rebook with approval | ReAct + approval gate |
-| 15 | **Code review and bug fixing** | Read the failing test, locate code, propose a fix, run tests, iterate | ReAct + reflection |
+In every scenario below, the steps are **dependent**: each step needs the result of the one before it, and a check between steps stops a wrong result from flowing on. This chain of dependent steps is what makes them multi-step reasoning problems.
+
+| # | Scenario | Steps (each uses the previous result) | What flows forward | Check between steps |
+|---|---|---|---|---|
+| 1 | **Refund / return eligibility** (retail) | Fetch order, check delivery date, check policy window, apply restocking fee, decide | Order amount and delivery date, then days elapsed, then eligibility, then refund amount | Date math verified by a tool |
+| 2 | **Loan application pre-screening** (banking) | Collect documents, verify identity, pull credit data, compute income-to-debt ratio, compute exposure, recommend | Verified identity, then credit data, then ratios, then risk band, then recommendation | Identity must pass before any credit pull |
+| 3 | **Card transaction dispute** (banking) | Retrieve transaction, check merchant and location, compare to customer pattern, apply fraud rules, decide provisional credit | Transaction details, then anomaly flags, then risk score, then decision | Each flag needs supporting evidence |
+| 4 | **KYC / customer onboarding** (banking, fintech) | Extract data from documents, validate fields, screen against watchlists, score risk, route | Extracted fields, then validated record, then screening hits, then risk tier | Mandatory fields present before screening |
+| 5 | **Fraud and AML alert investigation** | Pull alert, gather related transactions, check counterparties, build timeline, write case summary | Alert, then transaction set, then counterparty links, then timeline | Every summary fact traces to evidence |
+| 6 | **IT incident triage and resolution** | Read ticket, check logs, check service status, identify probable cause, recommend fix, create ticket | Symptoms, then error patterns, then suspected component, then fix | Cause must be supported by log evidence |
+| 7 | **Insurance claim processing** | Verify coverage, check claim documents, estimate damage, detect inconsistencies, compute payout | Coverage limits, then claimed items, then estimate, then payout | Payout never exceeds the coverage limit |
+| 8 | **Regulatory / compliance report drafting** | Collect data, compute metrics, draft sections, check against checklist, revise | Raw data, then metrics, then draft text, then revised text | Numbers in the text match computed metrics |
+| 9 | **Customer support resolution** | Understand issue, look up account, search knowledge base, try fix, escalate if unresolved | Intent, then account status, then matching article, then outcome | Fix confirmed before closing the case |
+| 10 | **Contract or policy review** | Extract clauses, compare with standard terms, flag deviations, summarize risk | Clauses, then deviations, then risk rating | Each flag quotes the clause text |
+| 11 | **Procurement and purchase approval** | Check budget, compare vendor quotes, verify approval limits, route for sign-off | Remaining budget, then chosen quote, then required approver level | Amount is within budget |
+| 12 | **HR policy and leave queries** | Identify employee, fetch leave balance, apply policy rules, compute entitlement, answer | Employee id, then balance, then eligible days | Balance cannot be negative |
+| 13 | **Data analysis and reporting** | Query data, clean it, compute metrics, interpret, write narrative | Raw rows, then cleaned set, then metrics, then insights | Row counts reconcile after cleaning |
+| 14 | **Travel disruption rebooking** | Check flight status, find alternatives, check fare rules, price options, rebook | Disruption, then options, then allowed fares, then chosen option | Fare rules permit the change |
+| 15 | **Code review and bug fixing** | Read failing test, locate code, propose fix, run tests, iterate | Error message, then file and line, then patch, then test result | Tests pass before finishing |
+
+**Same pattern every time:** step 1's output becomes step 2's input, and so on. If you skip a step or get one wrong, everything after it is wrong. That is why multi-step reasoning needs explicit state and checks between steps.
 
 ### Why it matters
 
@@ -715,3 +721,4 @@ Run the same tests after every prompt or tool change to catch regressions.
 ---
 
 *Related material in this folder:* `ReativeAgent/` (tool calling basics), `PlanningAgent/` (plan-then-execute), `HumanInLoopAgent/` (approval gates), `Human-in-the-Loop-Agentic-AI.md` (concept notes).
+
