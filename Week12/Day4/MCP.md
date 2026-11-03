@@ -246,6 +246,304 @@ Example response:
 }
 ```
 
+## 2.5 MCP transports
+A transport defines how the Client and Server exchange messages.
+Transport	Purpose	Example
+STDIO	Local process communication	Desktop AI applications
+Streamable HTTP	Network-based communication	Remote MCP server
+SSE	Server-Sent Events transport	Compatibility with older integrations
 
+For our tutorial:
+- We will use Streamable HTTP for the learning client/server exercise.
+- We will introduce STDIO for local AI application integrations.
+Module exercise
+
+Draw the architecture of an HR assistant using Host, Client, Server, and the HR database.
 The SDK handles the protocol messages for us, so developers usually work with Python functions instead of manually constructing JSON-RPC requests.
+
+# Module 3 – Build Your First MCP Server (60 minutes)
+
+## Hands-on Coding
+
+### 3.1 Development Scenario
+We will develop an **HR Operations MCP Server**.
+
+The server will expose the following business capabilities:
+
+| Business Requirement | MCP Capability |
+| :--- | :--- |
+| Retrieve employee details | Tool |
+| Check leave balance | Tool |
+| Apply for leave | Tool |
+| Calculate employee salary | Tool |
+| Retrieve leave policy | Resource |
+| Retrieve WFH policy | Resource |
+| Generate leave summary instructions | Prompt |
+
+### Why are we building an MCP server?
+Imagine that your HR application already contains employee-related business logic. 
+
+Instead of implementing the same integration separately for every AI application, we expose the functionality through an MCP server. **The server becomes a reusable integration layer.**
+
+
+# 3.2 Project Setup
+
+### Prerequisites
+* Python 3.11 or above
+* VS Code or PyCharm
+* Basic Python programming knowledge
+* Terminal access
+
+### Directory Structure
+Create the following layout in your workspace:
+
+```text
+hr-mcp-server/
+│
+├── server.py
+├── client.py
+├── requirements.txt
+│
+├── data/
+│   └── policies/
+│       ├── leave_policy.txt
+│       └── wfh_policy.txt
+│
+└── README.md
+```
+
+### Step 1 – Create the Project
+Run these commands to set up your directory and virtual environment:
+
+```bash
+mkdir hr-mcp-server
+cd hr-mcp-server
+python -m venv venv
+```
+
+Activate the environment based on your operating system:
+* **macOS / Linux:** `source venv/bin/activate`
+* **Windows:** `venv\Scripts\activate`
+
+### Step 2 – Install Dependencies
+Create your `requirements.txt` file:
+
+```text
+mcp[cli]
+anyio
+```
+
+Install the dependencies:
+```bash
+pip install -r requirements.txt
+```
+*(The official Python SDK provides the underlying MCP server and client implementation.)*
+
+---
+
+# 3.3 Understand the MCP Server Implementation
+
+Before writing the complete codebase, analyze this minimal server pattern:
+
+```python
+from mcp.server import MCPServer
+
+# Create an MCP server
+mcp = MCPServer("HR Operations Server")
+
+# Expose a business function as an MCP tool
+@mcp.tool()
+def get_employee(employee_id: int) -> str:
+    """Retrieve employee details."""
+    return f"Employee ID: {employee_id}"
+```
+
+### Concept Explanation
+
+| Code | Purpose |
+| :--- | :--- |
+| `MCPServer()` | Creates a new MCP server instance |
+| `@mcp.tool()` | Registers a Python function as an available MCP tool |
+| `get_employee()` | Implements the core backend business functionality |
+| `employee_id` | Input parameter extracted from the client request |
+| `return` | Sends the textual execution result back to the caller |
+
+### Why use decorators?
+Decorators make it easy to expose existing Python functions as MCP capabilities. The SDK dynamically derives the required input schema from the function's native type hints and automatically handles serialization for MCP clients.
+
+---
+
+# 3.4 Complete MCP Server Code
+
+Create your `server.py` file. This implementation exposes **four tools, two resources, and one prompt**.
+
+```python
+# ============================================================
+# HR OPERATIONS MCP SERVER
+# ============================================================
+# This server exposes HR business capabilities through MCP.
+#
+# MCP capabilities:
+# 1. Tools     - Execute business operations
+# 2. Resources - Provide HR policy information
+# 3. Prompts   - Provide reusable prompt templates
+# ============================================================
+
+from mcp.server import MCPServer
+
+# ------------------------------------------------------------
+# STEP 1: CREATE MCP SERVER
+# ------------------------------------------------------------
+mcp = MCPServer(
+    "HR Operations Server",
+    instructions="Provides employee, salary, leave and HR policy services."
+)
+
+# ------------------------------------------------------------
+# STEP 2: SAMPLE HR DATABASE
+# ------------------------------------------------------------
+# For this tutorial, we use in-memory Python dictionaries.
+# In production, connect to MySQL, PostgreSQL or an HR API.
+employees = {
+    101: {
+        "name": "Rahul Sharma",
+        "department": "IT",
+        "designation": "Software Engineer",
+        "annual_salary": 1200000,
+        "leave_balance": 12
+    },
+    102: {
+        "name": "Priya Verma",
+        "department": "HR",
+        "designation": "HR Manager",
+        "annual_salary": 1500000,
+        "leave_balance": 15
+    },
+    103: {
+        "name": "Amit Kumar",
+        "department": "Finance",
+        "designation": "Financial Analyst",
+        "annual_salary": 900000,
+        "leave_balance": 8
+    }
+}
+
+# ------------------------------------------------------------
+# STEP 3: TOOLS (ACTIONS)
+# ------------------------------------------------------------
+@mcp.tool()
+def get_employee_details(employee_id: int) -> str:
+    """Retrieve an employee's profile, department, and designation."""
+    emp = employees.get(employee_id)
+    if not emp:
+        return f"Error: Employee with ID {employee_id} not found."
+    return f"Name: {emp['name']} | Dept: {emp['department']} | Role: {emp['designation']}"
+
+@mcp.tool()
+def get_leave_balance(employee_id: int) -> str:
+    """Check the remaining leave balance for a specific employee."""
+    emp = employees.get(employee_id)
+    if not emp:
+        return f"Error: Employee with ID {employee_id} not found."
+    return f"Employee {emp['name']} has {emp['leave_balance']} days of leave remaining."
+
+@mcp.tool()
+def apply_for_leave(employee_id: int, days: int) -> str:
+    """Submit a formal leave request and deduct balance if available."""
+    emp = employees.get(employee_id)
+    if not emp:
+        return f"Error: Employee with ID {employee_id} not found."
+    if emp['leave_balance'] < days:
+        return f"Rejected: Insufficient balance. Requested {days}, only have {emp['leave_balance']}."
+    emp['leave_balance'] -= days
+    return f"Approved: {days} days of leave deducted. New balance: {emp['leave_balance']} days."
+
+@mcp.tool()
+def calculate_monthly_salary(employee_id: int) -> str:
+    """Calculate the monthly gross breakdown based on annual salary."""
+    emp = employees.get(employee_id)
+    if not emp:
+        return f"Error: Employee with ID {employee_id} not found."
+    monthly = emp['annual_salary'] / 12
+    return f"Employee: {emp['name']} | Monthly Gross Salary: INR {monthly:,.2_f}"
+
+# ------------------------------------------------------------
+# STEP 4: RESOURCES (CONTEXT / DATA)
+# ------------------------------------------------------------
+@mcp.resource("uri://policies/leave")
+def leave_policy() -> str:
+    """Retrieve the standard company leave policy documentation."""
+    try:
+        with open("data/policies/leave_policy.txt", "r") as f:
+            return f.read()
+    except FileNotFoundError:
+        return "Standard Leave Policy: All employees receive 15 days of annual paid leave."
+
+@mcp.resource("uri://policies/wfh")
+def wfh_policy() -> str:
+    """Retrieve the current hybrid/remote work-from-home guidelines."""
+    try:
+        with open("data/policies/wfh_policy.txt", "r") as f:
+            return f.read()
+    except FileNotFoundError:
+        return "WFH Policy: Employees can work remotely up to 2 days per week with manager approval."
+
+# ------------------------------------------------------------
+# STEP 5: PROMPTS (TEMPLATES)
+# ------------------------------------------------------------
+@mcp.prompt()
+def employee_leave_summary(employee_name: str) -> str:
+    """Generate a structured system prompt template to review an employee's leave pattern."""
+    return f"Please analyze the attendance records and prepare a formal leave summary report for {employee_name}."
+```
+
+---
+
+# 3.5 Understand the Server Code
+
+### Capability Mapping
+
+| MCP Capability | Function | Responsibility |
+| :--- | :--- | :--- |
+| **Tool** | `get_employee_details()` | Employee profile lookup |
+| **Tool** | `get_leave_balance()` | Live balance check |
+| **Tool** | `apply_for_leave()` | Modifies state to process a leave request |
+| **Tool** | `calculate_monthly_salary()` | Computes financial metrics |
+| **Resource** | `leave_policy()` | Static or dynamic policy reference reading |
+| **Resource** | `wfh_policy()` | Remote framework guidelines lookup |
+| **Prompt** | `employee_leave_summary()` | Returns pre-structured instructions to the LLM |
+
+### Core Architectural Distinctions
+* **Tools** execute functional business logic and can change state (active operations).
+* **Resources** serve as contextual data containers for the agent to inspect (read-only datasets).
+* **Prompts** offer engineered prompt shortcuts to predictably frame interactions.
+
+---
+
+# 3.6 Run the MCP Server
+
+Ensure you have `uv` installed via its official system commands. Open a terminal panel and launch the server application over a streamable transport layer:
+
+```bash
+uv run mcp run server.py --transport streamable-http
+```
+
+The underlying network engine will establish local access endpoints at:
+`http://localhost:8000/mcp`
+
+*Keep this terminal execution running continuously.*
+
+---
+
+# 3.7 Test Using MCP Inspector
+
+The **MCP Inspector** provides a graphical console interface optimized for executing, reviewing, and debugging registered server components.
+
+In a secondary, independent terminal panel, run:
+```bash
+npx -y @modelcontextprotocol/inspector
+```
+
+Launch the administrative portal link presented in the stdout log output to view your tools, run tests, and check payload schemas.
+
 
