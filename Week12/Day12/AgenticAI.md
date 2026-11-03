@@ -52,6 +52,65 @@ The business question: Can we build a system that understands the customer’s g
 
 That is the case for Agentic AI.
 
+## What is Agentic AI?
+
+Agentic AI refers to AI systems that work toward a goal with a degree of autonomy. Instead of producing a single response, the system plans, uses tools, observes the results, and adapts until the task is complete.
+
+Chatbot: “Here is what our dispute policy says.”
+Agent: “I verified your identity, confirmed the charge looks fraudulent, blocked your card, ordered a replacement, opened a dispute case, and sent you the confirmation.”
+
+**The shift in capability**
+| | Generative AI (LLM) | RAG | Agentic AI |
+|---|---|---|---|
+| Core ability | Generates text | Generates text grounded in documents | Pursues goals using tools |
+| Data | Training data | Your documents | Live systems and documents |
+| Takes actions? | No | No | Yes |
+| Who decides the steps? | n/a | Fixed pipeline | The LLM, at runtime |
+| Banking example | "Explain chargebacks" | "What is our dispute window?" | "Investigate and resolve this disputed charge" |
+
+
+**The agent loop**
+Goal → Think → Act (call a tool) → Observe result → Think again → ... → Done / Escalate
+
+### Building blocks
+**LLM (the brain):** reasons about the situation and chooses the next step.
+**Tools:** functions the agent can call, such as verify_identity(), get_transaction(), fraud_score(), block_card(), open_dispute_case(), notify_customer().
+**Memory:** conversation context, plus longer-term knowledge such as customer history and policy documents (via RAG).
+
+Instructions and guardrails: what the agent may and may not do, such as credit limits, mandatory approvals, and audit logging.
+
+Applying it to the scenario
+
+The agent calls verify_identity(). It passes.
+- It calls get_transaction() and sees a foreign merchant that the customer has never used.
+- It calls fraud_score(), which returns a high score.
+- It retrieves the dispute policy via RAG and confirms the case qualifies.
+- It calls block_card() and requests a replacement.
+- It calls open_dispute_case(). The provisional credit is above the auto-approval limit, so the agent pauses for human approval.
+- It calls notify_customer() and writes an audit log.
+
+## Agentic AI vs. workflows
+
+- Not every problem needs an agent.
+
+Workflow: steps are known in advance, so use a fixed path (for example, “send a statement email on the 1st of every month”).
+Agent: steps depend on what is discovered along the way (for example, a dispute investigation).
+
+Agents cost more, run slower, and can compound errors, so use autonomy only where it adds real value.
+
+Key risks to discuss
+**Wrong actions:** an agent that can block cards or issue credits can do so incorrectly.
+
+**Runaway loops:** cost and latency grow if the agent never converges.
+
+**Security:** prompt injection through customer messages or tool outputs.
+
+**Compliance:** every decision must be explainable and auditable.
+
+**Mitigation:** least-privilege tools, approval gates, logging, and clear stop conditions.
+
+
+#-------------------------------------------------------------------------------------------------
 
 # 2.  Problem Scenario
 
