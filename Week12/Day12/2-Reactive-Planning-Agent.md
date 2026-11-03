@@ -140,6 +140,7 @@ Goal → Plan (step 1..N) → Execute step → Check → (Replan if needed) → 
 The plan can be reviewed, approved and logged **before** anything runs.
 
 **Fits Part B:** remediation is structured, order-sensitive, and needs sign-off.
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/d668dfef-de17-48cd-a43f-587ead9c0eba" />
 
 ## Side by Side
 
