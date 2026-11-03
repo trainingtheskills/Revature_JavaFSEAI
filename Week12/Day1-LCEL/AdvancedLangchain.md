@@ -46,7 +46,9 @@ LCEL is a declarative way to build LLM pipelines by connecting components with t
 
 ### 1.1 The problem scenario
 
-Employees send HR requests as free text: *"Hi, I need leave from 22nd to 26th Dec, my sister's wedding. Email me at raj@acme.com"*. The HR Assistant must turn this into a structured leave request plus a polite acknowledgement. The pipeline has four steps: clean the text (and mask contact details), build a prompt, call the model, parse the output. Without LCEL you write the glue yourself:
+Employees send HR requests as free text: *"Hi, I need leave from 22nd to 26th Dec, my sister's wedding. Email me at raj@acme.com"*. The HR Assistant must turn this into a structured leave request plus a polite acknowledgement. The pipeline has four steps: clean the text (and mask contact details), build a prompt, call the model, parse the output.
+
+**Without LCEL you write the glue yourself:**
 
 ```python
 from openai import OpenAI
