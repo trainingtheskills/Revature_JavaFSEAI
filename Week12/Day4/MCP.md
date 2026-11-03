@@ -1,4 +1,4 @@
-# Model Context Protocol (MCP) – 
+# Model Context Protocol (MCP) 
 
 ## Training objective: Understand the Model Context Protocol (MCP), why it is important in Agentic AI, how MCP servers and clients communicate, and how to develop and test your own MCP server and connect it to an AI application.
 
