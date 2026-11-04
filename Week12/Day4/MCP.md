@@ -25,7 +25,8 @@ By the end of six hours, participants should be able to:
 
 
 ## Module 1 – Introduction to MCP (45 minutes)
-1.1 What is MCP?
+
+### 1.1 What is MCP?
 Concept
 
 MCP stands for Model Context Protocol.
@@ -47,7 +48,8 @@ To answer this question, an AI application may need to:
 Without a standardized integration mechanism, developers may need to build separate integrations for each AI application.
 
 MCP provides a standardized way to expose these capabilities.
-1.2 Why do we need MCP?
+
+### 1.2 Why do we need MCP?
 Consider the following scenario.
 
 You have three AI applications:
@@ -81,7 +83,7 @@ With MCP, business capabilities can be exposed through standardized MCP servers.
 
 An AI agent needs more than the ability to generate text. It needs access to external capabilities. **MCP standardizes how those capabilities are discovered and accessed.**
 
-## 1.3 MCP vs API vs Function Calling
+### 1.3 MCP vs API vs Function Calling
 
 These concepts are related, but they are not interchangeable.
 
