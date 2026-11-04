@@ -2,6 +2,8 @@
 
 <img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/d2db184e-5aea-41c5-872a-d6d09ff56528" />
 
+### requirement.md
+
 ### weather-mcp-server.py
 ```
 
@@ -227,4 +229,34 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+```
+
+### Output
+```
+Connecting to MCP Server via MultiServerMCPClient...
+
+Available MCP Tools:
+get_weather
+
+User: What are the current weather conditions in Pune right now?
+
+AI Tool Selection:
+Executing Tool: get_weather
+Arguments: {'city': 'Pune'}
+
+Weather Tool Result:
+{
+    'city': 'Pune',
+    'temperature': '28.5°C',
+    'humidity': '65%',
+    'wind_speed': '12.4 km/h',
+    'time': '2026-11-04T16:00'
+}
+
+Final AI Response:
+The current weather in Pune is:
+
+Temperature: 28.5°C
+Humidity: 65%
+Wind Speed: 12.4 km/h
 ```
