@@ -68,6 +68,9 @@ With MCP, business capabilities can be exposed through standardized MCP servers.
 
 <img width="1017" height="622" alt="image" src="https://github.com/user-attachments/assets/29ac03dc-166a-4344-bfba-63cc476c56d5" />
 
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/51a6cddf-8b02-48a7-a3b0-f8ab547484dc" />
+
+
 ## Integration Architecture Comparison: Without MCP vs. With MCP
 
 | Feature / Aspect | Without MCP | With MCP |
