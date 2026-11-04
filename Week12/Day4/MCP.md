@@ -1,6 +1,6 @@
 # Model Context Protocol (MCP) 
 
- Training objective: Understand the Model Context Protocol (MCP), why it is important in Agentic AI, how MCP servers and clients communicate, and how to develop and test your own MCP server and connect it to an AI application.
+**Training objective:** Understand the Model Context Protocol (MCP), why it is important in Agentic AI, how MCP servers and clients communicate, and how to develop and test your own MCP server and connect it to an AI application.
 
 I recommend using an HR Management Systehttps://github.com/trainingtheskills/Revature_JavaFSEAI/tree/main/Week12/Day4m as the running case study throughout the tutorial. This makes it easier to demonstrate how an AI assistant can interact with employee records, leave policies, salary information, and HR operations.
 
