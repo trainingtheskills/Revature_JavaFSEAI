@@ -38,10 +38,7 @@ Git is a **distributed version control system (DVCS)**. Every developer has a fu
 
 ### The three states of a file
 
-```
-Modified  ──git add──▶  Staged  ──git commit──▶  Committed
-(working dir)           (index)                  (.git repo)
-```
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/4bf87bbe-59c4-479d-bb7d-fca419f4348c" />
 
 ---
 
@@ -49,15 +46,7 @@ Modified  ──git add──▶  Staged  ──git commit──▶  Committed
 
 ### 3.1 The four areas
 
-```
- ┌──────────────┐  git add   ┌──────────────┐ git commit ┌──────────────┐ git push  ┌──────────────┐
- │   Working    │ ─────────▶ │   Staging    │ ─────────▶ │    Local     │ ────────▶ │    Remote    │
- │  Directory   │            │  Area/Index  │            │  Repository  │           │  Repository  │
- │              │ ◀───────── │              │            │   (.git)     │ ◀──────── │ (GitHub etc.)│
- └──────────────┘  restore   └──────────────┘            └──────────────┘ fetch/pull└──────────────┘
-         ▲                                                       │
-         └───────────────────── git checkout / switch ───────────┘
-```
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/1a40aaa4-d47c-44e8-9fb6-6253fae3336c" />
 
 ### 3.2 Internal object model
 
@@ -79,6 +68,8 @@ commit C2 ──▶ tree ...
    ▼
 commit C1 ──▶ tree ...
 ```
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/3154cfa0-308a-4e53-bf22-06d9b86d390f" />
+
 
 Git stores **snapshots, not diffs**. Unchanged files are reused by pointing to the same blob.
 
@@ -125,6 +116,8 @@ Git stores **snapshots, not diffs**. Unchanged files are reused by pointing to t
    │ full repo│ │full repo│ │ clone   │
    └──────────┘ └─────────┘ └─────────┘
 ```
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/76a63633-72c0-4727-b5d4-94b1b9caba48" />
+
 
 ---
 
@@ -194,7 +187,7 @@ git push --force-with-lease       # safer force-push after a rebase
 | Undo a **pushed** commit safely (new inverse commit) | `git revert <sha>` |
 | Recover "lost" commits | `git reflog` then `git reset --hard <sha>` |
 
-### 4.7 Advanced tools
+### 4.7 Advanced tools(Optional)
 
 ```bash
 git stash push -m "wip"           # shelve uncommitted work
